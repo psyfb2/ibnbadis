@@ -67,11 +67,17 @@ is also read:
   (READ-ONLY)                 per step-2 doc                          userqanssave.php
 ```
 
-1. **`make scrape`** — deterministic Playwright; READ-ONLY; populates the store.
+It is a **3-step** pipeline (step 3 has a validate gate, `3a`, before the
+side-effecting write-back, `3b`):
+
+1. **Step 1 — `make scrape`** — deterministic Playwright; READ-ONLY; populates
+   the store.
 2. **Step 2 (no code)** — Claude Code fills the Arabic per
    [`docs/step-2-translation-procedure.md`](docs/step-2-translation-procedure.md).
-3. **`make validate`** — mandatory offline gate; must exit `0`.
-4. **`make writeback`** — deterministic Playwright; fills the Arabic and Saves.
+3. **Step 3 — write-back**, in two parts:
+   - **3a — `make validate`** — mandatory offline gate; must exit `0`.
+   - **3b — `make writeback`** — deterministic Playwright; fills the Arabic and
+     Saves.
 
 Each step is killable and resumable; the store is written atomically after every
 page.
@@ -205,7 +211,7 @@ CSTC-3 may not have entered the English Q&A for every page yet. CSTC-4 operates
 
 | Id | Divergence | Rationale |
 |---|---|---|
-| **A** | **Save signal.** CSTC-4 keys save-success strictly off the `userqanssave.php` POST body `["", true]` (a `["", false]` body or 5xx = failed). CSTC-3 (agentic) intentionally continues to use the **green Save-button flash**. | Same underlying endpoint; CSTC-4 can intercept the response (deterministic), CSTC-3 cannot (agentic, observes the UI). Documented in **both** projects: this §10, the CSTC-3 [RUNBOOK §4.7](../agentic-qa-data-entry/RUNBOOK.md) note and CSTC-3 [CLAUDE.md](../agentic-qa-data-entry/CLAUDE.md) "Important guarantees". CSTC-3 behaviour is unchanged. |
+| **A** | **Save signal.** CSTC-4 keys save-success strictly off the `userqanssave.php` POST body `["", true]` (a `["", false]` body or 5xx = failed). CSTC-3 (agentic) intentionally continues to use the **green Save-button flash**. | Same underlying endpoint; CSTC-4 can intercept the response (deterministic), CSTC-3 cannot (agentic, observes the UI). Documented in **both** projects: this §10, the CSTC-3 [RUNBOOK §4.7](../agentic-qa-data-entry/RUNBOOK.md#47-save) note and CSTC-3 [CLAUDE.md](../agentic-qa-data-entry/CLAUDE.md) "Important guarantees". CSTC-3 behaviour is unchanged. |
 | **B** | **Store persistence.** CSTC-4's `store/translations.json` is **gitignored**; CSTC-3 **commits** its `state/`. | CSTC-4's store may contain large scraped page content and is reproducible by re-running scrape; CSTC-3's state is its only audit trail. |
 | **C** | **Section-slug.** CSTC-3 uses hand-made special slugs (e.g. `dictionary`, `ending`, `pictionary-and-alphabet`) that are **not** algorithmically reproducible. CSTC-4 deterministically uses `section-{1-based-index}-{slug}` (+ optional `/part-{n}`) for **both** scrape and write-back. | CSTC-4 must key scrape and write-back by the *same* deterministic rule; it is internally consistent. Cross-reference with CSTC-3 keys is therefore **best-effort by key string** only. |
 | **D** | **OpenTelemetry deferred.** The org standard mandates OpenTelemetry; CSTC-4 uses **structlog JSON to stdout only**. | KISS — CSTC-4 is a single-operator local CLI; OTel infrastructure is unjustified here. Deliberate, documented divergence (see `../agentdocs/architecture.md`). |
