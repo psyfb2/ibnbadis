@@ -59,3 +59,54 @@ def assert_valid_page_key(value: str) -> str:
             f"matching {PAGE_KEY_RE.pattern}"
         )
     return value
+
+
+#: Any run of characters that are NOT lowercase ASCII alphanumerics.
+_NON_SLUG_RE: re.Pattern[str] = re.compile(r"[^a-z0-9]+")
+
+
+def slugify(text: str) -> str:
+    """Deterministically kebab-case ``text`` for use in a section slug.
+
+    Lowercases, then collapses every run of non ``[a-z0-9]`` characters
+    (whitespace, punctuation, apostrophes, and any non-ASCII text such as
+    Arabic) into a single ``-`` and trims leading/trailing ``-``. A title that
+    contains no ASCII alphanumerics (e.g. a purely Arabic title) yields ``""``;
+    :func:`section_slug` handles that case so the composed key stays valid.
+    """
+    return _NON_SLUG_RE.sub("-", text.strip().lower()).strip("-")
+
+
+def section_slug(index: int, title: str, part: int | None = None) -> str:
+    """Build the ``<section-slug>`` path segment(s) for a page key.
+
+    Always starts ``section-{index}`` so the slug is non-empty and key-valid
+    even when ``title`` slugifies to ``""``. An optional ``part`` appends a
+    ``/part-{part}`` segment (mirrors CSTC-3's ``.../part-{n}/...`` keys).
+
+    Note: CSTC-3's hand-made special slugs (``dictionary``, ``ending``,
+    ``pictionary-and-alphabet``) are NOT algorithmically reproducible; CSTC-4
+    uses this deterministic ``section-{index}-{slug}`` rule consistently, which
+    is format-compliant and internally consistent (scrape and write-back key by
+    the same rule). Cross-reference with CSTC-3 is therefore best-effort by key.
+    """
+    slug = slugify(title)
+    base = f"section-{index}-{slug}" if slug else f"section-{index}"
+    if part is not None:
+        base += f"/part-{part}"
+    return base
+
+
+def compose_page_key(book_key: str, section_slug: str, page_number: int) -> str:
+    """Compose and validate a full flat page key.
+
+    Args:
+        book_key: e.g. ``year4-sem1`` (see :func:`book_key`).
+        section_slug: a slug as produced by :func:`section_slug` (may itself
+            contain a ``/part-{n}`` segment).
+        page_number: 1-based page number; zero-padded to >=2 digits.
+
+    Raises:
+        ValueError: if the composed key is not a valid page key.
+    """
+    return assert_valid_page_key(f"{book_key}/{section_slug}/page-{page_number:02d}")
