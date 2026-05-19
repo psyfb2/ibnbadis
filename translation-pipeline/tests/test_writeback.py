@@ -473,6 +473,31 @@ def test_writeback_book_resume_skips_success_pages(
     assert store[KEY_04].writeback_status == "success"
 
 
+def test_writeback_book_retries_failed_page_on_rerun(
+    patched_io: dict[str, MagicMock], store_path: Path
+) -> None:
+    # Resumability/idempotency: only "success" is terminal — a "failed" page is
+    # NOT skipped; it is re-acted on the next run and can recover to "success".
+    nav = make_book_nav([pc(KEY_04)])
+    store = TranslationStore(
+        {
+            KEY_04: page(
+                row(tq="q", uq_needs=True, uq_tr="AR"),
+                status="failed",
+            )
+        }
+    )
+    store[KEY_04].writeback_error = "server error (http=502)"
+
+    writeback.writeback_book(nav, 4, 1, store, store_path)
+
+    nav.open_textapps.assert_called_once()  # re-acted, not resume-skipped
+    patched_io["save"].assert_called_once()
+    assert store[KEY_04].writeback_status == "success"
+    assert store[KEY_04].writeback_error is None  # cleared on recovery
+    patched_io["save_store"].assert_called_once()  # persisted after acting
+
+
 def test_writeback_book_skips_pages_absent_from_store(
     patched_io: dict[str, MagicMock], store_path: Path
 ) -> None:
