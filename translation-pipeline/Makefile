@@ -38,5 +38,9 @@ scrape:
 validate:
 	uv run python -m translation_pipeline.validate $(ARGS)
 
+# `make writeback` is the side-effecting step-3 stage (run after `make
+# validate` passes). Resumable & idempotent — only pending/failed pages are
+# touched. For the live selector-tuning run:
+#   make writeback ARGS='--headed --book year4-sem1'
 writeback:
-	@echo "writeback: not yet implemented (task 5)"
+	uv run python -m translation_pipeline.writeback $(ARGS)

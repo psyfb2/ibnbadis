@@ -117,6 +117,18 @@ class SiteNavigator:
         # work without a ``NoneType`` access later in ``login()``.
         self._settings = settings if settings is not None else get_settings()
 
+    @property
+    def page(self) -> Page:
+        """The injected Playwright page (read accessor for write-back).
+
+        Exposing the already-injected page adds **no** write surface to this
+        module: every side-effecting primitive still lives solely in
+        :mod:`translation_pipeline.write_helper` (imported only by write-back).
+        Interface segregation is unchanged — ``site.py`` still contains zero
+        fill/Save code and never imports ``write_helper``.
+        """
+        return self._page
+
     # --- Authentication ----------------------------------------------------
     def login(self) -> None:
         """Log in with the env-supplied credentials.

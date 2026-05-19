@@ -360,6 +360,16 @@ def test_close_textapps_sequence(nav: SiteNavigator, mock_page: MagicMock) -> No
 # --- Interface segregation (scrape provably cannot mutate the site) --------
 
 
+def test_page_property_returns_injected_page_read_only(
+    nav: SiteNavigator, mock_page: MagicMock
+) -> None:
+    # write-back needs the navigator's page to call write_helper primitives;
+    # exposing it read-only adds NO write surface to site.py.
+    assert nav.page is mock_page
+    with pytest.raises(AttributeError):
+        nav.page = MagicMock()  # type: ignore[misc]
+
+
 def test_sitenavigator_exposes_no_write_surface() -> None:
     for forbidden in ("fill_translation", "save_page", "read_field_value"):
         assert not hasattr(SiteNavigator, forbidden)
