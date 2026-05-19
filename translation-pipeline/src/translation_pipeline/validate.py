@@ -153,7 +153,9 @@ def _check_source_flag_integrity(store: TranslationStore) -> list[Finding]:
     to flags) so the validator and the scraper share one flag definition. A
     mismatch means an English source / already-translated state was modified
     after scrape, or the flags were hand-corrupted (e.g. ``already``+``needs``
-    both true).
+    both true). UQ and UA are checked **independently**: a row with both sides
+    corrupted yields one finding per side (mirroring the other per-field
+    checks) so neither side is silently folded into the other's message.
     """
     findings: list[Finding] = []
     for page_key, page in store.items():
@@ -162,36 +164,46 @@ def _check_source_flag_integrity(store: TranslationStore) -> list[Finding]:
                 RowFields(tq=row.tq, ta=row.ta, uq=row.uq, ua=row.ua),
                 prev=None,
             )
-            uq_mismatch = (
+            if (
                 row.uq_already_translated != expected.uq_already_translated
                 or row.uq_needs_translation != expected.uq_needs_translation
-            )
-            ua_mismatch = (
+            ):
+                findings.append(
+                    Finding(
+                        code=ValidationCode.SOURCE_FLAG_MISMATCH,
+                        page_key=page_key,
+                        row_index=idx,
+                        field="uq",
+                        message=(
+                            "stored UQ flags do not match flags recomputed "
+                            "from tq/uq "
+                            f"(stored already={row.uq_already_translated} "
+                            f"needs={row.uq_needs_translation}; "
+                            f"expected already={expected.uq_already_translated} "
+                            f"needs={expected.uq_needs_translation})"
+                        ),
+                    )
+                )
+            if (
                 row.ua_already_translated != expected.ua_already_translated
                 or row.ua_needs_translation != expected.ua_needs_translation
-            )
-            if not (uq_mismatch or ua_mismatch):
-                continue
-            findings.append(
-                Finding(
-                    code=ValidationCode.SOURCE_FLAG_MISMATCH,
-                    page_key=page_key,
-                    row_index=idx,
-                    field="uq" if uq_mismatch else "ua",
-                    message=(
-                        "stored per-field flags do not match flags recomputed "
-                        "from tq/ta/uq/ua "
-                        f"(stored uq_already={row.uq_already_translated} "
-                        f"uq_needs={row.uq_needs_translation} "
-                        f"ua_already={row.ua_already_translated} "
-                        f"ua_needs={row.ua_needs_translation}; "
-                        f"expected uq_already={expected.uq_already_translated} "
-                        f"uq_needs={expected.uq_needs_translation} "
-                        f"ua_already={expected.ua_already_translated} "
-                        f"ua_needs={expected.ua_needs_translation})"
-                    ),
+            ):
+                findings.append(
+                    Finding(
+                        code=ValidationCode.SOURCE_FLAG_MISMATCH,
+                        page_key=page_key,
+                        row_index=idx,
+                        field="ua",
+                        message=(
+                            "stored UA flags do not match flags recomputed "
+                            "from ta/ua "
+                            f"(stored already={row.ua_already_translated} "
+                            f"needs={row.ua_needs_translation}; "
+                            f"expected already={expected.ua_already_translated} "
+                            f"needs={expected.ua_needs_translation})"
+                        ),
+                    )
                 )
-            )
     return findings
 
 

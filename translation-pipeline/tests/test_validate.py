@@ -191,6 +191,23 @@ def test_source_flag_mismatch_already_and_needs_both_true() -> None:
     assert ValidationCode.SOURCE_FLAG_MISMATCH in codes
 
 
+def test_source_flag_mismatch_both_sides_independent_findings() -> None:
+    # tq+ta set, uq+ua blank -> build_row expects BOTH needs=True; stored
+    # says both False -> one independent finding per side (not folded).
+    both = Row(
+        tq="q",
+        ta="a",
+        uq="",
+        ua="",
+        uq_needs_translation=False,
+        ua_needs_translation=False,
+    )
+    s = store(p=Page(rows=[both]))
+    findings = [f for f in validate_store(s) if f.code is ValidationCode.SOURCE_FLAG_MISMATCH]
+    assert len(findings) == 2
+    assert {f.field for f in findings} == {"uq", "ua"}
+
+
 # --- Independent UQ/UA -----------------------------------------------------
 
 
