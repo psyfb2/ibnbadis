@@ -26,8 +26,10 @@ test:
 	uv run pytest
 
 # --- Pipeline step placeholders (implemented in tasks 3 / 4 / 5) ---
+# `make scrape` runs all 6 books headless. For the live selector-tuning run:
+#   make scrape ARGS='--headed --book year4-sem1'
 scrape:
-	@echo "scrape: not yet implemented (task 3)"
+	uv run python -m translation_pipeline.scrape $(ARGS)
 
 validate:
 	@echo "validate: not yet implemented (task 4)"
