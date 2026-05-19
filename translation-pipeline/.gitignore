@@ -1,0 +1,16 @@
+# Data store is deliberately NOT committed (diverges from CSTC-3 which commits state/).
+store/translations.json
+store/*.bak
+
+# Screenshots may leak credentials / page content.
+screenshots/
+
+# Secrets
+.env
+
+# Python / tooling
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+.ruff_cache/
