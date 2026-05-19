@@ -250,6 +250,22 @@ def test_wait_for_page_settled_falls_back_when_signals_time_out(
     ]
 
 
+def test_wait_for_page_settled_never_raises_when_all_signals_time_out(
+    nav: SiteNavigator, mock_page: MagicMock
+) -> None:
+    # Even the domcontentloaded backstop times out -> must be tolerated (the
+    # walk continues; a stale read surfaces downstream), never aborting here.
+    mock_page.wait_for_function.side_effect = PlaywrightTimeoutError("no change")
+    mock_page.wait_for_load_state.side_effect = PlaywrightTimeoutError("never settles")
+
+    nav._wait_for_page_settled("3")  # must not raise
+
+    assert mock_page.wait_for_load_state.call_args_list == [
+        call("networkidle", timeout=30_000),
+        call("domcontentloaded", timeout=30_000),
+    ]
+
+
 # --- read_rows (RTL: by name, never by position) ---------------------------
 
 

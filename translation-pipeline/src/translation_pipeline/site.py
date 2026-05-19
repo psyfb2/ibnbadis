@@ -345,7 +345,12 @@ class SiteNavigator:
         try:
             self._page.wait_for_load_state("networkidle", timeout=DEFAULT_TIMEOUT_MS)
         except PlaywrightTimeoutError:
-            self._page.wait_for_load_state("domcontentloaded", timeout=DEFAULT_TIMEOUT_MS)
+            try:
+                self._page.wait_for_load_state("domcontentloaded", timeout=DEFAULT_TIMEOUT_MS)
+            except PlaywrightTimeoutError:
+                # Bounded + tolerated per this method's contract: never abort
+                # the book here. A genuinely stale read surfaces downstream.
+                _log.warning("page_load_state_not_settled", prev_page_text=prev_page_text)
 
     def _click_first_by_text(self, texts: tuple[str, ...]) -> None:
         """Click the first locator whose text matches any of ``texts``."""

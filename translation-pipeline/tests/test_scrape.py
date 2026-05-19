@@ -91,12 +91,6 @@ def test_merge_page_none_builds_dense_zero_based_rows() -> None:
     assert page.skip_reason is None
 
 
-def test_orchestration_keys_store_by_pagecontext_key_verbatim() -> None:
-    # The flat key is taken straight from PageContext.page_key (already composed
-    # by the same deterministic rule write-back uses) and is format-valid.
-    assert is_valid_page_key(KEY_04)
-
-
 @pytest.mark.parametrize(
     ("tq", "ta", "uq", "ua", "expected"),
     [
@@ -221,7 +215,10 @@ def test_scrape_book_keys_store_by_page_key_and_saves_per_page(
 
     scrape.scrape_book(nav, 4, 1, store, store_path)
 
+    # Store is keyed by the verbatim PageContext.page_key (no transform), and
+    # every emitted key is format-valid.
     assert set(store.keys()) == {KEY_04, KEY_05}
+    assert all(is_valid_page_key(k) for k in store.keys())
     assert saves.call_count == 2  # interrupt-safe: persisted after every page
     # Empty-grid page is still recorded with the no-English skip reason.
     assert store[KEY_05].rows == []
