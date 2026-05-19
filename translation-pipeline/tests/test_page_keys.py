@@ -145,6 +145,7 @@ def test_compose_page_key_is_consistent_with_helpers() -> None:
         ("year3-sem1", "section-1", 4),  # bad year -> invalid composed key
         ("year4-sem1", "Section-1", 4),  # uppercase slug
         ("year4-sem1", "section-1", -1),  # negative page number
+        ("year4-sem1", "section-1", 0),  # 0 would format as page-00
     ],
 )
 def test_compose_page_key_rejects_invalid(bk: str, slug: str, page: int) -> None:

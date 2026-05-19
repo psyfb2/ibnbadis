@@ -107,6 +107,10 @@ def compose_page_key(book_key: str, section_slug: str, page_number: int) -> str:
         page_number: 1-based page number; zero-padded to >=2 digits.
 
     Raises:
-        ValueError: if the composed key is not a valid page key.
+        ValueError: if ``page_number`` is < 1, or the composed key is not a
+            valid page key. (``PAGE_KEY_RE`` alone would accept ``page-00``;
+            the explicit guard rejects a 0/negative page number.)
     """
+    if page_number < 1:
+        raise ValueError(f"page_number must be >= 1 (got {page_number!r})")
     return assert_valid_page_key(f"{book_key}/{section_slug}/page-{page_number:02d}")

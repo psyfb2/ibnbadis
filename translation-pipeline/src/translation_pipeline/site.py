@@ -43,7 +43,7 @@ from translation_pipeline.selectors import (
     ROW_INPUT_CSS,
     SEMESTER_DROPDOWN_SELECTOR,
     SEMESTER_OPTION,
-    SIDEBAR_SECTION_ACTIVE_SELECTOR,
+    SIDEBAR_ACTIVE_CLASS,
     SIDEBAR_SECTION_SELECTOR,
     SPANNER_TRIGGER_SELECTOR,
     TEXTAPPS_TAB_TEXT,
@@ -238,14 +238,18 @@ class SiteNavigator:
         )
 
     def _current_section(self) -> tuple[int, str]:
-        active = self._page.query_selector(SIDEBAR_SECTION_ACTIVE_SELECTOR)
-        if active is None:
-            raise NavigationError("no active sidebar section")
-        title = (active.text_content() or "").strip()
-        for idx, sec_title in self.sections():
-            if sec_title == title:
-                return idx, sec_title
-        raise NavigationError(f"active section {title!r} not found in sidebar")
+        """Return ``(1-based index, title)`` of the highlighted section.
+
+        The active section is identified by its DOM POSITION among the sidebar
+        entries combined with the active class — never by matching the title
+        text, because sidebar titles can collide (e.g. a repeated "Part 1"),
+        which would otherwise always resolve to the first occurrence.
+        """
+        for idx, el in enumerate(self._page.query_selector_all(SIDEBAR_SECTION_SELECTOR), start=1):
+            classes = (el.get_attribute("class") or "").split()
+            if SIDEBAR_ACTIVE_CLASS in classes:
+                return idx, (el.text_content() or "").strip()
+        raise NavigationError("no active sidebar section")
 
     def _current_page_number(self) -> int:
         el = self._page.query_selector(PAGE_NUMBER_ACTIVE_SELECTOR)
@@ -274,7 +278,26 @@ class SiteNavigator:
         if arrow is None or arrow.is_disabled():
             return False
         arrow.click()
+        self._wait_for_page_settled()
         return True
+
+    def _wait_for_page_settled(self) -> None:
+        """Wait for the new page's content to settle after a page change.
+
+        ``page.click`` only auto-waits for the arrow's actionability — it does
+        NOT wait for the viewer's SPA to swap the page number, the sidebar
+        highlight and the grid inputs. Without this, the next
+        ``_current_page_context``/``read_rows`` could read stale values from
+        the previous page.
+
+        # VERIFY-ON-LIVE: the correct settle strategy (full reload vs SPA DOM
+        # swap) is unknown from the RUNBOOK/screenshots. This is the SINGLE
+        # seam tasks 3/5 must implement during their live integration runs
+        # (e.g. wait_for_load_state, or wait_for_function on the page-number
+        # indicator changing). Intentionally a no-op until then so we do not
+        # guess a wrong wait that masks the gap.
+        """
+        return None
 
     def _click_first_by_text(self, texts: tuple[str, ...]) -> None:
         """Click the first locator whose text matches any of ``texts``."""

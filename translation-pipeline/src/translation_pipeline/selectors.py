@@ -118,6 +118,10 @@ BOOK_ROW_TEXT_TMPL = "Year {year} English"  # VERIFY-ON-LIVE
 # --- Ebook viewer / navigation --------------------------------------------
 SIDEBAR_SECTION_SELECTOR = ".sidebar .section"  # VERIFY-ON-LIVE
 SIDEBAR_SECTION_ACTIVE_SELECTOR = ".sidebar .section.active"  # VERIFY-ON-LIVE
+#: Token expected in the active sidebar section element's class list. The
+#: active section is identified by DOM POSITION + this class (never by title
+#: text, which can collide across sections, e.g. a repeated "Part 1").
+SIDEBAR_ACTIVE_CLASS = "active"  # VERIFY-ON-LIVE
 PAGE_NEXT_ARROW_SELECTOR = ".page-nav .next"  # VERIFY-ON-LIVE
 PAGE_PREV_ARROW_SELECTOR = ".page-nav .prev"  # VERIFY-ON-LIVE
 PAGE_NUMBER_ACTIVE_SELECTOR = ".page-nav .current"  # VERIFY-ON-LIVE

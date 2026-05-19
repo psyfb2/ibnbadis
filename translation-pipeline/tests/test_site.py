@@ -15,7 +15,7 @@ from unittest.mock import MagicMock
 import pytest
 from playwright.sync_api import TimeoutError as PlaywrightTimeoutError
 
-from tests.conftest import fake_input, fake_text_el
+from tests.conftest import fake_input, fake_section, fake_text_el
 from translation_pipeline import site as site_mod
 from translation_pipeline.page_keys import is_valid_page_key
 from translation_pipeline.site import (
@@ -133,17 +133,34 @@ def test_sections_returns_one_based_index_and_title(
     assert nav.sections() == [(1, "Unit One"), (2, "Unit Two")]
 
 
-def test_current_section_matches_active_by_text(nav: SiteNavigator, mock_page: MagicMock) -> None:
+def test_current_section_identified_by_position_and_active_class(
+    nav: SiteNavigator, mock_page: MagicMock
+) -> None:
     mock_page.query_selector_all.return_value = [
-        fake_text_el("Unit One"),
-        fake_text_el("Unit Two"),
+        fake_section("Unit One"),
+        fake_section("Unit Two", active=True),
     ]
-    mock_page.query_selector.return_value = fake_text_el("Unit Two")
     assert nav._current_section() == (2, "Unit Two")
 
 
+def test_current_section_disambiguates_duplicate_titles(
+    nav: SiteNavigator, mock_page: MagicMock
+) -> None:
+    # Two sections share the title "Part 1"; the SECOND is active. Resolving by
+    # title text would wrongly return index 1 — index must come from position.
+    mock_page.query_selector_all.return_value = [
+        fake_section("Part 1"),
+        fake_section("Part 1", active=True),
+        fake_section("Part 2"),
+    ]
+    assert nav._current_section() == (2, "Part 1")
+
+
 def test_current_section_raises_without_active(nav: SiteNavigator, mock_page: MagicMock) -> None:
-    mock_page.query_selector.return_value = None
+    mock_page.query_selector_all.return_value = [
+        fake_section("Unit One"),
+        fake_section("Unit Two"),
+    ]
     with pytest.raises(NavigationError):
         nav._current_section()
 
@@ -174,6 +191,8 @@ def test_advance_to_next_page(
     expected: bool,
     clicked: bool,
 ) -> None:
+    settled = MagicMock()
+    nav._wait_for_page_settled = settled  # type: ignore[method-assign]
     if arrow is None:
         mock_page.query_selector.return_value = None
         el = None
@@ -184,6 +203,9 @@ def test_advance_to_next_page(
     assert nav._advance_to_next_page() is expected
     if el is not None:
         assert el.click.called is clicked
+    # The settle seam is invoked exactly when (and only when) we advanced, so
+    # the next read does not race the SPA page swap.
+    assert settled.called is clicked
 
 
 # --- read_rows (RTL: by name, never by position) ---------------------------

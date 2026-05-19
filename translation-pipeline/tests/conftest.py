@@ -147,3 +147,11 @@ def fake_text_el(text: str) -> MagicMock:
     el = MagicMock()
     el.text_content.return_value = text
     return el
+
+
+def fake_section(title: str, *, active: bool = False) -> MagicMock:
+    """A fake sidebar section element (``text_content()`` + ``class`` attr)."""
+    el = MagicMock()
+    el.text_content.return_value = title
+    el.get_attribute.return_value = "section active" if active else "section"
+    return el
