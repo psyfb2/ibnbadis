@@ -1,0 +1,14 @@
+{
+  "page_key": "year4-sem1/section-6-on-sundays-i/part-1/page-36",
+  "timestamp": "2026-05-13T08:59:20Z",
+  "existing_rows": [
+    {"q": "What subjects do you have on Mondays?", "a": "I have science and religion."},
+    {"q": "What`s your favourite subject?", "a": "My favourite subject is maths."}
+  ],
+  "extracted_rows": [
+    {"q": "What subjects do you have on Mondays?", "a": "I have science and religion."},
+    {"q": "What's your favourite subject?", "a": "My favourite subject is maths."}
+  ],
+  "appended_rows": [],
+  "note": "Retry of prior save_failed. Save succeeded — all TextEntry save endpoints returned 200. Existing row 2 uses backtick instead of apostrophe in 'What`s' (left untouched per non-modify rule)."
+}

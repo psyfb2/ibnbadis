@@ -1,0 +1,19 @@
+{
+  "page_key": "year6-sem2/section-18-revision/part-1/page-64",
+  "timestamp": "2026-05-12T19:08:00Z",
+  "existing_rows": [],
+  "extracted_rows": [
+    {"q": "Why don't you ride the donkey? It's strong, put the boy on it!", "a": "What a good idea! Son, jump on the donkey."},
+    {"q": "Why's your son riding the donkey? He's young, make him walk!", "a": "Please don't shout! But I agree with you. Come on son, jump down, let's take turns."},
+    {"q": "Hey, look at your son. He's very tired. He should ride the donkey!", "a": "Oh dear … She's right, come on son, it's your turn."},
+    {"q": "Mum, why don't they both ride the donkey?", "a": "You're right. Move up son, I'm getting on."},
+    {"q": "Poor donkey! I can see clearly it is very tired.", "a": "Yes, our donkey has carried us for a long time! It's OUR turn to carry HIM now, son."}
+  ],
+  "appended_rows": [
+    {"q": "Why don't you ride the donkey? It's strong, put the boy on it!", "a": "What a good idea! Son, jump on the donkey."},
+    {"q": "Why's your son riding the donkey? He's young, make him walk!", "a": "Please don't shout! But I agree with you. Come on son, jump down, let's take turns."},
+    {"q": "Hey, look at your son. He's very tired. He should ride the donkey!", "a": "Oh dear … She's right, come on son, it's your turn."},
+    {"q": "Mum, why don't they both ride the donkey?", "a": "You're right. Move up son, I'm getting on."},
+    {"q": "Poor donkey! I can see clearly it is very tired.", "a": "Yes, our donkey has carried us for a long time! It's OUR turn to carry HIM now, son."}
+  ]
+}

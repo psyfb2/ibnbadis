@@ -1,0 +1,18 @@
+{
+  "page_key": "year4-sem1/section-2-our-house/part-2/page-14",
+  "timestamp": "2026-05-11T15:58:30Z",
+  "existing_rows": [],
+  "extracted_rows": [
+    {"q": "Where's mum?", "a": "She's in the bathroom."},
+    {"q": "Where are Hala and Amal?", "a": "They're in the kitchen."},
+    {"q": "Where's dad?", "a": "He's in the kitchen."},
+    {"q": "What's he doing?", "a": "He's cooking."}
+  ],
+  "appended_rows": [
+    {"q": "Where's mum?", "a": "She's in the bathroom."},
+    {"q": "Where are Hala and Amal?", "a": "They're in the kitchen."},
+    {"q": "Where's dad?", "a": "He's in the kitchen."},
+    {"q": "What's he doing?", "a": "He's cooking."}
+  ],
+  "save_button_color_after_save": "rgb(0, 128, 0)"
+}

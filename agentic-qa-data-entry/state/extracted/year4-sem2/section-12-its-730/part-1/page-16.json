@@ -1,0 +1,23 @@
+{
+  "page_key": "year4-sem2/section-12-its-730/part-1/page-16",
+  "timestamp": "2026-05-11T18:55:33Z",
+  "existing_rows": [
+    {"q": "What is the time?", "a": "It is twelve thirty."},
+    {"q": "What is the time?", "a": "It is three o`clock."},
+    {"q": "What is the time?", "a": "It is eleven fifteen."},
+    {"q": "What is the time?", "a": "It is ten thirty."},
+    {"q": "What is the time?", "a": "It is six forty five."},
+    {"q": "What is the time?", "a": "It is twelve thirty."},
+    {"q": "What is the time?", "a": "It is four o`clock."},
+    {"q": "What is the time?", "a": "It is eleven fifteen."},
+    {"q": "What is the time?", "a": "It is seven forty five"},
+    {"q": "What is the time?", "a": "It is eight thirty."},
+    {"q": "What is the time?", "a": "It is one fifteen."}
+  ],
+  "extracted_rows": [
+    {"q": "What's the time?", "a": "It's 12:30."},
+    {"q": "What's the time?", "a": "It's 4:15."}
+  ],
+  "appended_rows": [],
+  "notes": "Existing 11 rows comprehensively cover 'What is the time?' with spelled-out times. Page exchanges duplicate these semantically (different format only). Skipped append per conservative duplicate handling consistent with prior session."
+}

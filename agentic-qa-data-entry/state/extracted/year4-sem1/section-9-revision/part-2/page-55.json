@@ -1,0 +1,15 @@
+{
+  "page_key": "year4-sem1/section-9-revision/part-2/page-55",
+  "timestamp": "2026-05-11T17:30:55Z",
+  "existing_rows": [],
+  "extracted_rows": [
+    {"q": "What do you do at the weekend?", "a": "On Fridays I go to the playground."},
+    {"q": "What do you do at the weekend?", "a": "On Saturdays I ride my bike."}
+  ],
+  "appended_rows": [
+    {"q": "What do you do at the weekend?", "a": "On Fridays I go to the playground."},
+    {"q": "What do you do at the weekend?", "a": "On Saturdays I ride my bike."}
+  ],
+  "save_button_color_after_save": "rgb(0, 128, 0)",
+  "notes": "Ex 4 'Read and write.' email exchange. Katie's email contains the Q 'What do you do at the weekend?' followed by two model answer sentences. Bottom half is a fill-in reply template (no model answer). Saved on retry (attempt 2)."
+}

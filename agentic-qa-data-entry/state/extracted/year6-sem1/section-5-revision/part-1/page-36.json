@@ -1,0 +1,14 @@
+{
+  "page_key": "year6-sem1/section-5-revision/part-1/page-36",
+  "timestamp": "2026-05-12T15:10:45Z",
+  "existing_rows": [],
+  "extracted_rows": [
+    {"q": "Who is stronger?", "a": "We are both strong."},
+    {"q": "You are not stronger than me! Who do you think you are?", "a": "I'm the strongest! Come and get me!"}
+  ],
+  "appended_rows": [
+    {"q": "Who is stronger?", "a": "We are both strong."},
+    {"q": "You are not stronger than me! Who do you think you are?", "a": "I'm the strongest! Come and get me!"}
+  ],
+  "note": "Two Q→A pairs from the lion-and-oxen revision story dialogue. First save attempt got userqanssave=false; retry succeeded."
+}

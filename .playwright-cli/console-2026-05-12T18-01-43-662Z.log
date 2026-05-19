@@ -1,0 +1,18 @@
+[    1477ms] [ERROR] Failed to load resource: net::ERR_NAME_NOT_RESOLVED @ https://res4sites/templates/myquds_ibnbadis/SHimages/usericon0.png:0
+[    1487ms] [WARNING] Alerted:  @ https://myquds.ibnbadis.org/content.php?gid=1229_0_1:5
+[   64895ms] [ERROR] Failed to load resource: net::ERR_NAME_NOT_RESOLVED @ https://ahgsites.earabics.com/AppsDZlast/Icons/IZP0A16D.gif:0
+[   87795ms] [WARNING] Alerted:  @ https://myquds.ibnbadis.org/content.php?gid=1231_0_2:5
+[   93231ms] [ERROR] Failed to load resource: net::ERR_NAME_NOT_RESOLVED @ https://res4sites/templates/myquds_ibnbadis/SHimages/usericon0.png:0
+[   93265ms] [ERROR] Failed to load resource: net::ERR_NAME_NOT_RESOLVED @ https://ahgsites.earabics.com/AppsDZlast/Icons/IZP0A16D.gif:0
+[  372533ms] [ERROR]  Error: Code 5xx
+    at submitForms (https://dev.ibnbadis.org/exp_entry.php?site_id=4&paper=PS6E20B&ULang=AR&TLang=EN&ILang=AR&nfw9=1&page=5&npage=5&mbr=26:2970:30)
+    at async HTMLButtonElement.<anonymous> (https://dev.ibnbadis.org/exp_entry.php?site_id=4&paper=PS6E20B&ULang=AR&TLang=EN&ILang=AR&nfw9=1&page=5&npage=5&mbr=26:399:21) @ https://dev.ibnbadis.org/exp_entry.php?site_id=4&paper=PS6E20B&ULang=AR&TLang=EN&ILang=AR&nfw9=1&page=5&npage=5&mbr=26:2974
+[  372533ms] [ERROR] There was an error while saving the data. @ https://dev.ibnbadis.org/exp_entry.php?site_id=4&paper=PS6E20B&ULang=AR&TLang=EN&ILang=AR&nfw9=1&page=5&npage=5&mbr=26:403
+[  429515ms] [ERROR]  Error: Code 5xx
+    at submitForms (https://dev.ibnbadis.org/exp_entry.php?site_id=4&paper=PS6E20B&ULang=AR&TLang=EN&ILang=AR&nfw9=1&page=6&npage=6&mbr=26:2970:30)
+    at async HTMLButtonElement.<anonymous> (https://dev.ibnbadis.org/exp_entry.php?site_id=4&paper=PS6E20B&ULang=AR&TLang=EN&ILang=AR&nfw9=1&page=6&npage=6&mbr=26:399:21) @ https://dev.ibnbadis.org/exp_entry.php?site_id=4&paper=PS6E20B&ULang=AR&TLang=EN&ILang=AR&nfw9=1&page=6&npage=6&mbr=26:2974
+[  429516ms] [ERROR] There was an error while saving the data. @ https://dev.ibnbadis.org/exp_entry.php?site_id=4&paper=PS6E20B&ULang=AR&TLang=EN&ILang=AR&nfw9=1&page=6&npage=6&mbr=26:403
+[  472103ms] [ERROR]  Error: Code 5xx
+    at submitForms (https://dev.ibnbadis.org/exp_entry.php?site_id=4&paper=PS6E20B&ULang=AR&TLang=EN&ILang=AR&nfw9=1&page=7&npage=7&mbr=26:3000:30)
+    at async HTMLButtonElement.<anonymous> (https://dev.ibnbadis.org/exp_entry.php?site_id=4&paper=PS6E20B&ULang=AR&TLang=EN&ILang=AR&nfw9=1&page=7&npage=7&mbr=26:399:21) @ https://dev.ibnbadis.org/exp_entry.php?site_id=4&paper=PS6E20B&ULang=AR&TLang=EN&ILang=AR&nfw9=1&page=7&npage=7&mbr=26:3004
+[  472103ms] [ERROR] There was an error while saving the data. @ https://dev.ibnbadis.org/exp_entry.php?site_id=4&paper=PS6E20B&ULang=AR&TLang=EN&ILang=AR&nfw9=1&page=7&npage=7&mbr=26:403

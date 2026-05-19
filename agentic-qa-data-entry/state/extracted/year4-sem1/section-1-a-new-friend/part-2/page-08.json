@@ -1,0 +1,20 @@
+{
+  "page_key": "year4-sem1/section-1-a-new-friend/part-2/page-08",
+  "timestamp": "2026-05-11T15:50:00Z",
+  "existing_rows": [
+    {"q": "What`s your favorite hobby Walid?", "a": "My favorite hobby is reading"},
+    {"q": "What`s your favorite hobby hala?", "a": "My favorite hobby is playing football"},
+    {"q": "What`s your favorite hobby hamza?", "a": "My favorite hobby is swimming"},
+    {"q": "What`s your favorite hobby Fiona?", "a": "My favorite hobby is drawing"},
+    {"q": "What`s your favorite colour?", "a": "My favorite colour is yellow"},
+    {"q": "What`s your favorite colour?", "a": "My favorite colour is orange"}
+  ],
+  "extracted_rows": [
+    {"q": "What's your favourite hobby, Walid?", "a": "My favourite hobby is reading."},
+    {"q": "What's your favourite colour?", "a": "My favourite colour is yellow."},
+    {"q": "What's your favourite colour?", "a": "My favourite colour is orange."},
+    {"q": "What's your favourite hobby?", "a": "My favourite hobby is swimming."}
+  ],
+  "appended_rows": [],
+  "notes": "All extracted pairs are already covered by existing rows (including personalized variants by name). Conservative: no appends."
+}

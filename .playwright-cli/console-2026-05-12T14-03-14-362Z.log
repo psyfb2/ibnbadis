@@ -1,0 +1,48 @@
+[     146ms] ReferenceError: ddmegamenu is not defined
+    at https://myquds.ibnbadis.org/:1375:2
+[     148ms] TypeError: Cannot set properties of null (setting 'href')
+    at https://myquds.ibnbadis.org/:2470:12
+[     148ms] ReferenceError: selectcombo is not defined
+    at https://myquds.ibnbadis.org/:3363:40
+[     169ms] TypeError: $(...).switchify is not a function
+    at HTMLDocument.<anonymous> (https://myquds.ibnbadis.org/:5156:36)
+    at Object.resolveWith (https://myquds.ibnbadis.org/jscripts/infusion/lib/jquery/core/js/jquery.js:16:12559)
+    at jQuery.ready (https://myquds.ibnbadis.org/jscripts/infusion/lib/jquery/core/js/jquery.js:16:5061)
+    at HTMLDocument.DOMContentLoaded (https://myquds.ibnbadis.org/jscripts/infusion/lib/jquery/core/js/jquery.js:16:11516)
+[     171ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://myquds.ibnbadis.org/get.php/res4sites/templates/myquds_ibnbadis/SHimages/usericon0.png:0
+[   67114ms] ReferenceError: ddmegamenu is not defined
+    at https://myquds.ibnbadis.org/:1375:2
+[   67114ms] TypeError: Cannot set properties of null (setting 'href')
+    at https://myquds.ibnbadis.org/:2470:12
+[   67114ms] ReferenceError: selectcombo is not defined
+    at https://myquds.ibnbadis.org/:3363:40
+[   67128ms] TypeError: $(...).switchify is not a function
+    at HTMLDocument.<anonymous> (https://myquds.ibnbadis.org/:5156:36)
+    at Object.resolveWith (https://myquds.ibnbadis.org/jscripts/infusion/lib/jquery/core/js/jquery.js:16:12559)
+    at jQuery.ready (https://myquds.ibnbadis.org/jscripts/infusion/lib/jquery/core/js/jquery.js:16:5061)
+    at HTMLDocument.DOMContentLoaded (https://myquds.ibnbadis.org/jscripts/infusion/lib/jquery/core/js/jquery.js:16:11516)
+[   67260ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://myquds.ibnbadis.org/get.php/res4sites/templates/myquds_ibnbadis/SHimages/xlogo.png:0
+[   67260ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://myquds.ibnbadis.org/get.php/res4sites/templates/myquds_ibnbadis/SHimages/bg-header.jpg:0
+[   67305ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://myquds.ibnbadis.org/get.php/res4sites/templates/myquds_ibnbadis/SHimages/family-small.jpg:0
+[   67359ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://myquds.ibnbadis.org/get.php/res4sites/templates/myquds_ibnbadis/SHimages/usericon0.png:0
+[   89956ms] TypeError: Cannot read properties of null (reading 'style')
+    at ddpanel.initpanel (https://myquds.ibnbadis.org/includeahg/js/dddropdownpanel.js:118:11)
+    at https://myquds.ibnbadis.org/includeahg/js/dddropdownpanel.js:24:50
+[  112877ms] [WARNING] Alerted:  @ https://myquds.ibnbadis.org/content.php?gid=1199_0_1:5
+[  116356ms] [ERROR] Failed to load resource: net::ERR_NAME_NOT_RESOLVED @ https://res4sites/templates/myquds_ibnbadis/SHimages/usericon0.png:0
+[  116364ms] [ERROR] Failed to load resource: net::ERR_NAME_NOT_RESOLVED @ https://ahgsites.earabics.com/AppsDZlast/Icons/IZP0A16D.gif:0
+[  153276ms] [WARNING] Alerted:  @ https://myquds.ibnbadis.org/content.php?gid=1201_0_2:5
+[  158887ms] [ERROR] Failed to load resource: net::ERR_NAME_NOT_RESOLVED @ https://res4sites/templates/myquds_ibnbadis/SHimages/usericon0.png:0
+[  158939ms] [ERROR] Failed to load resource: net::ERR_NAME_NOT_RESOLVED @ https://ahgsites.earabics.com/AppsDZlast/Icons/IZP0A16D.gif:0
+[  524583ms] [ERROR]  Error: Code 5xx
+    at submitForms (https://dev.ibnbadis.org/exp_entry.php?site_id=4&paper=PS6E20A&ULang=AR&TLang=EN&ILang=AR&nfw9=1&page=5&npage=5&mbr=26:2970:30)
+    at async HTMLButtonElement.<anonymous> (https://dev.ibnbadis.org/exp_entry.php?site_id=4&paper=PS6E20A&ULang=AR&TLang=EN&ILang=AR&nfw9=1&page=5&npage=5&mbr=26:399:21) @ https://dev.ibnbadis.org/exp_entry.php?site_id=4&paper=PS6E20A&ULang=AR&TLang=EN&ILang=AR&nfw9=1&page=5&npage=5&mbr=26:2974
+[  524584ms] [ERROR] There was an error while saving the data. @ https://dev.ibnbadis.org/exp_entry.php?site_id=4&paper=PS6E20A&ULang=AR&TLang=EN&ILang=AR&nfw9=1&page=5&npage=5&mbr=26:403
+[  616387ms] [ERROR]  Error: Code 5xx
+    at submitForms (https://dev.ibnbadis.org/exp_entry.php?site_id=4&paper=PS6E20A&ULang=AR&TLang=EN&ILang=AR&nfw9=1&page=6&npage=6&mbr=26:2970:30)
+    at async HTMLButtonElement.<anonymous> (https://dev.ibnbadis.org/exp_entry.php?site_id=4&paper=PS6E20A&ULang=AR&TLang=EN&ILang=AR&nfw9=1&page=6&npage=6&mbr=26:399:21) @ https://dev.ibnbadis.org/exp_entry.php?site_id=4&paper=PS6E20A&ULang=AR&TLang=EN&ILang=AR&nfw9=1&page=6&npage=6&mbr=26:2974
+[  616387ms] [ERROR] There was an error while saving the data. @ https://dev.ibnbadis.org/exp_entry.php?site_id=4&paper=PS6E20A&ULang=AR&TLang=EN&ILang=AR&nfw9=1&page=6&npage=6&mbr=26:403
+[  725451ms] [ERROR]  Error: Code 5xx
+    at submitForms (https://dev.ibnbadis.org/exp_entry.php?site_id=4&paper=PS6E20A&ULang=AR&TLang=EN&ILang=AR&nfw9=1&page=7&npage=7&mbr=26:2970:30)
+    at async HTMLButtonElement.<anonymous> (https://dev.ibnbadis.org/exp_entry.php?site_id=4&paper=PS6E20A&ULang=AR&TLang=EN&ILang=AR&nfw9=1&page=7&npage=7&mbr=26:399:21) @ https://dev.ibnbadis.org/exp_entry.php?site_id=4&paper=PS6E20A&ULang=AR&TLang=EN&ILang=AR&nfw9=1&page=7&npage=7&mbr=26:2974
+[  725451ms] [ERROR] There was an error while saving the data. @ https://dev.ibnbadis.org/exp_entry.php?site_id=4&paper=PS6E20A&ULang=AR&TLang=EN&ILang=AR&nfw9=1&page=7&npage=7&mbr=26:403

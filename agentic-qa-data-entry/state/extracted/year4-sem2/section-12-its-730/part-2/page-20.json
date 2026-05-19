@@ -1,0 +1,22 @@
+{
+  "page_key": "year4-sem2/section-12-its-730/part-2/page-20",
+  "timestamp": "2026-05-11T19:03:04Z",
+  "existing_rows": [
+    {"q": "What time does the match start?", "a": "The match starts at two forty five."},
+    {"q": "What time does the match finish?", "a": "It finishes at three thirty."},
+    {"q": "What time does the party start?", "a": "The party starts at six."},
+    {"q": "What time does the party finish?", "a": "It finishes at seven forty five."},
+    {"q": "What time does the basketball start?", "a": "Basketball starts at ten fifteen."},
+    {"q": "What time does the basketball finish?", "a": "It finishes at eleven fifteen."},
+    {"q": "What time does the cartoon start?", "a": "The cartoon starts at nine."},
+    {"q": "What time does the cartoon finish?", "a": "It finishes at nine thirty."}
+  ],
+  "extracted_rows": [
+    {"q": "When does the party start?", "a": "It starts at 1:45."},
+    {"q": "When does the party finish?", "a": "It finishes at 4:15."}
+  ],
+  "appended_rows": [
+    {"q": "When does the party start?", "a": "It starts at 1:45."},
+    {"q": "When does the party finish?", "a": "It finishes at 4:15."}
+  ]
+}

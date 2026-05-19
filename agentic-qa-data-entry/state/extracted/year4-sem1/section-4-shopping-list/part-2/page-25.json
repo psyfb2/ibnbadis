@@ -1,0 +1,17 @@
+{
+  "page_key": "year4-sem1/section-4-shopping-list/part-2/page-25",
+  "timestamp": "2026-05-11T16:12:30Z",
+  "existing_rows": [],
+  "extracted_rows": [
+    {"q": "What would you like?", "a": "I'd like a bag of rice, please."},
+    {"q": "Anything else?", "a": "No, thank you."},
+    {"q": "How much is it?", "a": "Fifteen dinars, please."}
+  ],
+  "appended_rows": [
+    {"q": "What would you like?", "a": "I'd like a bag of rice, please."},
+    {"q": "Anything else?", "a": "No, thank you."},
+    {"q": "How much is it?", "a": "Fifteen dinars, please."}
+  ],
+  "save_button_color_after_save": "rgb(0, 128, 0)",
+  "notes": "First save attempt 5xx (red); retried once and succeeded (green)."
+}

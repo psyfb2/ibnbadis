@@ -1,0 +1,12 @@
+{
+  "page_key": "year5-sem1/section-3-mini-olympics/part-1/page-23",
+  "timestamp": "2026-05-12T08:23:21Z",
+  "existing_rows": [],
+  "extracted_rows": [
+    {"q": "What are they doing?", "a": "Omar and Ben are running in the 100 metre race. Ben wants to come first. Rania and her friends are in the egg and spoon race. Rania comes second. Omar is swimming. He can swim 50 metres. He is fourth. Ben swims too. He is first. Rania and her friends run in the 200 metre race. Rania comes fifth. Reem comes seventh."}
+  ],
+  "appended_rows": [
+    {"q": "What are they doing?", "a": "Omar and Ben are running in the 100 metre race. Ben wants to come first. Rania and her friends are in the egg and spoon race. Rania comes second. Omar is swimming. He can swim 50 metres. He is fourth. Ben swims too. He is first. Rania and her friends run in the 200 metre race. Rania comes fifth. Reem comes seventh."}
+  ],
+  "note": "1 Q&A from section 4 reading passage. First save 5xx, retry green."
+}

@@ -1,0 +1,12 @@
+{
+  "page_key": "year5-sem1/section-2-our-country/part-1/page-12",
+  "timestamp": "2026-05-12T08:06:58Z",
+  "existing_rows": [
+    {"q": "It is the dome of the rock. It`s famous. It`s in Jerusalem.", "a": "What`s that? It`s a very big building. And who`s that?"},
+    {"q": "This is the Olympic stadium. It`s a new building. It`s for the Olympic games. This is my father. He`s an engineer.", "a": "This is Deir Qruntul. You can go up the mountain on the cable car. These people are my mother and father. And this is Wadi el Qilt. It`s a famous valley. We go hiking there."},
+    {"q": "What`s that? Is this a boat? It...", "a": "It`s a duck bus. It can go in..."}
+  ],
+  "extracted_rows": [],
+  "appended_rows": [],
+  "note": "Page already filled with the full dialogue (3 rows) by prior data entry. Saved without modifications."
+}

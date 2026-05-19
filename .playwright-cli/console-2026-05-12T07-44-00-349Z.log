@@ -1,0 +1,27 @@
+[    1137ms] ReferenceError: ddmegamenu is not defined
+    at https://myquds.ibnbadis.org/login.php?ahg=2:1477:2
+[    1158ms] TypeError: $(...).scrollToFixed is not a function
+    at HTMLDocument.<anonymous> (https://myquds.ibnbadis.org/login.php?ahg=2:5262:34)
+    at Object.resolveWith (https://myquds.ibnbadis.org/jscripts/infusion/InfusionAll.js:16:12559)
+    at jQuery.ready (https://myquds.ibnbadis.org/jscripts/infusion/InfusionAll.js:16:5061)
+    at HTMLDocument.DOMContentLoaded (https://myquds.ibnbadis.org/jscripts/infusion/InfusionAll.js:16:11516)
+[    1187ms] TypeError: Cannot read properties of null (reading 'style')
+    at HTMLDocument.<anonymous> (https://myquds.ibnbadis.org/login.php?ahg=2:2838:42)
+[    1201ms] [VERBOSE] [DOM] Input elements should have autocomplete attributes (suggested: "current-password"): (More info: https://goo.gl/9p2vKq) %o @ https://myquds.ibnbadis.org/login.php?ahg=2:0
+[    1654ms] ReferenceError: ddmegamenu is not defined
+    at https://myquds.ibnbadis.org/login.php?ahg=2:1085:9
+[    8741ms] TypeError: Cannot read properties of null (reading 'style')
+    at ddpanel.initpanel (https://myquds.ibnbadis.org/includeahg/js/dddropdownpanel.js:118:11)
+    at https://myquds.ibnbadis.org/includeahg/js/dddropdownpanel.js:24:50
+[   21786ms] [ERROR] Failed to load resource: net::ERR_NAME_NOT_RESOLVED @ https://res4sites/templates/myquds_ibnbadis/SHimages/usericon0.png:0
+[   24732ms] [ERROR] Failed to load resource: net::ERR_NAME_NOT_RESOLVED @ https://ahgsites.earabics.com/AppsDZlast/Icons/IZP0A16D.gif:0
+[   43870ms] [ERROR] Failed to load resource: net::ERR_NAME_NOT_RESOLVED @ https://res4sites/templates/myquds_ibnbadis/SHimages/usericon0.png:0
+[   46445ms] [ERROR] Failed to load resource: net::ERR_NAME_NOT_RESOLVED @ https://ahgsites.earabics.com/AppsDZlast/Icons/IZP0A16D.gif:0
+[  435253ms] [ERROR]  Error: Code 5xx
+    at submitForms (https://dev.ibnbadis.org/exp_entry.php?site_id=4&paper=PS5E20A&ULang=AR&TLang=EN&ILang=AR&nfw9=1&page=5&npage=5&mbr=26:2970:30)
+    at async HTMLButtonElement.<anonymous> (https://dev.ibnbadis.org/exp_entry.php?site_id=4&paper=PS5E20A&ULang=AR&TLang=EN&ILang=AR&nfw9=1&page=5&npage=5&mbr=26:399:21) @ https://dev.ibnbadis.org/exp_entry.php?site_id=4&paper=PS5E20A&ULang=AR&TLang=EN&ILang=AR&nfw9=1&page=5&npage=5&mbr=26:2974
+[  435253ms] [ERROR] There was an error while saving the data. @ https://dev.ibnbadis.org/exp_entry.php?site_id=4&paper=PS5E20A&ULang=AR&TLang=EN&ILang=AR&nfw9=1&page=5&npage=5&mbr=26:403
+[  583713ms] [ERROR]  Error: Code 5xx
+    at submitForms (https://dev.ibnbadis.org/exp_entry.php?site_id=4&paper=PS5E20A&ULang=AR&TLang=EN&ILang=AR&nfw9=1&page=6&npage=6&mbr=26:2970:30)
+    at async HTMLButtonElement.<anonymous> (https://dev.ibnbadis.org/exp_entry.php?site_id=4&paper=PS5E20A&ULang=AR&TLang=EN&ILang=AR&nfw9=1&page=6&npage=6&mbr=26:399:21) @ https://dev.ibnbadis.org/exp_entry.php?site_id=4&paper=PS5E20A&ULang=AR&TLang=EN&ILang=AR&nfw9=1&page=6&npage=6&mbr=26:2974
+[  583713ms] [ERROR] There was an error while saving the data. @ https://dev.ibnbadis.org/exp_entry.php?site_id=4&paper=PS5E20A&ULang=AR&TLang=EN&ILang=AR&nfw9=1&page=6&npage=6&mbr=26:403

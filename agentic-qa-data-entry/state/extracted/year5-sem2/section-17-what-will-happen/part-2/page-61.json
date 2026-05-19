@@ -1,0 +1,16 @@
+{
+  "page_key": "year5-sem2/section-17-what-will-happen/part-2/page-61",
+  "timestamp": "2026-05-12T13:37:30Z",
+  "existing_rows": [],
+  "extracted_rows": [
+    {"q": "What will we wear?", "a": "Spacesuits of course!"},
+    {"q": "How will we travel?", "a": "By spaceship!"},
+    {"q": "Where will we go?", "a": "To planets in outer space!"}
+  ],
+  "appended_rows": [
+    {"q": "What will we wear?", "a": "Spacesuits of course!"},
+    {"q": "How will we travel?", "a": "By spaceship!"},
+    {"q": "Where will we go?", "a": "To planets in outer space!"}
+  ],
+  "note": "3 explicit Q&A pairs from activity 3 'IN THE FUTURE' box. First save 5xx, retry succeeded."
+}

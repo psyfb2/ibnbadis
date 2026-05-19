@@ -1,0 +1,14 @@
+{
+  "page_key": "year5-sem1/section-3-mini-olympics/part-2/page-25",
+  "timestamp": "2026-05-12T08:26:15Z",
+  "existing_rows": [],
+  "extracted_rows": [
+    {"q": "Can you jump high?", "a": "Yes, I can."},
+    {"q": "Can you swim fast?", "a": "No, I can't."}
+  ],
+  "appended_rows": [
+    {"q": "Can you jump high?", "a": "Yes, I can."},
+    {"q": "Can you swim fast?", "a": "No, I can't."}
+  ],
+  "note": "2 Q&A pairs from song in section 3. First save 5xx, retry green."
+}

@@ -1,0 +1,13 @@
+{
+  "page_key": "year5-sem2/section-10-ben-and-amys-holiday/part-1/page-04",
+  "timestamp": "2026-05-12T12:30:45Z",
+  "existing_rows": [
+    {"q": "Who looked like princess?", "a": "My aunt Sarah."},
+    {"q": "How many hours was the family in the car?", "a": "It took six hours in the car."},
+    {"q": "What photos did Ben take?", "a": "A lot of photos of mountains."},
+    {"q": "Amy read a story, what was the story about?", "a": "The princess and the three friends."}
+  ],
+  "extracted_rows": [],
+  "appended_rows": [],
+  "note": "Page already had 4 comprehension Q&A rows covering the narrative (aunt's wedding, family trip to Scotland, Ben's photos, Amy's storybook). No additional canonical Q&A on the page beyond the existing rows. Saved without modifications."
+}

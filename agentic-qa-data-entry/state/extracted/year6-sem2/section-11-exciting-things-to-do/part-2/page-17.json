@@ -1,0 +1,18 @@
+{
+  "page_key": "year6-sem2/section-11-exciting-things-to-do/part-2/page-17",
+  "timestamp": "2026-05-12T18:22:00Z",
+  "existing_rows": [
+    {"q": "Who`s talking?", "a": "Fatima and Mary."},
+    {"q": "Who has never camped in Palestine?", "a": "Fatima has never camped in Palestine."},
+    {"q": "Who has never slept under the stars", "a": "Mary has never slept under the stars."},
+    {"q": "Who has camped at the dead", "a": "Fatima has camped at the dead sea."},
+    {"q": "Why can`t sail or swim at the dead sea?", "a": "You can`t sail in the dead sea, it`s too salty."},
+    {"q": "What desert animal can you see at night?", "a": "You can see hedgehogs at night."}
+  ],
+  "extracted_rows": [
+    {"q": "Have you ever slept under the stars?", "a": "No, I've never slept under the stars."}
+  ],
+  "appended_rows": [
+    {"q": "Have you ever slept under the stars?", "a": "No, I've never slept under the stars."}
+  ]
+}

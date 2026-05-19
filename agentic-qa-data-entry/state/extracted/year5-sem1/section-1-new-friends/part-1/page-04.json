@@ -1,0 +1,13 @@
+{
+  "page_key": "year5-sem1/section-1-new-friends/part-1/page-04",
+  "timestamp": "2026-05-12T07:49:30Z",
+  "existing_rows": [
+    {"q": "Good morning, today we have a new pupil in our class. Welcome him in our class. Omar", "a": "Hi, I am Omar. This is my sister Rania. We are twins. We are 11 years old. What is your name?"},
+    {"q": "Hi, I am Ben. This is are my parents and my sister Amy. I like drawing pictures..", "a": "Welcome to Palestine! I like drawing pictures too. I am good at art. Where are you from?"},
+    {"q": "I am from Britain. I am British. My dad`s an engineer. He works in Ramallah. He likes walking races. My mum helps him.", "a": "What do you like doing Ben?"},
+    {"q": "I like writing emails. I like watching films at the cinema. What do you like doing Rania?", "a": "I like looking at cats on the internet. I like watching films at the cinema too."}
+  ],
+  "extracted_rows": [],
+  "appended_rows": [],
+  "note": "Page already fully filled with the dialogue across 4 rows by prior data entry; existing rows capture the page content. Per runbook 'Page already 100% filled' — saved without modifications."
+}

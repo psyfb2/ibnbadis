@@ -1,0 +1,18 @@
+{
+  "page_key": "year5-sem1/section-4-holidays-in-palestine/part-1/page-28",
+  "timestamp": "2026-05-12T09:24:30Z",
+  "existing_rows": [
+    {"q": "June, July and August are very hot. I want to go to the beach.", "a": "Oh good! it`s the summer holiday. I want to go to Haifa."},
+    {"q": "December and January are very cold. What are we going in February?", "a": "It`s the holiday. We are going to aunt Amina`s farm. We are going to ride the horses."},
+    {"q": "Look Ben! We can fly our kites in October. It`s windy.", "a": "Great! I like to fly my Kite. Wat are you going to do in that photo?"},
+    {"q": "Rania and I are collecting olives.", "a": "I like spring. Spring is March, April and May?"},
+    {"q": "Yes, sometimes it is rainy in spring. we play indoors.", "a": "End"}
+  ],
+  "extracted_rows": [
+    {"q": "What are we going to do in February?", "a": "It's a holiday. We're going to Aunt Amina's farm. We can ride the horses."},
+    {"q": "What are you doing in that photo?", "a": "Rania and I are collecting olives."},
+    {"q": "I like spring. Spring is March, April and May?", "a": "Yes, sometimes it's rainy in spring and we play indoors."}
+  ],
+  "appended_rows": [],
+  "note": "Page form already populated with 5 rows of dialogue content. Per runbook §4.6, never overwrite existing rows. Extracted content substantively overlaps existing rows. Saved as-is (4x 200 OK)."
+}

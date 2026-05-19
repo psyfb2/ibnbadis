@@ -1,0 +1,12 @@
+{
+  "page_key": "year4-sem2/section-11-lets-make-a-cake/part-2/page-13",
+  "timestamp": "2026-05-12T07:25:25Z",
+  "existing_rows": [
+    {"q": "Is it ready?", "a": "Yes, it is!"}
+  ],
+  "extracted_rows": [
+    {"q": "Is it ready?", "a": "Yes, it is!"}
+  ],
+  "appended_rows": [],
+  "notes": "Retry: row was already present from prior session despite prior save error. Confirmed via re-save (true)."
+}

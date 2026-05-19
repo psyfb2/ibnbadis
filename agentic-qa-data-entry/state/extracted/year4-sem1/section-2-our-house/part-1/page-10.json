@@ -1,0 +1,14 @@
+{
+  "page_key": "year4-sem1/section-2-our-house/part-1/page-10",
+  "timestamp": "2026-05-11T15:53:00Z",
+  "existing_rows": [
+    {"q": "Where`s dad?", "a": "In the bathroom"},
+    {"q": "Who`s in the kitchen?", "a": "Mum"},
+    {"q": "What`s this?", "a": "This is the living room"}
+  ],
+  "extracted_rows": [
+    {"q": "Where's dad?", "a": "In the bathroom."},
+    {"q": "Who's in the kitchen?", "a": "Mum."}
+  ],
+  "appended_rows": []
+}

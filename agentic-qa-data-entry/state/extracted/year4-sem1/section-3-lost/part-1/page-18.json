@@ -1,0 +1,12 @@
+{
+  "page_key": "year4-sem1/section-3-lost/part-1/page-18",
+  "timestamp": "2026-05-11T16:04:30Z",
+  "existing_rows": [],
+  "extracted_rows": [
+    {"q": "Where's my t-shirt?", "a": "It's in the bin."}
+  ],
+  "appended_rows": [
+    {"q": "Where's my t-shirt?", "a": "It's in the bin."}
+  ],
+  "save_button_color_after_save": "rgb(0, 128, 0)"
+}

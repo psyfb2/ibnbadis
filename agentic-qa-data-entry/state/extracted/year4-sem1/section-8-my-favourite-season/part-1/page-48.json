@@ -1,0 +1,13 @@
+{
+  "page_key": "year4-sem1/section-8-my-favourite-season/part-1/page-48",
+  "timestamp": "2026-05-11T17:24:05Z",
+  "existing_rows": [],
+  "extracted_rows": [
+    {"q": "What do you like to do in spring?", "a": "In spring I like to go outdoors."}
+  ],
+  "appended_rows": [
+    {"q": "What do you like to do in spring?", "a": "In spring I like to go outdoors."}
+  ],
+  "save_button_color_after_save": "rgb(0, 128, 0)",
+  "notes": "Ex 1 statement speech bubbles (no Q). Ex 2 true/false ticking. Ex 3 'Say.' Q→A. Saved on retry (attempt 2)."
+}

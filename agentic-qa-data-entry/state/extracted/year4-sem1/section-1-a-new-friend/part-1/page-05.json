@@ -1,0 +1,13 @@
+{
+  "page_key": "year4-sem1/section-1-a-new-friend/part-1/page-05",
+  "timestamp": "2026-05-11T15:45:00Z",
+  "existing_rows": [
+    {"q": "What`s your name ?", "a": "I`m Walid"},
+    {"q": "How old are you?", "a": "I`m nine"},
+    {"q": "Where are you from?", "a": "I`m from ramallah"},
+    {"q": "How many brothers/sisters do you have ?", "a": "I have two brothers and three sisters"}
+  ],
+  "extracted_rows": [],
+  "appended_rows": [],
+  "notes": "Page has Match, Read-and-circle, and Write-your-own exercises. No canonical Q→A pairs per RUNBOOK extraction rules. Existing rows preserved unchanged."
+}

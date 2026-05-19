@@ -1,0 +1,24 @@
+{
+  "page_key": "year4-sem2/section-10-visiting-palestine/part-1/page-04",
+  "timestamp": "2026-05-11T17:54:00Z",
+  "existing_rows": [
+    {"q": "What are you going to do on holiday?", "a": "I am going to visit Hebron, I am going to see Al-Ibrahimi Mosque."},
+    {"q": "What are you going to do on holiday?", "a": "I am going to visit Haifa, I am going to see Mount Carmel."},
+    {"q": "What are you going to do on holiday?", "a": "I am going to visit Bethlehem, I am going to see the Church of Nativity."},
+    {"q": "What are you going to do on holiday?", "a": "I am going to visit Akka, I am going to see Al-Jazaar Mosque."},
+    {"q": "Hala, what are you going to do on holiday?", "a": "To visit Hebron"},
+    {"q": "What are you going to see?", "a": "To see Al-Ibrahimi Mosque."},
+    {"q": "Hamza, what are you going to do on holiday?", "a": "To visit Haifa."},
+    {"q": "What are you going to see?", "a": "To see Mount Carmel."},
+    {"q": "Fiona, what are you going to do on holiday?", "a": "To visit Bethlehem."},
+    {"q": "What are you going to see?", "a": "To see the Church of Nativity."},
+    {"q": "Walid, what are you going to do on holiday?", "a": "To visit Akka."},
+    {"q": "What are you going to see?", "a": "To see Al-Jazaar Mosque."}
+  ],
+  "extracted_rows": [
+    {"q": "What are you going to do on holiday?", "a": "I'm going to visit Hebron."},
+    {"q": "What are you going to do on holiday?", "a": "I'm going to visit Akka. I'm going to see Al-Jazaar Mosque."}
+  ],
+  "appended_rows": [],
+  "notes": "Existing rows already comprehensively cover the page's two speech-bubble exchanges (with minor stylistic differences: 'I am' vs 'I'm', comma vs period). Skipped append per conservative duplicate handling."
+}

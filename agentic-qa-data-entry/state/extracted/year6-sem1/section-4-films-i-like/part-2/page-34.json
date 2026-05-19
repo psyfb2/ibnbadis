@@ -1,0 +1,16 @@
+{
+  "page_key": "year6-sem1/section-4-films-i-like/part-2/page-34",
+  "timestamp": "2026-05-12T15:06:15Z",
+  "existing_rows": [],
+  "extracted_rows": [
+    {"q": "What did the dolphin do?", "a": "I pushed the diver while the other divers were watching."},
+    {"q": "Why was the orange fish hiding?", "a": "I wasn't safe. They were attacking the plants together!"},
+    {"q": "Why was the mouse angry?", "a": "Stop that noise!"}
+  ],
+  "appended_rows": [
+    {"q": "What did the dolphin do?", "a": "I pushed the diver while the other divers were watching."},
+    {"q": "Why was the orange fish hiding?", "a": "I wasn't safe. They were attacking the plants together!"},
+    {"q": "Why was the mouse angry?", "a": "Stop that noise!"}
+  ],
+  "note": "Three Q→A pairs from 'Read and write' section with illustrated answer bubbles. First save attempt got userqanssave=false; retry succeeded."
+}

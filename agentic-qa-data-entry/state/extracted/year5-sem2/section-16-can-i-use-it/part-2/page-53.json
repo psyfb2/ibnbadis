@@ -1,0 +1,20 @@
+{
+  "page_key": "year5-sem2/section-16-can-i-use-it/part-2/page-53",
+  "timestamp": "2026-05-12T13:28:20Z",
+  "existing_rows": [],
+  "extracted_rows": [
+    {"q": "Ben, can I use your computer, please?", "a": "Sure! What do you want to do?"},
+    {"q": "Can I play a game?", "a": "OK. There are lots of games. Look at the names and choose one."},
+    {"q": "How do I start?", "a": "First turn on the computer. Now move the mouse on the name of the game. Click the button on the mouse."},
+    {"q": "Rania, can I borrow your mobile phone again, please?", "a": "Sure, here you are."},
+    {"q": "How do I turn it on?", "a": "Press this blue button. Then press the number buttons."}
+  ],
+  "appended_rows": [
+    {"q": "Ben, can I use your computer, please?", "a": "Sure! What do you want to do?"},
+    {"q": "Can I play a game?", "a": "OK. There are lots of games. Look at the names and choose one."},
+    {"q": "How do I start?", "a": "First turn on the computer. Now move the mouse on the name of the game. Click the button on the mouse."},
+    {"q": "Rania, can I borrow your mobile phone again, please?", "a": "Sure, here you are."},
+    {"q": "How do I turn it on?", "a": "Press this blue button. Then press the number buttons."}
+  ],
+  "note": "5 speech bubble Q&A from activity 1. First save 5xx, retry succeeded."
+}

@@ -1,0 +1,12 @@
+{
+  "page_key": "year5-sem2/section-13-bens-blog/part-1/page-28",
+  "timestamp": "2026-05-12T13:00:30Z",
+  "existing_rows": [],
+  "extracted_rows": [
+    {"q": "How's your leg?", "a": "Better, thanks."}
+  ],
+  "appended_rows": [
+    {"q": "How's your leg?", "a": "Better, thanks."}
+  ],
+  "note": "Q&A speech bubble from panel 1+2 of Ben's blog narrative. First save returned Code 5xx; retried once, succeeded."
+}

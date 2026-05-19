@@ -1,0 +1,13 @@
+{
+  "page_key": "year6-sem2/section-10-a-visit-to-the-dead-sea/part-2/page-11",
+  "timestamp": "2026-05-12T18:15:30Z",
+  "existing_rows": [],
+  "extracted_rows": [
+    {"q": "Have you ever seen a jerboa?", "a": "It lives in the desert in Palestine. It is small. It looks like a small mouse. It comes out at night time."},
+    {"q": "Have you ever seen a gazelle?", "a": "It lives in the desert in Palestine. It is big. It does not like people. It runs away."}
+  ],
+  "appended_rows": [
+    {"q": "Have you ever seen a jerboa?", "a": "It lives in the desert in Palestine. It is small. It looks like a small mouse. It comes out at night time."},
+    {"q": "Have you ever seen a gazelle?", "a": "It lives in the desert in Palestine. It is big. It does not like people. It runs away."}
+  ]
+}

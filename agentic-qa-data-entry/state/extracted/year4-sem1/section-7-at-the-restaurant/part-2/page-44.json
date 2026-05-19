@@ -1,0 +1,13 @@
+{
+  "page_key": "year4-sem1/section-7-at-the-restaurant/part-2/page-44",
+  "timestamp": "2026-05-11T17:19:35Z",
+  "existing_rows": [],
+  "extracted_rows": [
+    {"q": "What would you like for dessert?", "a": "I'd like chocolate ice cream, please."}
+  ],
+  "appended_rows": [
+    {"q": "What would you like for dessert?", "a": "I'd like chocolate ice cream, please."}
+  ],
+  "save_button_color_after_save": "rgb(0, 128, 0)",
+  "notes": "First save click hit server 5xx; retry succeeded with green. Ex 1 true/false tick statements about food. Ex 2 blank fill-in. Ex 3 'Say.' Q→A speech-bubble pair."
+}

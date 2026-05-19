@@ -1,0 +1,15 @@
+[     940ms] ReferenceError: ddmegamenu is not defined
+    at https://myquds.ibnbadis.org/login.php?ahg=2:1477:2
+[     952ms] TypeError: $(...).scrollToFixed is not a function
+    at HTMLDocument.<anonymous> (https://myquds.ibnbadis.org/login.php?ahg=2:5262:34)
+    at Object.resolveWith (https://myquds.ibnbadis.org/jscripts/infusion/InfusionAll.js:16:12559)
+    at jQuery.ready (https://myquds.ibnbadis.org/jscripts/infusion/InfusionAll.js:16:5061)
+    at HTMLDocument.DOMContentLoaded (https://myquds.ibnbadis.org/jscripts/infusion/InfusionAll.js:16:11516)
+[     980ms] TypeError: Cannot read properties of null (reading 'style')
+    at HTMLDocument.<anonymous> (https://myquds.ibnbadis.org/login.php?ahg=2:2838:42)
+[     989ms] [VERBOSE] [DOM] Input elements should have autocomplete attributes (suggested: "current-password"): (More info: https://goo.gl/9p2vKq) %o @ https://myquds.ibnbadis.org/login.php?ahg=2:0
+[    1220ms] ReferenceError: ddmegamenu is not defined
+    at https://myquds.ibnbadis.org/login.php?ahg=2:1085:9
+[   11895ms] TypeError: Cannot read properties of null (reading 'style')
+    at ddpanel.initpanel (https://myquds.ibnbadis.org/includeahg/js/dddropdownpanel.js:118:11)
+    at https://myquds.ibnbadis.org/includeahg/js/dddropdownpanel.js:24:50

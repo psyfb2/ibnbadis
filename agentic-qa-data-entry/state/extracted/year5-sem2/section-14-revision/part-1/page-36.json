@@ -1,0 +1,12 @@
+{
+  "page_key": "year5-sem2/section-14-revision/part-1/page-36",
+  "timestamp": "2026-05-12T13:08:00Z",
+  "existing_rows": [],
+  "extracted_rows": [
+    {"q": "Who did the princess marry?", "a": "She married Murad."}
+  ],
+  "appended_rows": [
+    {"q": "Who did the princess marry?", "a": "She married Murad."}
+  ],
+  "note": "Q&A from narrative panel 5 (question) and panel 6 (answer). First save 5xx, retry succeeded."
+}

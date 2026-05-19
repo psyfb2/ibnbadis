@@ -1,0 +1,12 @@
+{
+  "page_key": "year5-sem1/section-8-what-i-like-doing-and-why/part-1/page-56",
+  "timestamp": "2026-05-12T09:57:55Z",
+  "existing_rows": [],
+  "extracted_rows": [
+    {"q": "Ben, can you give me the water, please?", "a": "Oh, sorry dad. Which do you want, the water or this? Oh, here's the water."}
+  ],
+  "appended_rows": [
+    {"q": "Ben, can you give me the water, please?", "a": "Oh, sorry dad. Which do you want, the water or this? Oh, here's the water."}
+  ],
+  "note": "Unit 8 Period 1 'What I like doing and why': 4 dialogue panels. Only panel 4 has clear Q→A; panels 1-3 are statements/suggestions. Save: 5xx on first attempt, success on retry."
+}

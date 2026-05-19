@@ -1,0 +1,20 @@
+{
+  "page_key": "year4-sem2/section-13-good-habits/part-1/page-24",
+  "timestamp": "2026-05-11T19:09:47Z",
+  "existing_rows": [
+    {"q": "How often do you brush your teeth?", "a": "I always brush my teeth."},
+    {"q": "How often do you wash the car?", "a": "I sometimes wash the car."},
+    {"q": "How often do you get up at eleven o`clock?", "a": "I never get up at eleven o`clock."},
+    {"q": "How often do you clean your bedroom?", "a": "I sometimes clean my bedroom."},
+    {"q": "How often do you go to bed at four o`clock?", "a": "Never go to bed at four o`clock."},
+    {"q": "How often do you do your homework?", "a": "I always do my homework."},
+    {"q": "How often do you do you brush your teeth?", "a": "I always brush my teeth."},
+    {"q": "How often do you go to bed at four?", "a": "I never go to bed at four o`clock."},
+    {"q": "How often do you wash the car?", "a": "I sometimes wash the car."}
+  ],
+  "extracted_rows": [
+    {"q": "How often do you brush your teeth?", "a": null}
+  ],
+  "appended_rows": [],
+  "notes": "Page's only question 'How often do you brush your teeth?' exactly matches existing row 1. No answer shown on page (listening exercise)."
+}

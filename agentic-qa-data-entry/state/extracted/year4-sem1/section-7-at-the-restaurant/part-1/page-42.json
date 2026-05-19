@@ -1,0 +1,14 @@
+{
+  "page_key": "year4-sem1/section-7-at-the-restaurant/part-1/page-42",
+  "timestamp": "2026-05-13T09:01:25Z",
+  "existing_rows": [
+    {"q": "What would you like to eat?", "a": "I`d like fish, please."},
+    {"q": "What would you like to drink?", "a": "I`d like lemonade, please."}
+  ],
+  "extracted_rows": [
+    {"q": "What would you like to eat?", "a": "I'd like fish, please."},
+    {"q": "What would you like to drink?", "a": "I'd like lemonade, please."}
+  ],
+  "appended_rows": [],
+  "note": "Retry of prior save_failed. Save succeeded — all TextEntry save endpoints returned 200. Existing rows present from prior session (likely appended before the 5xx). Existing rows use backtick instead of apostrophe in 'I`d' (left untouched per non-modify rule)."
+}

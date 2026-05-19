@@ -1,0 +1,289 @@
+- generic [ref=e1]:
+  - generic [ref=e4]:
+    - generic [ref=e5]:
+      - generic [ref=e6]:
+        - link [ref=e9] [cursor=pointer]:
+          - /url: /users/index.php
+          - img [ref=e11]
+        - generic [ref=e13]:
+          - link "كتب المدرسة الإبتدائية الفلسطينية" [ref=e14] [cursor=pointer]:
+            - /url: javascript:defaultpanel5.togglepanelplus()
+          - generic [ref=e15]: Interactive primary textbooks
+      - generic [ref=e17]: myquds.ibnbadis.org
+    - generic [ref=e19]:
+      - generic [ref=e20]:
+        - img "fam_small" [ref=e21]
+        - img "imgidx/xx" [ref=e22]
+      - generic [ref=e24]: SysTMPL 4 SUBSITE
+  - main [ref=e26]:
+    - generic [ref=e27]:
+      - generic "Content"
+      - navigation [ref=e28]:
+        - generic "Toggle course administration tools on or off."
+        - navigation "Tools" [ref=e30]:
+          - listitem [ref=e31]: دخول
+          - listitem [ref=e32]:
+            - link "نسيت كلمة المرور" [ref=e33] [cursor=pointer]:
+              - /url: /password_reminder.php
+        - navigation "Manage tools"
+    - generic [ref=e34]:
+      - generic [ref=e35]:
+        - generic [ref=e36]:
+          - generic [ref=e37]:
+            - generic [ref=e38]: تُقَدِّمُ لَكُمْ مَدْرَسَتُنَا تَطْبِيقَاتٍ حَدِيثَةٍ عَبْرَ اَلْإِنْتَرْنَتْ لِتَسْهِيلِ وَ دَعْمِ عَمَلَيَّةِ التعليم من الكتاب المدرسي.
+            - generic [ref=e39]: وَ يُمْكِنُ إِسْتِعْمَالَ هَذِهِ اَلْتَّقْنِيَاتِ لتعلــيم و تَدْرِيبِ وَ تَقْوِيمِ اَلْتِّلْمِيذِ فِي كَثِيرٍ مِنَ اَلْمَهَارَاتِ.
+          - img [ref=e40]
+        - generic [ref=e42]:
+          - generic [ref=e43]:
+            - generic [ref=e44]: التعليم الإلكتروني
+            - generic [ref=e45]:
+              - generic [ref=e47]: يوجد 82 كتب في
+              - combobox [ref=e48]:
+                - option "جميع المواد" [selected]
+                - option "العربيّة"
+                - option "الرّياضيات"
+                - option "اللّغة الإنجليزية"
+                - option "الآخرين"
+          - generic [ref=e49]:
+            - generic [ref=e52]:
+              - generic [ref=e54]: إسم الدخول أو عنوان بريدك الإلكتروني
+              - textbox [active] [ref=e55] [cursor=pointer]
+              - generic [ref=e57]: كلمة المرور
+              - textbox [ref=e58] [cursor=pointer]
+              - button "دخول" [ref=e60] [cursor=pointer]
+            - generic [ref=e64]:
+              - generic [ref=e65]:
+                - img [ref=e67]
+                - img [ref=e69]
+                - img [ref=e71]
+                - img [ref=e73]
+                - img [ref=e75]
+                - img [ref=e77]
+                - img [ref=e79]
+                - img [ref=e81]
+                - img [ref=e83]
+                - img [ref=e85]
+                - img [ref=e87]
+                - img [ref=e89]
+                - img [ref=e91]
+                - img [ref=e93]
+                - img [ref=e95]
+                - img [ref=e97]
+                - img [ref=e99]
+                - img [ref=e101]
+                - img [ref=e103]
+                - img [ref=e105]
+                - img [ref=e107]
+                - img [ref=e109]
+                - img [ref=e111]
+                - img [ref=e113]
+                - img [ref=e115]
+                - img [ref=e117]
+                - img [ref=e119]
+                - img [ref=e121]
+                - img [ref=e123]
+                - img [ref=e125]
+                - img [ref=e127]
+                - img [ref=e129]
+                - img [ref=e131]
+                - img [ref=e133]
+                - img [ref=e135]
+                - img [ref=e137]
+                - img [ref=e139]
+                - img [ref=e141]
+                - img [ref=e143]
+                - img [ref=e145]
+                - img [ref=e147]
+                - img [ref=e149]
+                - img [ref=e151]
+                - img [ref=e153]
+                - img [ref=e155]
+                - img [ref=e157]
+                - img [ref=e159]
+                - img [ref=e161]
+                - img [ref=e163]
+                - img [ref=e165]
+                - img [ref=e167]
+                - img [ref=e169]
+                - img [ref=e171]
+                - img [ref=e173]
+                - img [ref=e175]
+                - img [ref=e177]
+                - img [ref=e179]
+                - img [ref=e181]
+                - img [ref=e183]
+                - img [ref=e185]
+                - img [ref=e187]
+                - img [ref=e189]
+                - img [ref=e191]
+                - img [ref=e193]
+                - img [ref=e195]
+                - img [ref=e197]
+                - img [ref=e199]
+                - img [ref=e201]
+                - img [ref=e203]
+                - img [ref=e205]
+                - img [ref=e207]
+                - img [ref=e209]
+                - img [ref=e211]
+                - img [ref=e213]
+                - img [ref=e215]
+                - img [ref=e217]
+                - img [ref=e219]
+                - img [ref=e221]
+                - img [ref=e223]
+                - img [ref=e225]
+                - img [ref=e227]
+                - img [ref=e229]
+              - generic [ref=e230]:
+                - img [ref=e232]
+                - img [ref=e234]
+                - img [ref=e236]
+                - img [ref=e238]
+                - img [ref=e240]
+                - img [ref=e242]
+                - img [ref=e244]
+                - img [ref=e246]
+                - img [ref=e248]
+                - img [ref=e250]
+                - img [ref=e252]
+                - img [ref=e254]
+                - img [ref=e256]
+                - img [ref=e258]
+                - img [ref=e260]
+                - img [ref=e262]
+                - img [ref=e264]
+                - img [ref=e266]
+                - img [ref=e268]
+                - img [ref=e270]
+                - img [ref=e272]
+                - img [ref=e274]
+                - img [ref=e276]
+                - img [ref=e278]
+                - img [ref=e280]
+                - img [ref=e282]
+                - img [ref=e284]
+                - img [ref=e286]
+                - img [ref=e288]
+                - img [ref=e290]
+                - img [ref=e292]
+                - img [ref=e294]
+                - img [ref=e296]
+                - img [ref=e298]
+                - img [ref=e300]
+                - img [ref=e302]
+                - img [ref=e304]
+                - img [ref=e306]
+                - img [ref=e308]
+                - img [ref=e310]
+                - img [ref=e312]
+                - img [ref=e314]
+                - img [ref=e316]
+                - img [ref=e318]
+                - img [ref=e320]
+                - img [ref=e322]
+                - img [ref=e324]
+                - img [ref=e326]
+                - img [ref=e328]
+                - img [ref=e330]
+                - img [ref=e332]
+                - img [ref=e334]
+                - img [ref=e336]
+                - img [ref=e338]
+                - img [ref=e340]
+                - img [ref=e342]
+                - img [ref=e344]
+                - img [ref=e346]
+                - img [ref=e348]
+                - img [ref=e350]
+                - img [ref=e352]
+                - img [ref=e354]
+                - img [ref=e356]
+                - img [ref=e358]
+                - img [ref=e360]
+                - img [ref=e362]
+                - img [ref=e364]
+                - img [ref=e366]
+                - img [ref=e368]
+                - img [ref=e370]
+                - img [ref=e372]
+                - img [ref=e374]
+                - img [ref=e376]
+                - img [ref=e378]
+                - img [ref=e380]
+                - img [ref=e382]
+                - img [ref=e384]
+                - img [ref=e386]
+                - img [ref=e388]
+                - img [ref=e390]
+                - img [ref=e392]
+                - img [ref=e394]
+      - generic [ref=e395]:
+        - generic [ref=e396]:
+          - generic [ref=e398] [cursor=pointer]:
+            - text: التــقويم التراكمي
+            - generic [ref=e399]: Cumulative Learning
+          - generic [ref=e401] [cursor=pointer]:
+            - text: التدريب التفاعلي الذكيّ
+            - generic [ref=e402]: iTraining
+          - generic [ref=e404] [cursor=pointer]:
+            - text: التعليم التفاعلي
+            - generic [ref=e405]: eLearning
+        - generic [ref=e407]:
+          - generic [ref=e408]:
+            - generic [ref=e409]:
+              - generic [ref=e410]: Digital Book
+              - generic [ref=e411]: الكتاب الرّقميّ
+            - generic [ref=e412]:
+              - text: حوّلنا الكتاب المدرسي إلى كتاب رقمي مرن يمكّن للتلميذ من خلاله تصفح الكتاب بطريقة مرنة ويمكّن للمتعلم الولوج مباشرة إلى أي صفحة أو فصل أو درس في الكتاب.
+              - list [ref=e413]:
+                - listitem [ref=e414]: "التصفح الحر: يتصفح المتعلم الكتاب بحرية كاملة"
+                - listitem [ref=e415]: تملك المتعلم للكتاب الرّقمي
+            - generic [ref=e416]:
+              - generic [ref=e417]: "Digital Book: Plugins"
+              - generic [ref=e418]: "الكتاب الرقمي: ملحقات"
+            - generic [ref=e419]:
+              - text: "نريد تحويل كل صفحة من الكتاب الرّقمي إلى صفحة ناطقة، ذكية، قادرة على التفاعل مع التلميذ ودعم تعليمه وإرشاده وتصحيح أخطائه أو تشجيعه. في كل صفحة من الكتاب المدرسي تم وضع عناصر تفاعلية غلى كل كلمة او نص او صورة للوصول لهذا الهدف صممنا و أنجزنا أولا الكتاب المدرسي الرّقمي بطريقة تمكننا من ربطه ببرامج ملحقة تمكّن المتعلم من التفاعل مع كل صفحة من كتابه المدرسي.التطبيقات التفاعلية تدمج مع الكتاب الرّقمي عن طريق برامج ملحقة (Plugins Programs) تتخصص كل واحدة منها في تحقيق أهداف بيداغوجية مختلفة ومتعددة. سنفصّل في إثنين منها:ويمكن إستعمال هذه التطبيقات لأهداف بيداغوجية مختلفة:"
+              - list [ref=e420]:
+                - listitem [ref=e421]: تطبيقات للتعلّم
+                - listitem [ref=e422]: تطبيقات لتقوية المهارات
+                - listitem [ref=e423]: تطبيقات للفحص الذاتي
+          - generic [ref=e424]:
+            - link "المتصفّح الرقمي Digital Book" [ref=e425] [cursor=pointer]:
+              - /url: javascript:void(0);
+              - text: المتصفّح الرقمي
+              - generic [ref=e426]: Digital Book
+            - link "التعليم الإلكتروني eLearning" [ref=e427] [cursor=pointer]:
+              - /url: javascript:void(0);
+              - text: التعليم الإلكتروني
+              - generic [ref=e428]: eLearning
+            - link "الكتاب المدعم xBook" [ref=e429] [cursor=pointer]:
+              - /url: javascript:void(0);
+              - text: الكتاب المدعم
+              - generic [ref=e430]: xBook
+    - generic [ref=e431]:
+      - link:
+        - /url: "#togglebar"
+        - img [ref=e432] [cursor=pointer]
+      - generic [ref=e433]:
+        - text: Copyright (c) 2018
+        - link "EARABICS.COM" [ref=e434] [cursor=pointer]:
+          - /url: http://earabics.com
+      - generic [ref=e436]:
+        - generic [ref=e437]:
+          - heading "المشرفون الكرام" [level=1] [ref=e438]
+          - list [ref=e439]:
+            - listitem [ref=e440]: المهندس بلال حيمد
+            - listitem [ref=e441]: المهندس صدّيقي أحمد
+            - listitem [ref=e442]: المهندس بودخيل مؤذّن
+            - listitem [ref=e443]: الأستاذ أيّوب بخيسي
+            - listitem [ref=e444]
+            - listitem [ref=e445]
+        - generic [ref=e446]:
+          - heading "الإدارة" [level=1] [ref=e447]
+          - list [ref=e448]:
+            - listitem [ref=e449]
+            - listitem [ref=e450]: بن علّال محمّد
+            - listitem [ref=e451]: بن غياتي أحمد
+            - listitem [ref=e452]
+        - heading "إتّصل بنا" [level=1] [ref=e454]

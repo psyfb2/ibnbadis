@@ -1,0 +1,18 @@
+{
+  "page_key": "year5-sem1/section-8-what-i-like-doing-and-why/part-1/page-59",
+  "timestamp": "2026-05-12T10:02:15Z",
+  "existing_rows": [],
+  "extracted_rows": [
+    {"q": "What are your favourite TV programmes?", "a": "Sports are the most exciting!"},
+    {"q": "What are your favourite TV programmes?", "a": "Cartoons are the most interesting!"},
+    {"q": "What are your favourite TV programmes?", "a": "Swimming programmes are the most boring!"},
+    {"q": "What are your favourite TV programmes?", "a": "Football programmes are the worst!"}
+  ],
+  "appended_rows": [
+    {"q": "What are your favourite TV programmes?", "a": "Sports are the most exciting!"},
+    {"q": "What are your favourite TV programmes?", "a": "Cartoons are the most interesting!"},
+    {"q": "What are your favourite TV programmes?", "a": "Swimming programmes are the most boring!"},
+    {"q": "What are your favourite TV programmes?", "a": "Football programmes are the worst!"}
+  ],
+  "note": "Unit 8 Period 4: Section 3 has one Q with 4 character responses — extracted as 4 rows. Save: 5xx on first attempt, success on retry."
+}

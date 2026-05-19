@@ -1,0 +1,3 @@
+[    1376ms] [WARNING] Alerted:  @ https://myquds.ibnbadis.org/content.php?gid=1205_0_6:5
+[   65221ms] [ERROR] Failed to load resource: net::ERR_NAME_NOT_RESOLVED @ https://res4sites/templates/myquds_ibnbadis/SHimages/usericon0.png:0
+[   65304ms] [ERROR] Failed to load resource: net::ERR_NAME_NOT_RESOLVED @ https://ahgsites.earabics.com/AppsDZlast/Icons/IZP0A16D.gif:0

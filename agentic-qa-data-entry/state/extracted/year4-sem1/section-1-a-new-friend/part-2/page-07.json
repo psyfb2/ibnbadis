@@ -1,0 +1,11 @@
+{
+  "page_key": "year4-sem1/section-1-a-new-friend/part-2/page-07",
+  "timestamp": "2026-05-11T15:48:30Z",
+  "existing_rows": [
+    {"q": "What does he do ?", "a": "He`s Farmer/driver/engineer/policeman"},
+    {"q": "What does she do?", "a": "She`s a nurse/housewife/teacher"}
+  ],
+  "extracted_rows": [],
+  "appended_rows": [],
+  "notes": "Page has spelling and anagram exercises (Write/Say/spell + unscramble). No canonical Q→A pairs to extract per RUNBOOK."
+}

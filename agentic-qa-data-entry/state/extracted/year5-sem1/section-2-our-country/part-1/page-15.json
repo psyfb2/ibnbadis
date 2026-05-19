@@ -1,0 +1,12 @@
+{
+  "page_key": "year5-sem1/section-2-our-country/part-1/page-15",
+  "timestamp": "2026-05-12T08:11:10Z",
+  "existing_rows": [],
+  "extracted_rows": [
+    {"q": "What are they doing?", "a": "Omar is showing Ben a photo of an old building. It is the Dome of the Rock. Rania is showing Amy a photo of a valley. Rania is showing Amy and Ben a photo of the cable cars in Jericho. Amy is riding in a duck bus."}
+  ],
+  "appended_rows": [
+    {"q": "What are they doing?", "a": "Omar is showing Ben a photo of an old building. It is the Dome of the Rock. Rania is showing Amy a photo of a valley. Rania is showing Amy and Ben a photo of the cable cars in Jericho. Amy is riding in a duck bus."}
+  ],
+  "note": "1 Q&A pair from section 4 'Read aloud. Then answer the questions.' — the question 'What are they doing?' with the reading passage as its model answer."
+}

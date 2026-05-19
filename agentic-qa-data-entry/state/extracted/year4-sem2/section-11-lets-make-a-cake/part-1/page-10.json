@@ -1,0 +1,19 @@
+{
+  "page_key": "year4-sem2/section-11-lets-make-a-cake/part-1/page-10",
+  "timestamp": "2026-05-11T18:05:10Z",
+  "existing_rows": [
+    {"q": "What do we need?", "a": "We need three cups of flour and one cup of sugar."},
+    {"q": "How much milk?", "a": "One cup of milk."},
+    {"q": "How many eggs?", "a": "we need four eggs."},
+    {"q": "Anything else?", "a": "Butter, one cup of butter."}
+  ],
+  "extracted_rows": [
+    {"q": "What do we need?", "a": "We need flour/eggs."},
+    {"q": "How much flour?", "a": "3 cups of flour."},
+    {"q": "How many eggs?", "a": "6 eggs."}
+  ],
+  "appended_rows": [
+    {"q": "How much flour?", "a": "3 cups of flour."}
+  ],
+  "notes": "Skipped 'What do we need?' (existing covers Q with comprehensive A). Skipped 'How many eggs?' (existing has same Q with different number; not overwriting)."
+}

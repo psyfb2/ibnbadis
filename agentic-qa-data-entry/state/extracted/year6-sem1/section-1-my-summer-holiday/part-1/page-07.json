@@ -1,0 +1,16 @@
+{
+  "page_key": "year6-sem1/section-1-my-summer-holiday/part-1/page-07",
+  "timestamp": "2026-05-12T14:15:40Z",
+  "existing_rows": [],
+  "extracted_rows": [
+    {"q": "Where did Amy break her arm?", "a": "She broke it at …"},
+    {"q": "How did Amy break her arm?", "a": "She fell down some …"},
+    {"q": "Who helped Amy?", "a": "Ann called …"}
+  ],
+  "appended_rows": [
+    {"q": "Where did Amy break her arm?", "a": "She broke it at …"},
+    {"q": "How did Amy break her arm?", "a": "She fell down some …"},
+    {"q": "Who helped Amy?", "a": "Ann called …"}
+  ],
+  "note": "First save attempt got userqanssave=false (transient); retry succeeded with userqanssave=true."
+}

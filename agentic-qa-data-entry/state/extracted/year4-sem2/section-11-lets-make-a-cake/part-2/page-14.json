@@ -1,0 +1,23 @@
+{
+  "page_key": "year4-sem2/section-11-lets-make-a-cake/part-2/page-14",
+  "timestamp": "2026-05-11T18:48:40Z",
+  "existing_rows": [
+    {"q": "How much flour do we need?", "a": "We need two cups of flour, one cup of butter, one cup of sugar and a cup of milk."},
+    {"q": "How many eggs do we need?", "a": "Two eggs."},
+    {"q": "Anything else?", "a": "Chocolate."},
+    {"q": "So what do we do?", "a": "Put the sugar and butter in the bowl, mix. Add the eggs, flour the milk and the sugar. Put the bowl in the oven and cook for fifteen minutes."},
+    {"q": "What are Walid and Bilal going to make?", "a": "They are going to make a cake."},
+    {"q": "How much flour do they need?", "a": "They need two cups of flour."},
+    {"q": "How much butter do they need?", "a": "They need one cup of butter."},
+    {"q": "How much sugar do they need?", "a": "They need one cup of sugar."},
+    {"q": "How many eggs do they need?", "a": "They need two eggs,"},
+    {"q": "What else do they need?", "a": "They need chocolate."},
+    {"q": "How much time do they need?", "a": "They need fifteen minutes."}
+  ],
+  "extracted_rows": [
+    {"q": "What do we need?", "a": "We need one cup of flour."}
+  ],
+  "appended_rows": [
+    {"q": "What do we need?", "a": "We need one cup of flour."}
+  ]
+}

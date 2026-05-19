@@ -1,0 +1,389 @@
+- generic [ref=e1]:
+  - text: 
+  - generic [ref=e2]:
+    - generic [ref=e3]: Only for a demo on the 19th of May. For Mrs Faiza Ghali - Algeria
+    - generic [ref=e5]:
+      - generic [ref=e6]:
+        - generic [ref=e7]:
+          - link [ref=e10] [cursor=pointer]:
+            - /url: /users/index.php
+            - img [ref=e12]
+          - generic [ref=e14]:
+            - generic [ref=e15]: Year 4 English A
+            - banner
+        - generic [ref=e16]:
+          - generic:
+            - link "أظهر/أخفي Hide Side Menu" [ref=e18] [cursor=pointer]:
+              - /url: javascript:void(0)
+              - generic [ref=e19]: أظهر/أخفي
+              - img "Hide Side Menu" [ref=e20]
+            - link "Admin & Dev " [ref=e21] [cursor=pointer]:
+              - /url: javascript:openAdminMenu(1);
+              - generic [ref=e23]: Admin & Dev
+              - generic [ref=e24]: 
+            - generic [ref=e25]:
+              - generic [ref=e26]:
+                - link "Close" [ref=e27] [cursor=pointer]:
+                  - /url: javascript:closeAdminMenu(1)
+                - generic [ref=e28]:
+                  - generic [ref=e29]: Admin & Dev
+                  - generic [ref=e30]: PS4E20A-69
+              - generic [ref=e31]:
+                - generic [ref=e32]:
+                  - generic [ref=e33]: Tutor
+                  - generic [ref=e34]:
+                    - link "Multimedia" [ref=e36] [cursor=pointer]:
+                      - /url: javascript:void(0);
+                    - link "Progress" [ref=e38] [cursor=pointer]:
+                      - /url: javascript:void(0);
+                    - link [ref=e40] [cursor=pointer]:
+                      - /url: javascript:void(0);
+                - generic [ref=e41]:
+                  - generic [ref=e42]: Data Entry
+                  - generic [ref=e43]:
+                    - link "Data iBook (Text Entry)" [ref=e45] [cursor=pointer]:
+                      - /url: javascript:void(0);
+                    - link "Data Apps" [ref=e47] [cursor=pointer]:
+                      - /url: https://idev.ibnbadis.org/kkdisplay_html.php?helpr=GA&xsubject=T&Tid=0&htmlmode=AR01&Tlang=EN&selectflag=2&indx=&xroot=&Mainselect=Nouns&htmlmbr=26&book=PS4E20A&page=04
+                - generic [ref=e48]:
+                  - generic [ref=e49]: Book Dev
+                  - generic [ref=e50]:
+                    - link "Open Book (Contents)" [ref=e52] [cursor=pointer]:
+                      - /url: javascript:void(0);
+                    - link "Design" [ref=e54] [cursor=pointer]:
+                      - /url: javascript:void(0);
+                    - link "Results" [ref=e56] [cursor=pointer]:
+                      - /url: javascript:void(0);
+                    - link "Audio" [ref=e58] [cursor=pointer]:
+                      - /url: javascript:void(0);
+                - generic [ref=e59]:
+                  - generic [ref=e60]: Follow-Up
+                  - generic [ref=e61]:
+                    - link "Text Helps" [ref=e63] [cursor=pointer]:
+                      - /url: https://idev.ibnbadis.org/helptext.php?helpr=GA&xsubject=T&Tid=0&htmlmode=AR01&Tlang=EN&selectflag=2&indx=&xroot=&Mainselect=Nouns&htmlmbr=26&book=PS4E20A&page=04
+                    - generic [ref=e64] [cursor=pointer]:
+                      - link "QLevel" [ref=e65]:
+                        - /url: https://docs.google.com/spreadsheets/d/1PMJKfP8viCQI7Y_Vwd7f3C3GMNVZ6uN0clFS0u4GOWc/edit?gid=1668594277#gid=1668594277
+                      - generic [ref=e66]: 
+                    - generic [ref=e67] [cursor=pointer]:
+                      - link "متابعة PS" [ref=e68]:
+                        - /url: https://docs.google.com/spreadsheets/d/1WtrdmZ_T7-9VXAVMMexBGaVAE3otPqUP8l9AT5f3PMY/edit?gid=966103573#gid=966103573
+                      - generic [ref=e69]: 
+                    - generic [ref=e70] [cursor=pointer]:
+                      - link "متابعة DZ" [ref=e71]:
+                        - /url: https://docs.google.com/spreadsheets/d/1zwFvPMosWCVTGP19IlTgQji6K6zYrK2wrOekcIfK3IQ/edit?gid=2072637516#gid=2072637516
+                      - generic [ref=e72]: 
+            - generic [ref=e73]:
+              - generic [ref=e74]:
+                - link "Close" [ref=e75] [cursor=pointer]:
+                  - /url: javascript:closeAdminMenu(2)
+                - generic [ref=e76]: My School
+              - generic [ref=e77]:
+                - generic [ref=e78]:
+                  - generic [ref=e79]: Teaching Tools
+                  - generic [ref=e80]:
+                    - link "My Achievements" [ref=e82] [cursor=pointer]:
+                      - /url: https://serv.ibnbadis.org//InfoDIR/schedule.php
+                    - link "Forum - فوروم " [ref=e84] [cursor=pointer]:
+                      - /url: ""
+                      - text: Forum -
+                      - generic [ref=e85]: فوروم
+                      - generic [ref=e86]: 
+                    - link "Virtual Class - القسم الإفتراضي" [ref=e88] [cursor=pointer]:
+                      - /url: ""
+                      - text: Virtual Class -
+                      - generic [ref=e89]: القسم الإفتراضي
+                    - link "Free-hand - نشاط حر" [ref=e91] [cursor=pointer]:
+                      - /url: ""
+                      - text: Free-hand -
+                      - generic [ref=e92]: نشاط حر
+                - generic [ref=e93]:
+                  - generic [ref=e94]: Course Info
+                  - generic [ref=e95]:
+                    - link "Announcements" [ref=e97] [cursor=pointer]:
+                      - /url: https://serv.ibnbadis.org//index.php
+                    - link "Lesson Plan" [ref=e99] [cursor=pointer]:
+                      - /url: ../includeahg/lessonplan.php
+                    - link "Teaching Methods" [ref=e101] [cursor=pointer]:
+                      - /url: https://serv.ibnbadis.org//InfoDIR/tutoring.php
+                    - link "Book Objectives" [ref=e103] [cursor=pointer]:
+                      - /url: https://serv.ibnbadis.org//InfoDIR/book_summary.php
+                    - link "Teacher Book" [ref=e105] [cursor=pointer]:
+                      - /url: ../includeahg/web/viewer.html?file=../../sites/QudsBooks/PS2A20B/PS2A20B.pdf
+                    - generic [ref=e107] [cursor=pointer]: About Us (contact)
+            - text: 
+          - generic [ref=e108]: myquds.ibnbadis.org
+          - generic [ref=e110]:
+            - list [ref=e111]:
+              - listitem [ref=e112]:
+                - link " My School" [ref=e113] [cursor=pointer]:
+                  - /url: javascript:void(0);
+            - list [ref=e114]:
+              - listitem [ref=e115]:
+                - link " Book Info" [ref=e116] [cursor=pointer]:
+                  - /url: javascript:void(0);
+      - generic [ref=e117]:
+        - generic [ref=e118]:
+          - img "fam_small" [ref=e119]
+          - img "imgidx/xx" [ref=e120]
+        - list [ref=e122]:
+          - listitem [ref=e123]:
+            - link "Help" [ref=e124] [cursor=pointer]:
+              - /url: https://serv.ibnbadis.org//InfoDIR/helptmpl.php?ssflag=digital&ILang=AR&mbr=26
+              - img [ref=e125]
+          - listitem [ref=e126]:
+            - link "26 - Fadi Benyatallah" [ref=e127] [cursor=pointer]:
+              - /url: javascript:void(0);
+              - generic [ref=e128]: 26 - Fadi Benyatallah
+          - listitem
+  - generic [ref=e129]:
+    - complementary [ref=e130]:
+      - generic [ref=e131]:
+        - generic [ref=e132]:
+          - generic: Page 4
+          - generic [ref=e133] [cursor=pointer]:
+            - generic: 
+            - generic [ref=e241]: تصفح الـكـتاب الرقمـي
+          - text:  
+        - generic [ref=e137]:
+          - text: "eBooks:"
+          - link "Book A" [ref=e138] [cursor=pointer]:
+            - /url: ../includeahg/web/viewer.html?file=../../res4sites/QudsBooks/PS4E20A/PS4E20A.pdf
+          - link "Book B" [ref=e139] [cursor=pointer]:
+            - /url: ../includeahg/web/viewer.html?file=../../res4sites/QudsBooks/PS4E20B/PS4E20B.pdf
+          - generic [ref=e141]:
+            - generic [ref=e142]: قم بإختار الفقرة
+            - generic [ref=e145]:
+              - link "xxxxx 1 - 2" [ref=e242] [cursor=pointer]:
+                - /url: /content.php?gid=1069_0_0
+                - generic "xxxxx" [ref=e243]: xxxxx
+                - generic [ref=e244]: 1 - 2
+              - link "Book Content 3" [ref=e245] [cursor=pointer]:
+                - /url: /content.php?gid=1070_0_1
+                - generic "Book Content" [ref=e246]: Book Content
+                - generic [ref=e247]: "3"
+              - generic [ref=e150]:
+                - link "Collapse" [ref=e151] [cursor=pointer]:
+                  - /url: javascript:void(0)
+                  - img "Collapse" [ref=e152]
+                - strong [ref=e153]:
+                  - 'generic "Section 1: A new friend" [ref=e155] [cursor=pointer]'
+              - generic [ref=e156]:
+                - strong [ref=e157]:
+                  - generic "Part 1" [ref=e158]:
+                    - text: Part 1
+                    - generic [ref=e248]: 4 - 6
+                - link "Part 2 7 - 9" [ref=e249] [cursor=pointer]:
+                  - /url: /content.php?gid=1073_0_3
+                  - generic "Part 2" [ref=e250]: Part 2
+                  - generic [ref=e251]: 7 - 9
+              - generic [ref=e161]:
+                - link "Expand" [ref=e162] [cursor=pointer]:
+                  - /url: javascript:void(0)
+                  - img "Expand" [ref=e163]
+                - 'generic "Section 2: Our house" [ref=e165] [cursor=pointer]'
+              - generic [ref=e166]:
+                - link "Expand" [ref=e167] [cursor=pointer]:
+                  - /url: javascript:void(0)
+                  - img "Expand" [ref=e168]
+                - 'generic "Section 3: Lost" [ref=e170] [cursor=pointer]'
+              - generic [ref=e171]:
+                - link "Expand" [ref=e172] [cursor=pointer]:
+                  - /url: javascript:void(0)
+                  - img "Expand" [ref=e173]
+                - 'generic "Section 4: Shopping list" [ref=e175] [cursor=pointer]'
+              - generic [ref=e176]:
+                - link "Expand" [ref=e177] [cursor=pointer]:
+                  - /url: javascript:void(0)
+                  - img "Expand" [ref=e178]
+                - 'generic "Section 5: Revision" [ref=e180] [cursor=pointer]'
+              - generic [ref=e181]:
+                - link "Expand" [ref=e182] [cursor=pointer]:
+                  - /url: javascript:void(0)
+                  - img "Expand" [ref=e183]
+                - 'generic "Section 6: On Sundays I" [ref=e185] [cursor=pointer]'
+              - generic [ref=e186]:
+                - link "Expand" [ref=e187] [cursor=pointer]:
+                  - /url: javascript:void(0)
+                  - img "Expand" [ref=e188]
+                - 'generic "Section 7: At the restaurant" [ref=e190] [cursor=pointer]'
+              - generic [ref=e191]:
+                - link "Expand" [ref=e192] [cursor=pointer]:
+                  - /url: javascript:void(0)
+                  - img "Expand" [ref=e193]
+                - 'generic "Section 8: My favourite season" [ref=e195] [cursor=pointer]'
+              - generic [ref=e196]:
+                - link "Expand" [ref=e197] [cursor=pointer]:
+                  - /url: javascript:void(0)
+                  - img "Expand" [ref=e198]
+                - 'generic "Section 9: Revision" [ref=e200] [cursor=pointer]'
+              - generic [ref=e201]:
+                - link "Expand" [ref=e202] [cursor=pointer]:
+                  - /url: javascript:void(0)
+                  - img "Expand" [ref=e203]
+                - generic "Pictionary and Alphabet" [ref=e205] [cursor=pointer]
+              - link "Ending 64" [ref=e252] [cursor=pointer]:
+                - /url: /content.php?gid=1101_0_22
+                - generic "Ending" [ref=e253]: Ending
+                - generic [ref=e254]: "64"
+    - main [ref=e209]:
+      - link "التحليل البيداغوجي ... الخطة الدراسية" [ref=e210] [cursor=pointer]:
+        - /url: /includeahg/frontend/page_analysis.php
+      - table [ref=e212]:
+        - rowgroup [ref=e213]:
+          - row
+          - row
+          - row:
+            - cell [ref=e214]:
+              - generic:
+                - link:
+                  - /url: javascript:defaultpanelzzz.togglepanelplus();
+              - generic [ref=e216] [cursor=pointer]: 
+          - 'row "قم بإختيار الصفحة: «4 5 6 »" [ref=e255]':
+            - 'cell "قم بإختيار الصفحة: «4 5 6 »" [ref=e256]':
+              - generic [ref=e219]:
+                - generic [ref=e220]: "قم بإختيار الصفحة:"
+                - list [ref=e259]:
+                  - listitem [ref=e260]:
+                    - link "«" [ref=e261]:
+                      - /url: "#previous"
+                  - listitem [ref=e262]:
+                    - link "4" [ref=e263]:
+                      - /url: "#page1"
+                  - listitem [ref=e264]:
+                    - link "5" [ref=e265] [cursor=pointer]:
+                      - /url: "#page2"
+                  - listitem [ref=e266]:
+                    - link "6" [ref=e267] [cursor=pointer]:
+                      - /url: "#page3"
+                  - listitem [ref=e268]:
+                    - link "»" [ref=e269] [cursor=pointer]:
+                      - /url: "#next"
+            - cell [ref=e221]:      
+          - row:
+            - cell [ref=e270]:
+              - table [ref=e271]:
+                - rowgroup [ref=e272]:
+                  - row [ref=e273]:
+                    - cell [ref=e274]
+          - row [ref=e225]
+          - row "Book A Book B Year 4 English A" [ref=e226]:
+            - cell [ref=e227]
+            - cell "Book A Book B Year 4 English A" [ref=e228]:
+              - link "Book A" [ref=e229] [cursor=pointer]:
+                - /url: ../includeahg/web/viewer.html?file=../../res4sites/QudsBooks/PS4E20A/PS4E20A.pdf
+              - link "Book B" [ref=e230] [cursor=pointer]:
+                - /url: ../includeahg/web/viewer.html?file=../../res4sites/QudsBooks/PS4E20B/PS4E20B.pdf
+              - generic [ref=e231]: Year 4 English A
+            - cell [ref=e232]
+          - row [ref=e233]:
+            - cell [ref=e234]
+  - text:  
+  - generic [ref=e236]:
+    - link "إغلاق" [ref=e237] [cursor=pointer]:
+      - /url: javascript:ahgsideshowhide();
+    - generic "Close Content Panel" [ref=e276] [cursor=pointer]:
+      - generic [ref=e277]: إغلاق
+    - iframe [active] [ref=e278]:
+      - generic [ref=f5e3]:
+        - generic [ref=f5e4]:
+          - generic [ref=f5e5]:
+            - text: الكـتاب التفاعلي
+            - generic [ref=f5e6]: Learning iBook
+          - generic [ref=f5e7]:
+            - text: التقويم التفاعلي
+            - generic [ref=f5e8]: Selftest iBook
+          - generic [ref=f5e9]:
+            - text: تطبيقات التقوية
+            - generic [ref=f5e10]: BoosterApps
+          - generic [ref=f5e11]:
+            - text: تطبيقات النصوص
+            - generic [ref=f5e12]: TextApps
+          - generic [ref=f5e13]:
+            - text: تطبيقات القواعد والصرف
+            - generic [ref=f5e14]: gramApps
+          - generic [ref=f5e15]:
+            - text: التقويم التراكمي
+            - generic [ref=f5e16]: Cumulative Selftests
+        - generic [ref=f5e17]:
+          - generic [ref=f5e18]: 4ص
+          - button "Save" [ref=f5e19]
+          - generic [ref=f5e20]: إظهار الصفحة
+        - generic [ref=f5e140]:
+          - generic [ref=f5e142]:
+            - generic [ref=f5e143]:
+              - generic [ref=f5e144]: الصنف
+              - generic [ref=f5e145]: التفاعلات
+              - generic [ref=f5e146]: المهارة المستهدفة
+              - generic [ref=f5e147]: Demos إظهار
+              - generic [ref=f5e148]: المعطيات المستعملة
+              - generic [ref=f5e149]: عناصر التصميم
+            - generic [ref=f5e150]:
+              - generic [ref=f5e151]:
+                - generic [ref=f5e152]: مفردات
+                - generic [ref=f5e153]: الجملة المخفيّة
+                - generic [ref=f5e154]: السؤال المخفي
+                - generic [ref=f5e155]: المحادثة
+              - generic [ref=f5e159]:
+                - generic [ref=f5e160]:
+                  - generic [ref=f5e161]:
+                    - generic [ref=f5e162]: مفـرداتي الجديدة
+                    - checkbox "مفـرداتي الجديدة" [ref=f5e163]
+                  - generic [ref=f5e164]: تعلم المفردات
+                  - generic [ref=f5e165]: E17
+                  - generic [ref=f5e166]: voca, meaning
+                  - generic [ref=f5e167]: Apps
+                - generic [ref=f5e168]:
+                  - generic [ref=f5e169]:
+                    - generic [ref=f5e170]: مفـرداتي الجديدة (صور)
+                    - checkbox "مفـرداتي الجديدة (صور)" [ref=f5e171]
+                  - generic [ref=f5e172]: تعلم المفردات
+                  - generic [ref=f5e173]: photo, voca
+                  - generic [ref=f5e174]: Apps
+                - generic [ref=f5e175]:
+                  - generic [ref=f5e176]:
+                    - generic [ref=f5e177]: إملاء من معنى الكلمة
+                    - checkbox "إملاء من معنى الكلمة" [ref=f5e178]
+                  - generic [ref=f5e179]: الإملاء
+                  - generic [ref=f5e180]: voca,meaning
+                  - generic [ref=f5e181]: Apps
+                - generic [ref=f5e182]:
+                  - generic [ref=f5e183]:
+                    - generic [ref=f5e184]: إملاء من (صورة)
+                    - checkbox "إملاء من (صورة)" [ref=f5e185]
+                  - generic [ref=f5e186]: الإملاء
+                  - generic [ref=f5e187]: photo, voca
+                  - generic [ref=f5e188]: Apps
+          - generic [ref=f5e191]:
+            - generic [ref=f5e192]:
+              - generic [ref=f5e193]:
+                - generic [ref=f5e194]: Translated Questions - الأسئلة المترجمة
+                - generic [ref=f5e195]: Translated Answers - الجوابات المترجمة
+              - generic [ref=f5e196]: Page Questions - أسئلة الصفحة
+              - generic [ref=f5e198]:
+                - text: Page Answers - جوابات الصفحة
+                - text: (required - إجباري)
+            - generic [ref=f5e199]:
+              - generic [ref=f5e200]:
+                - textbox [ref=f5e201]
+                - textbox [ref=f5e202]
+                - textbox [ref=f5e203]: How many brothers/sisters do you have
+                - textbox [ref=f5e204]: I have a brother
+              - generic [ref=f5e205]:
+                - textbox [ref=f5e206]
+                - textbox [ref=f5e207]
+                - textbox [ref=f5e208]: How old is your brother
+                - textbox [ref=f5e209]: "He`s ten"
+              - generic [ref=f5e210]:
+                - textbox [ref=f5e211]
+                - textbox [ref=f5e212]
+                - textbox [ref=f5e213]
+                - textbox [ref=f5e214]
+            - generic [ref=f5e215]:
+              - generic [ref=f5e217]: +
+              - generic [ref=f5e218]:
+                - textbox [ref=f5e219]: "0"
+                - text: Level
+              - generic [ref=f5e220]:
+                - textbox [ref=f5e221]
+                - text: Subject

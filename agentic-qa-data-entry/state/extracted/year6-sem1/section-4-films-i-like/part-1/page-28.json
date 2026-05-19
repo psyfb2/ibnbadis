@@ -1,0 +1,14 @@
+{
+  "page_key": "year6-sem1/section-4-films-i-like/part-1/page-28",
+  "timestamp": "2026-05-12T14:56:00Z",
+  "existing_rows": [],
+  "extracted_rows": [
+    {"q": "And then what happened?", "a": "While the dog was chasing the cat, the mouse hid and watched it."},
+    {"q": "What happened to the diver?", "a": "He was fine! The dolphin rescued him!"}
+  ],
+  "appended_rows": [
+    {"q": "And then what happened?", "a": "While the dog was chasing the cat, the mouse hid and watched it."},
+    {"q": "What happened to the diver?", "a": "He was fine! The dolphin rescued him!"}
+  ],
+  "note": "First save attempt got userqanssave=false; retry succeeded."
+}

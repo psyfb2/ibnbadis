@@ -1,0 +1,23 @@
+{
+  "page_key": "year4-sem2/section-13-good-habits/part-1/page-22",
+  "timestamp": "2026-05-11T19:06:51Z",
+  "existing_rows": [
+    {"q": "What do you do everyday?", "a": "I get up at seven thirty."},
+    {"q": "What do you do everyday?", "a": "I brush my teeth in the morning and the evening."},
+    {"q": "What do you do everyday?", "a": "I wash my face in the morning and the evening."},
+    {"q": "What do you do everyday?", "a": "I clean my shoes in the morning."},
+    {"q": "What do you do everyday?", "a": "I go to bed at eight thirty."},
+    {"q": "What do you do everyday?", "a": "I do my homework in the afternoon."},
+    {"q": "Do you get up at seven thirty?", "a": "Yes I get up at seven thirty."},
+    {"q": "Do you brush in the afternoon", "a": "No I brush my teeth in the morning and the evening."},
+    {"q": "Do you wash your face in the morning and the evening?", "a": "Yes I wash my face in the morning and the evening."},
+    {"q": "Do you clean your shoes in the morning?", "a": "Yes I clean my shoes in the morning."},
+    {"q": "Do you go to bed at nine fifteen?", "a": "No I go to bed at eight thirty."},
+    {"q": "Do you do your homework in the morning?", "a": "No I do my homework in the afternoon."}
+  ],
+  "extracted_rows": [
+    {"q": "What do you do every day?", "a": "Every day I get up at 7:30."}
+  ],
+  "appended_rows": [],
+  "notes": "Existing 12 rows comprehensively cover the daily-routine pattern, including 'I get up at seven thirty' which duplicates the page's example semantically."
+}

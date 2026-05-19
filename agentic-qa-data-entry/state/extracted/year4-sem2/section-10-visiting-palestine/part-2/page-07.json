@@ -1,0 +1,11 @@
+{
+  "page_key": "year4-sem2/section-10-visiting-palestine/part-2/page-07",
+  "timestamp": "2026-05-11T17:59:45Z",
+  "existing_rows": [
+    {"q": "What are you going to do?", "a": "I am going to see Mount Carmel and Al-Jazaar and the Mount of Olives too."},
+    {"q": "What are you going to do?", "a": "I am going to see the Dead sea and Al-Aqsa and Al-Ibrahimi too."}
+  ],
+  "extracted_rows": [],
+  "appended_rows": [],
+  "notes": "Page has jumbled-word sentence exercises, fill-in-the-blank Listen-and-write, and Sing. No canonical Q-A pairs per RUNBOOK extraction rules."
+}

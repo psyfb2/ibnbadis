@@ -1,0 +1,18 @@
+{
+  "page_key": "year5-sem2/section-16-can-i-use-it/part-1/page-48",
+  "timestamp": "2026-05-12T13:21:35Z",
+  "existing_rows": [],
+  "extracted_rows": [
+    {"q": "That's a nice laptop. Can I use it?", "a": "Sure! Click on the mouse. Look at these games. You can choose a game and play it."},
+    {"q": "OK! Can I play this game?", "a": "Sure!"},
+    {"q": "Can I try your mobile phone please?", "a": "Sure! Here you are."},
+    {"q": "Dad, can we watch the cartoons?", "a": "OK, after the news programme."}
+  ],
+  "appended_rows": [
+    {"q": "That's a nice laptop. Can I use it?", "a": "Sure! Click on the mouse. Look at these games. You can choose a game and play it."},
+    {"q": "OK! Can I play this game?", "a": "Sure!"},
+    {"q": "Can I try your mobile phone please?", "a": "Sure! Here you are."},
+    {"q": "Dad, can we watch the cartoons?", "a": "OK, after the news programme."}
+  ],
+  "note": "4 speech bubble Q&A from activity 2 (Listen and answer). First save 5xx, retry succeeded."
+}

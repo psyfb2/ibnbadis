@@ -1,0 +1,23 @@
+{
+  "page_key": "year6-sem2/section-10-a-visit-to-the-dead-sea/part-1/page-04",
+  "timestamp": "2026-05-12T18:05:34Z",
+  "existing_rows": [
+    {"q": "Who is talking?", "a": "Amy and Rania were talking."},
+    {"q": "What did Rania`s dad do in the dead sea??", "a": "He floated in the water and was reading a book."},
+    {"q": "Why there are no fish or plants there.", "a": "There are no fish or plants because the water is too salty."},
+    {"q": "What do people do there?", "a": "People put mud on their skin."},
+    {"q": "What the desert animals doing?", "a": "They were drinking water."}
+  ],
+  "extracted_rows": [
+    {"q": "Have you ever been to the Dead Sea?", "a": "Yes, we went there two years ago."},
+    {"q": "Have you ever floated in the sea?", "a": "No, I haven't."},
+    {"q": "Have you ever put Dead Sea mud on your body?", "a": "No, I haven't! Why would I do that? Yuck!"},
+    {"q": "Have you ever been anywhere below sea level?", "a": "Yes, I have. I've seen a jerboa and a gazelle."}
+  ],
+  "appended_rows": [
+    {"q": "Have you ever been to the Dead Sea?", "a": "Yes, we went there two years ago."},
+    {"q": "Have you ever floated in the sea?", "a": "No, I haven't."},
+    {"q": "Have you ever put Dead Sea mud on your body?", "a": "No, I haven't! Why would I do that? Yuck!"},
+    {"q": "Have you ever been anywhere below sea level?", "a": "Yes, I have. I've seen a jerboa and a gazelle."}
+  ]
+}

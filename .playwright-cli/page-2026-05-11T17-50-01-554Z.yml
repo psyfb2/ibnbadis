@@ -1,0 +1,108 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e4]:
+    - generic [ref=e5]:
+      - generic [ref=e6]:
+        - link [ref=e9] [cursor=pointer]:
+          - /url: /users/index.php
+          - img [ref=e11]
+        - generic [ref=e13]:
+          - text: بسم الله الرحمان الرحيم
+          - generic [ref=e14]: كتب المدرسة الإبتدائية الفلسطينية
+      - generic [ref=e15]:
+        - generic: 
+        - generic [ref=e16]: myquds.ibnbadis.org
+        - list [ref=e19]:
+          - listitem [ref=e20]:
+            - link " My School" [ref=e21] [cursor=pointer]:
+              - /url: javascript:void(0);
+    - generic [ref=e22]:
+      - generic [ref=e23]:
+        - img "fam_small" [ref=e24]
+        - img "imgidx/xx" [ref=e25]
+      - list [ref=e27]:
+        - listitem [ref=e28]:
+          - link "Help" [ref=e29] [cursor=pointer]:
+            - /url: https://serv.ibnbadis.org//InfoDIR/helptmpl.php?ssflag=start&ILang=AR
+            - img [ref=e30]
+        - listitem [ref=e31]:
+          - link "26 - Fadi Benyatallah" [ref=e32] [cursor=pointer]:
+            - /url: javascript:void(0);
+            - generic [ref=e33]: 26 - Fadi Benyatallah
+        - listitem
+  - generic [ref=e34]:
+    - main [ref=e35]:
+      - table [ref=e37]
+      - generic [ref=e38]:
+        - combobox [ref=e39]:
+          - option "الفصل 1"
+          - option "الفصل 2" [selected]
+        - generic [ref=e40]: :والفصل الدراسي
+        - combobox [ref=e41]:
+          - option "جميع المواد" [selected]
+          - option "اللّغة الإنجليزية"
+        - generic [ref=e42]: :إخـتيـار الــمادة
+      - table [ref=e47]:
+        - rowgroup [ref=e48]:
+          - row "إضغط لتكبير الصّورة دورة إشراف المعلّم / السنة حالة" [ref=e49]:
+            - columnheader "إضغط لتكبير الصّورة" [ref=e50]:
+              - generic [ref=e51]:
+                - text: إضغط لتكبير
+                - text: الصّورة
+            - columnheader "دورة" [ref=e52]
+            - columnheader "إشراف" [ref=e53]
+            - columnheader "المعلّم / السنة" [ref=e54]
+            - columnheader "حالة" [ref=e55]
+          - row "Year 6 English B Year 6 English B younes Rali ahg earabics السادسة إبتدائي طالب" [ref=e92]:
+            - cell "Year 6 English B" [ref=e93]:
+              - img "Year 6 English B" [ref=e94]
+            - cell "Year 6 English B" [ref=e95]:
+              - link "Year 6 English B" [ref=e96] [cursor=pointer]:
+                - /url: bounce.php?course=76
+                - text: Year 6 English B
+            - cell "younes Rali" [ref=e97]
+            - cell "ahg earabics السادسة إبتدائي" [ref=e98]:
+              - link "ahg earabics السادسة إبتدائي" [ref=e99] [cursor=pointer]:
+                - /url: bounce.php?course=76
+                - generic [ref=e100]:
+                  - text: ahg earabics
+                  - text: السادسة إبتدائي
+            - cell "طالب" [ref=e101]:
+              - link "طالب" [ref=e102] [cursor=pointer]:
+                - /url: bounce.php?course=76
+          - row "Year 5 English B Year 5 English B younes Rali ahg earabics الخامسة إبتدائي طالب" [ref=e103]:
+            - cell "Year 5 English B" [ref=e104]:
+              - img "Year 5 English B" [ref=e105]
+            - cell "Year 5 English B" [ref=e106]:
+              - link "Year 5 English B" [ref=e107] [cursor=pointer]:
+                - /url: bounce.php?course=74
+                - text: Year 5 English B
+            - cell "younes Rali" [ref=e108]
+            - cell "ahg earabics الخامسة إبتدائي" [ref=e109]:
+              - link "ahg earabics الخامسة إبتدائي" [ref=e110] [cursor=pointer]:
+                - /url: bounce.php?course=74
+                - generic [ref=e111]:
+                  - text: ahg earabics
+                  - text: الخامسة إبتدائي
+            - cell "طالب" [ref=e112]:
+              - link "طالب" [ref=e113] [cursor=pointer]:
+                - /url: bounce.php?course=74
+          - row "Year 4 English B Year 4 English B moussa Ghali ahg earabics الرابعة إبتدائي طالب" [ref=e114] [cursor=pointer]:
+            - cell "Year 4 English B" [ref=e115]:
+              - img "Year 4 English B" [ref=e116]
+            - cell "Year 4 English B" [ref=e117]:
+              - link "Year 4 English B" [ref=e118]:
+                - /url: bounce.php?course=70
+                - text: Year 4 English B
+            - cell "moussa Ghali" [ref=e119]
+            - cell "ahg earabics الرابعة إبتدائي" [ref=e120]:
+              - link "ahg earabics الرابعة إبتدائي" [ref=e121]:
+                - /url: bounce.php?course=70
+                - generic [ref=e122]:
+                  - text: ahg earabics
+                  - text: الرابعة إبتدائي
+            - cell "طالب" [ref=e123]:
+              - link "طالب" [ref=e124]:
+                - /url: bounce.php?course=70
+    - text:  
+  - link "إغلاق" [ref=e90] [cursor=pointer]:
+    - /url: javascript:ahgsideshowhide();

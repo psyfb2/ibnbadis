@@ -1,0 +1,13 @@
+{
+  "page_key": "year6-sem2/section-15-great-explorers/part-2/page-45",
+  "timestamp": "2026-05-12T18:49:00Z",
+  "existing_rows": [],
+  "extracted_rows": [
+    {"q": "Have you tried the north and the south of our door?", "a": "Yes, I have but the ocean was in the way."},
+    {"q": "Have you tried the east and the west of our door?", "a": "Yes, I have but the compass was broken."}
+  ],
+  "appended_rows": [
+    {"q": "Have you tried the north and the south of our door?", "a": "Yes, I have but the ocean was in the way."},
+    {"q": "Have you tried the east and the west of our door?", "a": "Yes, I have but the compass was broken."}
+  ]
+}

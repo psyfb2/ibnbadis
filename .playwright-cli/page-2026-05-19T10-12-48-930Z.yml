@@ -1,0 +1,257 @@
+- generic [active] [ref=e1]:
+  - text: 
+  - generic [ref=e2]:
+    - generic [ref=e3]: Only for a demo on the 19th of May. For Mrs Faiza Ghali - Algeria
+    - generic [ref=e5]:
+      - generic [ref=e6]:
+        - generic [ref=e7]:
+          - link [ref=e10] [cursor=pointer]:
+            - /url: /users/index.php
+            - img [ref=e12]
+          - generic [ref=e14]:
+            - generic [ref=e15]: Year 4 English A
+            - banner
+        - generic [ref=e16]:
+          - generic:
+            - link "أظهر/أخفي Hide Side Menu" [ref=e18] [cursor=pointer]:
+              - /url: javascript:void(0)
+              - generic [ref=e19]: أظهر/أخفي
+              - img "Hide Side Menu" [ref=e20]
+            - link "Admin & Dev " [ref=e21] [cursor=pointer]:
+              - /url: javascript:openAdminMenu(1);
+              - generic [ref=e23]: Admin & Dev
+              - generic [ref=e24]: 
+            - generic [ref=e25]:
+              - generic [ref=e26]:
+                - link "Close" [ref=e27] [cursor=pointer]:
+                  - /url: javascript:closeAdminMenu(1)
+                - generic [ref=e28]:
+                  - generic [ref=e29]: Admin & Dev
+                  - generic [ref=e30]: PS4E20A-69
+              - generic [ref=e31]:
+                - generic [ref=e32]:
+                  - generic [ref=e33]: Tutor
+                  - generic [ref=e34]:
+                    - link "Multimedia" [ref=e36] [cursor=pointer]:
+                      - /url: javascript:void(0);
+                    - link "Progress" [ref=e38] [cursor=pointer]:
+                      - /url: javascript:void(0);
+                    - link [ref=e40] [cursor=pointer]:
+                      - /url: javascript:void(0);
+                - generic [ref=e41]:
+                  - generic [ref=e42]: Data Entry
+                  - generic [ref=e43]:
+                    - link "Data iBook (Text Entry)" [ref=e45] [cursor=pointer]:
+                      - /url: javascript:void(0);
+                    - link "Data Apps" [ref=e47] [cursor=pointer]:
+                      - /url: javascript:void(0);
+                - generic [ref=e48]:
+                  - generic [ref=e49]: Book Dev
+                  - generic [ref=e50]:
+                    - link "Open Book (Contents)" [ref=e52] [cursor=pointer]:
+                      - /url: javascript:void(0);
+                    - link "Design" [ref=e54] [cursor=pointer]:
+                      - /url: javascript:void(0);
+                    - link "Results" [ref=e56] [cursor=pointer]:
+                      - /url: javascript:void(0);
+                    - link "Audio" [ref=e58] [cursor=pointer]:
+                      - /url: javascript:void(0);
+                - generic [ref=e59]:
+                  - generic [ref=e60]: Follow-Up
+                  - generic [ref=e61]:
+                    - link "Text Helps" [ref=e63] [cursor=pointer]:
+                      - /url: javascript:void(0);
+                    - generic [ref=e64] [cursor=pointer]:
+                      - link "QLevel" [ref=e65]:
+                        - /url: https://docs.google.com/spreadsheets/d/1PMJKfP8viCQI7Y_Vwd7f3C3GMNVZ6uN0clFS0u4GOWc/edit?gid=1668594277#gid=1668594277
+                      - generic [ref=e66]: 
+                    - generic [ref=e67] [cursor=pointer]:
+                      - link "متابعة PS" [ref=e68]:
+                        - /url: https://docs.google.com/spreadsheets/d/1WtrdmZ_T7-9VXAVMMexBGaVAE3otPqUP8l9AT5f3PMY/edit?gid=966103573#gid=966103573
+                      - generic [ref=e69]: 
+                    - generic [ref=e70] [cursor=pointer]:
+                      - link "متابعة DZ" [ref=e71]:
+                        - /url: https://docs.google.com/spreadsheets/d/1zwFvPMosWCVTGP19IlTgQji6K6zYrK2wrOekcIfK3IQ/edit?gid=2072637516#gid=2072637516
+                      - generic [ref=e72]: 
+            - generic [ref=e73]:
+              - generic [ref=e74]:
+                - link "Close" [ref=e75] [cursor=pointer]:
+                  - /url: javascript:closeAdminMenu(2)
+                - generic [ref=e76]: My School
+              - generic [ref=e77]:
+                - generic [ref=e78]:
+                  - generic [ref=e79]: Teaching Tools
+                  - generic [ref=e80]:
+                    - link "My Achievements" [ref=e82] [cursor=pointer]:
+                      - /url: https://serv.ibnbadis.org//InfoDIR/schedule.php
+                    - link "Forum - فوروم " [ref=e84] [cursor=pointer]:
+                      - /url: ""
+                      - text: Forum -
+                      - generic [ref=e85]: فوروم
+                      - generic [ref=e86]: 
+                    - link "Virtual Class - القسم الإفتراضي" [ref=e88] [cursor=pointer]:
+                      - /url: ""
+                      - text: Virtual Class -
+                      - generic [ref=e89]: القسم الإفتراضي
+                    - link "Free-hand - نشاط حر" [ref=e91] [cursor=pointer]:
+                      - /url: ""
+                      - text: Free-hand -
+                      - generic [ref=e92]: نشاط حر
+                - generic [ref=e93]:
+                  - generic [ref=e94]: Course Info
+                  - generic [ref=e95]:
+                    - link "Announcements" [ref=e97] [cursor=pointer]:
+                      - /url: https://serv.ibnbadis.org//index.php
+                    - link "Lesson Plan" [ref=e99] [cursor=pointer]:
+                      - /url: ../includeahg/lessonplan.php
+                    - link "Teaching Methods" [ref=e101] [cursor=pointer]:
+                      - /url: https://serv.ibnbadis.org//InfoDIR/tutoring.php
+                    - link "Book Objectives" [ref=e103] [cursor=pointer]:
+                      - /url: https://serv.ibnbadis.org//InfoDIR/book_summary.php
+                    - link "Teacher Book" [ref=e105] [cursor=pointer]:
+                      - /url: ../includeahg/web/viewer.html?file=../../sites/QudsBooks/PS2A20B/PS2A20B.pdf
+                    - generic [ref=e107] [cursor=pointer]: About Us (contact)
+            - text: 
+          - generic [ref=e108]: myquds.ibnbadis.org
+          - generic [ref=e110]:
+            - list [ref=e111]:
+              - listitem [ref=e112]:
+                - link " My School" [ref=e113] [cursor=pointer]:
+                  - /url: javascript:void(0);
+            - list [ref=e114]:
+              - listitem [ref=e115]:
+                - link " Book Info" [ref=e116] [cursor=pointer]:
+                  - /url: javascript:void(0);
+      - generic [ref=e117]:
+        - generic [ref=e118]:
+          - img "fam_small" [ref=e119]
+          - img "imgidx/xx" [ref=e120]
+        - list [ref=e122]:
+          - listitem [ref=e123]:
+            - link "Help" [ref=e124] [cursor=pointer]:
+              - /url: https://serv.ibnbadis.org//InfoDIR/helptmpl.php?ssflag=digital&ILang=AR&mbr=26
+              - img [ref=e125]
+          - listitem [ref=e126]:
+            - link "26 - Fadi Benyatallah" [ref=e127] [cursor=pointer]:
+              - /url: javascript:void(0);
+              - generic [ref=e128]: 26 - Fadi Benyatallah
+          - listitem
+  - generic [ref=e129]:
+    - complementary [ref=e130]:
+      - generic [ref=e131]:
+        - generic [ref=e132]:
+          - generic: Page _
+          - generic [ref=e133] [cursor=pointer]:
+            - generic: 
+            - generic [ref=e135]: تصفح الـكـتاب الرقمـي
+          - text: 
+        - generic [ref=e137]:
+          - text: "eBooks:"
+          - link "Book A" [ref=e138] [cursor=pointer]:
+            - /url: ../includeahg/web/viewer.html?file=../../res4sites/QudsBooks/PS4E20A/PS4E20A.pdf
+          - link "Book B" [ref=e139] [cursor=pointer]:
+            - /url: ../includeahg/web/viewer.html?file=../../res4sites/QudsBooks/PS4E20B/PS4E20B.pdf
+          - generic [ref=e141]:
+            - generic [ref=e142]: قم بإختار الفقرة
+            - generic [ref=e145]:
+              - link "xxxxx" [ref=e146] [cursor=pointer]:
+                - /url: /content.php?gid=1069_0_0
+                - generic "xxxxx" [ref=e147]: xxxxx
+              - link "Book Content" [ref=e148] [cursor=pointer]:
+                - /url: /content.php?gid=1070_0_1
+                - generic "Book Content" [ref=e149]: Book Content
+              - generic [ref=e150]:
+                - link "Collapse" [ref=e151] [cursor=pointer]:
+                  - /url: javascript:void(0)
+                  - img "Collapse" [ref=e152]
+                - strong [ref=e153]:
+                  - 'generic "Section 1: A new friend" [ref=e155] [cursor=pointer]'
+              - generic [ref=e156]:
+                - strong [ref=e157]:
+                  - generic "Part 1" [ref=e158]
+                - link "Part 2" [ref=e159] [cursor=pointer]:
+                  - /url: /content.php?gid=1073_0_3
+                  - generic "Part 2" [ref=e160]: Part 2
+              - generic [ref=e161]:
+                - link "Expand" [ref=e162] [cursor=pointer]:
+                  - /url: javascript:void(0)
+                  - img "Expand" [ref=e163]
+                - 'generic "Section 2: Our house" [ref=e165] [cursor=pointer]'
+              - generic [ref=e166]:
+                - link "Expand" [ref=e167] [cursor=pointer]:
+                  - /url: javascript:void(0)
+                  - img "Expand" [ref=e168]
+                - 'generic "Section 3: Lost" [ref=e170] [cursor=pointer]'
+              - generic [ref=e171]:
+                - link "Expand" [ref=e172] [cursor=pointer]:
+                  - /url: javascript:void(0)
+                  - img "Expand" [ref=e173]
+                - 'generic "Section 4: Shopping list" [ref=e175] [cursor=pointer]'
+              - generic [ref=e176]:
+                - link "Expand" [ref=e177] [cursor=pointer]:
+                  - /url: javascript:void(0)
+                  - img "Expand" [ref=e178]
+                - 'generic "Section 5: Revision" [ref=e180] [cursor=pointer]'
+              - generic [ref=e181]:
+                - link "Expand" [ref=e182] [cursor=pointer]:
+                  - /url: javascript:void(0)
+                  - img "Expand" [ref=e183]
+                - 'generic "Section 6: On Sundays I" [ref=e185] [cursor=pointer]'
+              - generic [ref=e186]:
+                - link "Expand" [ref=e187] [cursor=pointer]:
+                  - /url: javascript:void(0)
+                  - img "Expand" [ref=e188]
+                - 'generic "Section 7: At the restaurant" [ref=e190] [cursor=pointer]'
+              - generic [ref=e191]:
+                - link "Expand" [ref=e192] [cursor=pointer]:
+                  - /url: javascript:void(0)
+                  - img "Expand" [ref=e193]
+                - 'generic "Section 8: My favourite season" [ref=e195] [cursor=pointer]'
+              - generic [ref=e196]:
+                - link "Expand" [ref=e197] [cursor=pointer]:
+                  - /url: javascript:void(0)
+                  - img "Expand" [ref=e198]
+                - 'generic "Section 9: Revision" [ref=e200] [cursor=pointer]'
+              - generic [ref=e201]:
+                - link "Expand" [ref=e202] [cursor=pointer]:
+                  - /url: javascript:void(0)
+                  - img "Expand" [ref=e203]
+                - generic "Pictionary and Alphabet" [ref=e205] [cursor=pointer]
+              - link "Ending" [ref=e206] [cursor=pointer]:
+                - /url: /content.php?gid=1101_0_22
+                - generic "Ending" [ref=e207]: Ending
+    - main [ref=e209]:
+      - link "التحليل البيداغوجي ... الخطة الدراسية" [ref=e210] [cursor=pointer]:
+        - /url: /includeahg/frontend/page_analysis.php
+      - table [ref=e212]:
+        - rowgroup [ref=e213]:
+          - row
+          - row
+          - row:
+            - cell [ref=e214]:
+              - generic:
+                - link:
+                  - /url: javascript:defaultpanelzzz.togglepanelplus();
+              - generic [ref=e216] [cursor=pointer]: 
+          - row "قم بإختيار الصفحة:" [ref=e217]:
+            - cell "قم بإختيار الصفحة:" [ref=e218]:
+              - generic [ref=e220]: "قم بإختيار الصفحة:"
+            - cell [ref=e221]:      
+          - row "Book pages set" [ref=e222]:
+            - cell "Book pages set" [ref=e223]:
+              - generic [ref=e224]: Book pages set
+          - row [ref=e225]
+          - row "Book A Book B Year 4 English A" [ref=e226]:
+            - cell [ref=e227]
+            - cell "Book A Book B Year 4 English A" [ref=e228]:
+              - link "Book A" [ref=e229] [cursor=pointer]:
+                - /url: ../includeahg/web/viewer.html?file=../../res4sites/QudsBooks/PS4E20A/PS4E20A.pdf
+              - link "Book B" [ref=e230] [cursor=pointer]:
+                - /url: ../includeahg/web/viewer.html?file=../../res4sites/QudsBooks/PS4E20B/PS4E20B.pdf
+              - generic [ref=e231]: Year 4 English A
+            - cell [ref=e232]
+          - row [ref=e233]:
+            - cell [ref=e234]
+  - text:  
+  - link "إغلاق" [ref=e237] [cursor=pointer]:
+    - /url: javascript:ahgsideshowhide();

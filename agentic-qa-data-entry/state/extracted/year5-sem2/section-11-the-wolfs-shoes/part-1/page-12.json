@@ -1,0 +1,16 @@
+{
+  "page_key": "year5-sem2/section-11-the-wolfs-shoes/part-1/page-12",
+  "timestamp": "2026-05-12T12:41:00Z",
+  "existing_rows": [
+    {"q": "Where was the wolf?", "a": "He was hiding behind a tree."},
+    {"q": "What did the wolf want?", "a": "He wanted the goat."},
+    {"q": "What did the wolf put on the road first?", "a": "He put his left shoe."},
+    {"q": "What did the farmer do?", "a": "He went looking for the right shoe."},
+    {"q": "What did the wolf put on the road second?", "a": "He put his right shoe."},
+    {"q": "What did the farmer do?", "a": "He put the right next to the goat."},
+    {"q": "What did the wolf do?", "a": "He took the right shoe and the goat."}
+  ],
+  "extracted_rows": [],
+  "appended_rows": [],
+  "note": "Page already has 7 comprehension Q&A rows covering the wolf story narrative. Saved without modifications."
+}

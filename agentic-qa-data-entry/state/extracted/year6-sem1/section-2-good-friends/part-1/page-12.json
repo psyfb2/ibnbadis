@@ -1,0 +1,17 @@
+{
+  "page_key": "year6-sem1/section-2-good-friends/part-1/page-12",
+  "timestamp": "2026-05-12T14:28:25Z",
+  "existing_rows": [
+    {"q": "Rana. what happened? I don`t understand why are you crying?", "a": "I have a problem. I lent Fatima my favourite book. She left it at home. I need it."},
+    {"q": "I like sharing by books with someone but I want them back. I don`t like arguing with anyone.", "a": "Sorry Rania. I will give back your book."},
+    {"q": "Let us go home and do this quiz about friends!", "a": "."},
+    {"q": "Ben. Don`t be sad.", "a": "Why doesn`t Bilal like playing with me?"},
+    {"q": "Come on Omar. Let`s play basket ball.", "a": "Hey Ben. Let`s ask Bilal."},
+    {"q": "I am sorry Ben.", "a": "."}
+  ],
+  "extracted_rows": [
+    {"q": "Rania, what happened? I don't understand why you are crying.", "a": "I have a problem. I lent Fatima my favourite book, but she left it at home. I need it."}
+  ],
+  "appended_rows": [],
+  "note": "Page already had 6 dialogue rows covering the scenes. Existing rows include the extracted Q&A. Saved without modifications."
+}

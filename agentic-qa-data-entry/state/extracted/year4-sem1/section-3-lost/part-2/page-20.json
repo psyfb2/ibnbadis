@@ -1,0 +1,14 @@
+{
+  "page_key": "year4-sem1/section-3-lost/part-2/page-20",
+  "timestamp": "2026-05-11T16:06:30Z",
+  "existing_rows": [],
+  "extracted_rows": [
+    {"q": "Is this your bag?", "a": "Yes, it is. / No, it's Fatima's."},
+    {"q": "Is this your kite?", "a": "Yes, it is."}
+  ],
+  "appended_rows": [
+    {"q": "Is this your bag?", "a": "Yes, it is. / No, it's Fatima's."},
+    {"q": "Is this your kite?", "a": "Yes, it is."}
+  ],
+  "save_button_color_after_save": "rgb(0, 128, 0)"
+}

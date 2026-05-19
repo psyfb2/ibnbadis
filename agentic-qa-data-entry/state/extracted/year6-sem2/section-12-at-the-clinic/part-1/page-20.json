@@ -1,0 +1,21 @@
+{
+  "page_key": "year6-sem2/section-12-at-the-clinic/part-1/page-20",
+  "timestamp": "2026-05-12T18:25:30Z",
+  "existing_rows": [
+    {"q": "How long have Ben and Amy been sick?", "a": "They both have a cold."},
+    {"q": "What problem does Rania have?", "a": "Rania has a sore throat."},
+    {"q": "Why do you think the doctor told the children to go home and stay in bed?", "a": "So they don`t spread the bug to others."},
+    {"q": "Why did many children visit the clinic that morning?", "a": "Many children visited the clinic with a stomachache."},
+    {"q": "What does Mr Ali say is going around?", "a": "He said there was a flu bug going around."}
+  ],
+  "extracted_rows": [
+    {"q": "Good morning! How long have the children been sick?", "a": "I've been tired for a week. And I've a backache too."},
+    {"q": "Good morning! How long have they been sick?", "a": "They have been sick since last night. Omar hasn't slept well and he has a fever. Rania has a sore throat."},
+    {"q": "Good afternoon! Oh dear! You don't look very well. How long have you been sick?", "a": "Hassan has had a stomachache all night."}
+  ],
+  "appended_rows": [
+    {"q": "Good morning! How long have the children been sick?", "a": "I've been tired for a week. And I've a backache too."},
+    {"q": "Good morning! How long have they been sick?", "a": "They have been sick since last night. Omar hasn't slept well and he has a fever. Rania has a sore throat."},
+    {"q": "Good afternoon! Oh dear! You don't look very well. How long have you been sick?", "a": "Hassan has had a stomachache all night."}
+  ]
+}

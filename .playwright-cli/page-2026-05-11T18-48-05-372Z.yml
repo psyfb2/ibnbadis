@@ -1,0 +1,431 @@
+- generic [ref=e1]:
+  - text: 
+  - generic [ref=e4]:
+    - generic [ref=e5]:
+      - generic [ref=e6]:
+        - link [ref=e9] [cursor=pointer]:
+          - /url: /users/index.php
+          - img [ref=e11]
+        - generic [ref=e13]:
+          - generic [ref=e14]: Year 4 English B
+          - banner
+      - generic [ref=e15]:
+        - generic:
+          - link "أظهر/أخفي Hide Side Menu" [ref=e17] [cursor=pointer]:
+            - /url: javascript:void(0)
+            - generic [ref=e18]: أظهر/أخفي
+            - img "Hide Side Menu" [ref=e19]
+          - link "Admin & Dev " [ref=e20] [cursor=pointer]:
+            - /url: javascript:openAdminMenu(1);
+            - generic [ref=e22]: Admin & Dev
+            - generic [ref=e23]: 
+          - generic [ref=e24]:
+            - generic [ref=e25]:
+              - link "Close" [ref=e26] [cursor=pointer]:
+                - /url: javascript:closeAdminMenu(1)
+              - generic [ref=e27]:
+                - generic [ref=e28]: Admin & Dev
+                - generic [ref=e29]: PS4E20B-70
+            - generic [ref=e30]:
+              - generic [ref=e31]:
+                - generic [ref=e32]: Tutor
+                - generic [ref=e33]:
+                  - link "Multimedia" [ref=e35] [cursor=pointer]:
+                    - /url: javascript:void(0);
+                  - link "Progress" [ref=e37] [cursor=pointer]:
+                    - /url: javascript:void(0);
+                  - link [ref=e39] [cursor=pointer]:
+                    - /url: javascript:void(0);
+              - generic [ref=e40]:
+                - generic [ref=e41]: Data Entry
+                - generic [ref=e42]:
+                  - link "Data iBook (Text Entry)" [ref=e44] [cursor=pointer]:
+                    - /url: javascript:void(0);
+                  - link "Data Apps" [ref=e46] [cursor=pointer]:
+                    - /url: https://idev.ibnbadis.org/kkdisplay_html.php?helpr=GA&xsubject=T&Tid=0&htmlmode=AR01&Tlang=EN&selectflag=2&indx=&xroot=&Mainselect=Nouns&htmlmbr=26&book=PS4E20B&page=14
+              - generic [ref=e47]:
+                - generic [ref=e48]: Book Dev
+                - generic [ref=e49]:
+                  - link "Open Book (Contents)" [ref=e51] [cursor=pointer]:
+                    - /url: javascript:void(0);
+                  - link "Design" [ref=e53] [cursor=pointer]:
+                    - /url: javascript:void(0);
+                  - link "Results" [ref=e55] [cursor=pointer]:
+                    - /url: javascript:void(0);
+                  - link "Audio" [ref=e57] [cursor=pointer]:
+                    - /url: javascript:void(0);
+              - generic [ref=e58]:
+                - generic [ref=e59]: Follow-Up
+                - generic [ref=e60]:
+                  - link "Text Helps" [ref=e62] [cursor=pointer]:
+                    - /url: https://idev.ibnbadis.org/helptext.php?helpr=GA&xsubject=T&Tid=0&htmlmode=AR01&Tlang=EN&selectflag=2&indx=&xroot=&Mainselect=Nouns&htmlmbr=26&book=PS4E20B&page=14
+                  - generic [ref=e63] [cursor=pointer]:
+                    - link "QLevel" [ref=e64]:
+                      - /url: https://docs.google.com/spreadsheets/d/1PMJKfP8viCQI7Y_Vwd7f3C3GMNVZ6uN0clFS0u4GOWc/edit?gid=1668594277#gid=1668594277
+                    - generic [ref=e65]: 
+                  - generic [ref=e66] [cursor=pointer]:
+                    - link "متابعة PS" [ref=e67]:
+                      - /url: https://docs.google.com/spreadsheets/d/1WtrdmZ_T7-9VXAVMMexBGaVAE3otPqUP8l9AT5f3PMY/edit?gid=966103573#gid=966103573
+                    - generic [ref=e68]: 
+                  - generic [ref=e69] [cursor=pointer]:
+                    - link "متابعة DZ" [ref=e70]:
+                      - /url: https://docs.google.com/spreadsheets/d/1zwFvPMosWCVTGP19IlTgQji6K6zYrK2wrOekcIfK3IQ/edit?gid=2072637516#gid=2072637516
+                    - generic [ref=e71]: 
+          - generic [ref=e72]:
+            - generic [ref=e73]:
+              - link "Close" [ref=e74] [cursor=pointer]:
+                - /url: javascript:closeAdminMenu(2)
+              - generic [ref=e75]: My School
+            - generic [ref=e76]:
+              - generic [ref=e77]:
+                - generic [ref=e78]: Teaching Tools
+                - generic [ref=e79]:
+                  - link "My Achievements" [ref=e81] [cursor=pointer]:
+                    - /url: https://serv.ibnbadis.org//InfoDIR/schedule.php
+                  - link "Forum - فوروم " [ref=e83] [cursor=pointer]:
+                    - /url: ""
+                    - text: Forum -
+                    - generic [ref=e84]: فوروم
+                    - generic [ref=e85]: 
+                  - link "Virtual Class - القسم الإفتراضي" [ref=e87] [cursor=pointer]:
+                    - /url: ""
+                    - text: Virtual Class -
+                    - generic [ref=e88]: القسم الإفتراضي
+                  - link "Free-hand - نشاط حر" [ref=e90] [cursor=pointer]:
+                    - /url: ""
+                    - text: Free-hand -
+                    - generic [ref=e91]: نشاط حر
+              - generic [ref=e92]:
+                - generic [ref=e93]: Course Info
+                - generic [ref=e94]:
+                  - link "Announcements" [ref=e96] [cursor=pointer]:
+                    - /url: https://serv.ibnbadis.org//index.php
+                  - link "Lesson Plan" [ref=e98] [cursor=pointer]:
+                    - /url: ../includeahg/lessonplan.php
+                  - link "Teaching Methods" [ref=e100] [cursor=pointer]:
+                    - /url: https://serv.ibnbadis.org//InfoDIR/tutoring.php
+                  - link "Book Objectives" [ref=e102] [cursor=pointer]:
+                    - /url: https://serv.ibnbadis.org//InfoDIR/book_summary.php
+                  - link "Teacher Book" [ref=e104] [cursor=pointer]:
+                    - /url: ../includeahg/web/viewer.html?file=../../sites/QudsBooks/PS2A20B/PS2A20B.pdf
+                  - generic [ref=e106] [cursor=pointer]: About Us (contact)
+          - text: 
+        - generic [ref=e107]: myquds.ibnbadis.org
+        - generic [ref=e109]:
+          - list [ref=e110]:
+            - listitem [ref=e111]:
+              - link " My School" [ref=e112] [cursor=pointer]:
+                - /url: javascript:void(0);
+          - list [ref=e113]:
+            - listitem [ref=e114]:
+              - link " Book Info" [ref=e115] [cursor=pointer]:
+                - /url: javascript:void(0);
+    - generic [ref=e116]:
+      - generic [ref=e117]:
+        - img "fam_small" [ref=e118]
+        - img "imgidx/xx" [ref=e119]
+      - list [ref=e121]:
+        - listitem [ref=e122]:
+          - link "Help" [ref=e123] [cursor=pointer]:
+            - /url: https://serv.ibnbadis.org//InfoDIR/helptmpl.php?ssflag=digital&ILang=AR&mbr=26
+            - img [ref=e124]
+        - listitem [ref=e125]:
+          - link "26 - Fadi Benyatallah" [ref=e126] [cursor=pointer]:
+            - /url: javascript:void(0);
+            - generic [ref=e127]: 26 - Fadi Benyatallah
+        - listitem
+  - generic [ref=e128]:
+    - complementary [ref=e129]:
+      - generic [ref=e130]:
+        - generic [ref=e131]:
+          - generic: Page 14
+          - generic [ref=e132] [cursor=pointer]:
+            - generic: 
+            - generic [ref=e277]: تصفح الـكـتاب الرقمـي
+          - text:  
+        - generic [ref=e136]:
+          - text: "eBooks:"
+          - link "Book A" [ref=e137] [cursor=pointer]:
+            - /url: ../includeahg/web/viewer.html?file=../../res4sites/QudsBooks/PS4E20A/PS4E20A.pdf
+          - link "Book B" [ref=e138] [cursor=pointer]:
+            - /url: ../includeahg/web/viewer.html?file=../../res4sites/QudsBooks/PS4E20B/PS4E20B.pdf
+          - generic [ref=e140]:
+            - generic [ref=e141]: قم بإختار الفقرة
+            - generic [ref=e144]:
+              - link "xxxxx 1 - 2" [ref=e240] [cursor=pointer]:
+                - /url: /content.php?gid=1102_0_0
+                - generic "xxxxx" [ref=e241]: xxxxx
+                - generic [ref=e242]: 1 - 2
+              - link "Book Content 3" [ref=e243] [cursor=pointer]:
+                - /url: /content.php?gid=1103_0_1
+                - generic "Book Content" [ref=e244]: Book Content
+                - generic [ref=e245]: "3"
+              - generic [ref=e149]:
+                - link "Expand" [ref=e150] [cursor=pointer]:
+                  - /url: javascript:void(0)
+                  - img "Expand" [ref=e151]
+                - 'generic "Section 10: Visiting Palestine" [ref=e153] [cursor=pointer]'
+              - generic [ref=e154]:
+                - link "Collapse" [ref=e155] [cursor=pointer]:
+                  - /url: javascript:void(0)
+                  - img "Collapse" [ref=e156]
+                - strong [ref=e157]:
+                  - 'generic "Section 11: Let&amp;#039;s make a cake" [ref=e159] [cursor=pointer]': "Section 11: Let&#039;s make a cake"
+              - generic [ref=e160]:
+                - link "Part 1 10 - 12" [ref=e246] [cursor=pointer]:
+                  - /url: /content.php?gid=1108_0_4
+                  - generic "Part 1" [ref=e247]: Part 1
+                  - generic [ref=e248]: 10 - 12
+                - strong [ref=e163]:
+                  - generic "Part 2" [ref=e164]:
+                    - text: Part 2
+                    - generic [ref=e249]: 13 - 15
+              - generic [ref=e165]:
+                - link "Expand" [ref=e166] [cursor=pointer]:
+                  - /url: javascript:void(0)
+                  - img "Expand" [ref=e167]
+                - 'generic "Section 12: It&amp;#039;s 7:30" [ref=e169] [cursor=pointer]': "Section 12: It&#039;s 7:30"
+              - generic [ref=e170]:
+                - link "Expand" [ref=e171] [cursor=pointer]:
+                  - /url: javascript:void(0)
+                  - img "Expand" [ref=e172]
+                - 'generic "Section 13: Good habits" [ref=e174] [cursor=pointer]'
+              - generic [ref=e175]:
+                - link "Expand" [ref=e176] [cursor=pointer]:
+                  - /url: javascript:void(0)
+                  - img "Expand" [ref=e177]
+                - 'generic "Section 14: Revision" [ref=e179] [cursor=pointer]'
+              - generic [ref=e180]:
+                - link "Expand" [ref=e181] [cursor=pointer]:
+                  - /url: javascript:void(0)
+                  - img "Expand" [ref=e182]
+                - 'generic "Section 15: I can do it" [ref=e184] [cursor=pointer]'
+              - generic [ref=e185]:
+                - link "Expand" [ref=e186] [cursor=pointer]:
+                  - /url: javascript:void(0)
+                  - img "Expand" [ref=e187]
+                - 'generic "Section 16: In my street" [ref=e189] [cursor=pointer]'
+              - generic [ref=e190]:
+                - link "Expand" [ref=e191] [cursor=pointer]:
+                  - /url: javascript:void(0)
+                  - img "Expand" [ref=e192]
+                - 'generic "Section 17: On the farm" [ref=e194] [cursor=pointer]'
+              - generic [ref=e195]:
+                - link "Expand" [ref=e196] [cursor=pointer]:
+                  - /url: javascript:void(0)
+                  - img "Expand" [ref=e197]
+                - 'generic "Section 18: Revision" [ref=e199] [cursor=pointer]'
+              - generic [ref=e200]:
+                - link "Expand" [ref=e201] [cursor=pointer]:
+                  - /url: javascript:void(0)
+                  - img "Expand" [ref=e202]
+                - generic "Pictionary and Alphabet" [ref=e204] [cursor=pointer]
+              - link "Ending 64" [ref=e250] [cursor=pointer]:
+                - /url: /content.php?gid=1134_0_22
+                - generic "Ending" [ref=e251]: Ending
+                - generic [ref=e252]: "64"
+    - main [ref=e208]:
+      - table [ref=e210]:
+        - rowgroup [ref=e211]:
+          - row
+          - row
+          - row:
+            - cell [ref=e212]:
+              - generic:
+                - link:
+                  - /url: javascript:defaultpanelzzz.togglepanelplus();
+              - generic [ref=e214] [cursor=pointer]: 
+          - 'row "قم بإختيار الصفحة: «13 14 15 »" [ref=e253]':
+            - 'cell "قم بإختيار الصفحة: «13 14 15 »" [ref=e254]':
+              - generic [ref=e217]:
+                - generic [ref=e218]: "قم بإختيار الصفحة:"
+                - list [ref=e257]:
+                  - listitem [ref=e258]:
+                    - link "«" [ref=e259] [cursor=pointer]:
+                      - /url: "#previous"
+                  - listitem [ref=e260]:
+                    - link "13" [ref=e261] [cursor=pointer]:
+                      - /url: "#page1"
+                  - listitem [ref=e262]:
+                    - link "14" [ref=e263]:
+                      - /url: "#page2"
+                  - listitem [ref=e264]:
+                    - link "15" [ref=e265] [cursor=pointer]:
+                      - /url: "#page3"
+                  - listitem [ref=e266]:
+                    - link "»" [ref=e267] [cursor=pointer]:
+                      - /url: "#next"
+            - cell [ref=e219]:      
+          - row:
+            - cell [ref=e268]:
+              - table [ref=e278]:
+                - rowgroup [ref=e279]:
+                  - row [ref=e280]:
+                    - cell [ref=e281]
+          - row [ref=e223]
+          - row "Book A Book B Year 4 English B" [ref=e224]:
+            - cell [ref=e225]
+            - cell "Book A Book B Year 4 English B" [ref=e226]:
+              - link "Book A" [ref=e227] [cursor=pointer]:
+                - /url: ../includeahg/web/viewer.html?file=../../res4sites/QudsBooks/PS4E20A/PS4E20A.pdf
+              - link "Book B" [ref=e228] [cursor=pointer]:
+                - /url: ../includeahg/web/viewer.html?file=../../res4sites/QudsBooks/PS4E20B/PS4E20B.pdf
+              - generic [ref=e229]: Year 4 English B
+            - cell [ref=e230]
+          - row [ref=e231]:
+            - cell [ref=e232]
+  - text:  
+  - generic [ref=e234]:
+    - link "إغلاق" [ref=e235] [cursor=pointer]:
+      - /url: javascript:ahgsideshowhide();
+    - generic "Close Content Panel" [ref=e273] [cursor=pointer]:
+      - generic [ref=e274]: إغلاق
+    - iframe [active] [ref=e283]:
+      - generic [ref=f109e3]:
+        - generic [ref=f109e4]:
+          - generic [ref=f109e5]:
+            - text: الكـتاب التفاعلي
+            - generic [ref=f109e6]: Learning iBook
+          - generic [ref=f109e7]:
+            - text: التقويم التفاعلي
+            - generic [ref=f109e8]: Selftest iBook
+          - generic [ref=f109e9]:
+            - text: تطبيقات التقوية
+            - generic [ref=f109e10]: BoosterApps
+          - generic [ref=f109e11]:
+            - text: تطبيقات النصوص
+            - generic [ref=f109e12]: TextApps
+          - generic [ref=f109e13]:
+            - text: تطبيقات القواعد والصرف
+            - generic [ref=f109e14]: gramApps
+          - generic [ref=f109e15]:
+            - text: التقويم التراكمي
+            - generic [ref=f109e16]: Cumulative Selftests
+        - generic [ref=f109e17]:
+          - generic [ref=f109e18]: 14ص
+          - button "Save" [ref=f109e19]
+          - generic [ref=f109e20]: إظهار الصفحة
+        - generic [ref=f109e123]:
+          - generic [ref=f109e125]:
+            - generic [ref=f109e126]:
+              - generic [ref=f109e127]: الصنف
+              - generic [ref=f109e128]: التفاعلات
+              - generic [ref=f109e129]: المهارة المستهدفة
+              - generic [ref=f109e130]: Demos إظهار
+              - generic [ref=f109e131]: المعطيات المستعملة
+              - generic [ref=f109e132]: عناصر التصميم
+            - generic [ref=f109e133]:
+              - generic [ref=f109e134]:
+                - generic [ref=f109e135]: مفردات
+                - generic [ref=f109e136]: الجملة المخفيّة
+                - generic [ref=f109e137]: السؤال المخفي
+                - generic [ref=f109e138]: المحادثة
+              - generic [ref=f109e142]:
+                - generic [ref=f109e143]:
+                  - generic [ref=f109e144]:
+                    - generic [ref=f109e145]: مفـرداتي الجديدة
+                    - checkbox "مفـرداتي الجديدة" [ref=f109e146]
+                  - generic [ref=f109e147]: sk
+                  - generic [ref=f109e148]: E17
+                  - generic [ref=f109e149]: voca, meaning
+                - generic [ref=f109e150]:
+                  - generic [ref=f109e151]:
+                    - generic [ref=f109e152]: مفـرداتي الجديدة (صور)
+                    - checkbox "مفـرداتي الجديدة (صور)" [ref=f109e153]
+                  - generic [ref=f109e154]: sk
+                  - generic [ref=f109e155]: photo, voca
+                - generic [ref=f109e156]:
+                  - generic [ref=f109e157]:
+                    - generic [ref=f109e158]: إملاء من معنى الكلمة
+                    - checkbox "إملاء من معنى الكلمة" [ref=f109e159]
+                  - generic [ref=f109e160]: الإملاء
+                  - generic [ref=f109e161]: voca,meaning
+                - generic [ref=f109e162]:
+                  - generic [ref=f109e163]:
+                    - generic [ref=f109e164]: إملاء من (صورة)
+                    - checkbox "إملاء من (صورة)" [ref=f109e165]
+                  - generic [ref=f109e166]: sk
+                  - generic [ref=f109e167]: photo, voca
+          - generic [ref=f109e170]:
+            - generic [ref=f109e171]:
+              - generic [ref=f109e172]:
+                - generic [ref=f109e173]: Translated Questions - الأسئلة المترجمة
+                - generic [ref=f109e174]: Translated Answers - الجوابات المترجمة
+              - generic [ref=f109e175]: Page Questions - أسئلة الصفحة
+              - generic [ref=f109e177]:
+                - text: Page Answers - جوابات الصفحة
+                - text: (required - إجباري)
+            - generic [ref=f109e178]:
+              - generic [ref=f109e179]:
+                - textbox [ref=f109e180]
+                - textbox [ref=f109e181]
+                - textbox [ref=f109e182]: How much flour do we need?
+                - textbox [ref=f109e183]: We need two cups of flour, one cup of butter, one cup of sugar and a cup of milk.
+              - generic [ref=f109e184]:
+                - textbox [ref=f109e185]
+                - textbox [ref=f109e186]
+                - textbox [ref=f109e187]: How many eggs do we need?
+                - textbox [ref=f109e188]: Two eggs.
+              - generic [ref=f109e189]:
+                - textbox [ref=f109e190]
+                - textbox [ref=f109e191]
+                - textbox [ref=f109e192]: Anything else?
+                - textbox [ref=f109e193]: Chocolate.
+              - generic [ref=f109e194]:
+                - textbox [ref=f109e195]
+                - textbox [ref=f109e196]
+                - textbox [ref=f109e197]: So what do we do?
+                - textbox [ref=f109e198]: Put the sugar and butter in the bowl, mix. Add the eggs, flour the milk and the sugar. Put the bowl in the oven and cook for fifteen minutes.
+              - generic [ref=f109e199]:
+                - textbox [ref=f109e200]
+                - textbox [ref=f109e201]
+                - textbox [ref=f109e202]: What are Walid and Bilal going to make?
+                - textbox [ref=f109e203]: They are going to make a cake.
+              - generic [ref=f109e204]:
+                - textbox [ref=f109e205]
+                - textbox [ref=f109e206]
+                - textbox [ref=f109e207]: How much flour do they need?
+                - textbox [ref=f109e208]: They need two cups of flour.
+              - generic [ref=f109e209]:
+                - textbox [ref=f109e210]
+                - textbox [ref=f109e211]
+                - textbox [ref=f109e212]: How much butter do they need?
+                - textbox [ref=f109e213]: They need one cup of butter.
+              - generic [ref=f109e214]:
+                - textbox [ref=f109e215]
+                - textbox [ref=f109e216]
+                - textbox [ref=f109e217]: How much sugar do they need?
+                - textbox [ref=f109e218]: They need one cup of sugar.
+              - generic [ref=f109e219]:
+                - textbox [ref=f109e220]
+                - textbox [ref=f109e221]
+                - textbox [ref=f109e222]: How many eggs do they need?
+                - textbox [ref=f109e223]: They need two eggs,
+              - generic [ref=f109e224]:
+                - textbox [ref=f109e225]
+                - textbox [ref=f109e226]
+                - textbox [ref=f109e227]: What else do they need?
+                - textbox [ref=f109e228]: They need chocolate.
+              - generic [ref=f109e229]:
+                - textbox [ref=f109e230]
+                - textbox [ref=f109e231]
+                - textbox [ref=f109e232]: How much time do they need?
+                - textbox [ref=f109e233]: They need fifteen minutes.
+              - generic [ref=f109e234]:
+                - textbox [ref=f109e235]
+                - textbox [ref=f109e236]
+                - textbox [ref=f109e237]
+                - textbox [ref=f109e238]
+              - generic [ref=f109e246]:
+                - textbox [ref=f109e247]
+                - textbox [ref=f109e248]
+                - textbox [ref=f109e249]
+                - textbox [ref=f109e250]
+            - generic [ref=f109e239]:
+              - generic [ref=f109e241]: +
+              - generic [ref=f109e242]:
+                - textbox [ref=f109e243]: "0"
+                - text: Level
+              - generic [ref=f109e244]:
+                - textbox [ref=f109e245]
+                - text: Subject

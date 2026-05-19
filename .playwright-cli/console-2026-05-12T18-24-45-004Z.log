@@ -1,0 +1,15 @@
+[    1385ms] [WARNING] Alerted:  @ https://myquds.ibnbadis.org/content.php?gid=1237_0_6:5
+[   63922ms] [ERROR] Failed to load resource: net::ERR_NAME_NOT_RESOLVED @ https://res4sites/templates/myquds_ibnbadis/SHimages/usericon0.png:0
+[   64002ms] [ERROR] Failed to load resource: net::ERR_NAME_NOT_RESOLVED @ https://ahgsites.earabics.com/AppsDZlast/Icons/IZP0A16D.gif:0
+[  135706ms] [ERROR]  Error: Code 5xx
+    at submitForms (https://dev.ibnbadis.org/exp_entry.php?site_id=4&paper=PS6E20B&ULang=AR&TLang=EN&ILang=AR&nfw9=1&page=21&npage=21&mbr=26:2970:30)
+    at async HTMLButtonElement.<anonymous> (https://dev.ibnbadis.org/exp_entry.php?site_id=4&paper=PS6E20B&ULang=AR&TLang=EN&ILang=AR&nfw9=1&page=21&npage=21&mbr=26:399:21) @ https://dev.ibnbadis.org/exp_entry.php?site_id=4&paper=PS6E20B&ULang=AR&TLang=EN&ILang=AR&nfw9=1&page=21&npage=21&mbr=26:2974
+[  135707ms] [ERROR] There was an error while saving the data. @ https://dev.ibnbadis.org/exp_entry.php?site_id=4&paper=PS6E20B&ULang=AR&TLang=EN&ILang=AR&nfw9=1&page=21&npage=21&mbr=26:403
+[  168865ms] [ERROR]  Error: Code 5xx
+    at submitForms (https://dev.ibnbadis.org/exp_entry.php?site_id=4&paper=PS6E20B&ULang=AR&TLang=EN&ILang=AR&nfw9=1&page=22&npage=22&mbr=26:2970:30)
+    at async HTMLButtonElement.<anonymous> (https://dev.ibnbadis.org/exp_entry.php?site_id=4&paper=PS6E20B&ULang=AR&TLang=EN&ILang=AR&nfw9=1&page=22&npage=22&mbr=26:399:21) @ https://dev.ibnbadis.org/exp_entry.php?site_id=4&paper=PS6E20B&ULang=AR&TLang=EN&ILang=AR&nfw9=1&page=22&npage=22&mbr=26:2974
+[  168866ms] [ERROR] There was an error while saving the data. @ https://dev.ibnbadis.org/exp_entry.php?site_id=4&paper=PS6E20B&ULang=AR&TLang=EN&ILang=AR&nfw9=1&page=22&npage=22&mbr=26:403
+[  201506ms] [ERROR]  Error: Code 5xx
+    at submitForms (https://dev.ibnbadis.org/exp_entry.php?site_id=4&paper=PS6E20B&ULang=AR&TLang=EN&ILang=AR&nfw9=1&page=23&npage=23&mbr=26:2970:30)
+    at async HTMLButtonElement.<anonymous> (https://dev.ibnbadis.org/exp_entry.php?site_id=4&paper=PS6E20B&ULang=AR&TLang=EN&ILang=AR&nfw9=1&page=23&npage=23&mbr=26:399:21) @ https://dev.ibnbadis.org/exp_entry.php?site_id=4&paper=PS6E20B&ULang=AR&TLang=EN&ILang=AR&nfw9=1&page=23&npage=23&mbr=26:2974
+[  201506ms] [ERROR] There was an error while saving the data. @ https://dev.ibnbadis.org/exp_entry.php?site_id=4&paper=PS6E20B&ULang=AR&TLang=EN&ILang=AR&nfw9=1&page=23&npage=23&mbr=26:403

@@ -1,0 +1,12 @@
+{
+  "page_key": "year4-sem1/section-6-on-sundays-i/part-1/page-34",
+  "timestamp": "2026-05-13T08:57:30Z",
+  "existing_rows": [
+    {"q": "What subjects do we have today?", "a": "We have English."}
+  ],
+  "extracted_rows": [
+    {"q": "What subjects do we have today?", "a": "We have English."}
+  ],
+  "appended_rows": [],
+  "note": "Retry of prior save_failed. Save succeeded — all TextEntry save endpoints returned 200."
+}

@@ -1,0 +1,13 @@
+{
+  "page_key": "year4-sem1/section-8-my-favourite-season/part-1/page-46",
+  "timestamp": "2026-05-11T17:22:05Z",
+  "existing_rows": [],
+  "extracted_rows": [
+    {"q": "What season is it?", "a": "It's autumn."}
+  ],
+  "appended_rows": [
+    {"q": "What season is it?", "a": "It's autumn."}
+  ],
+  "save_button_color_after_save": "rgb(0, 128, 0)",
+  "notes": "Unit 8 opener. Ex 1 tick + Q→A speech bubble. Ex 2 vocab matching. Ex 3 instruction. Ex 4 statement bubble (no Q). Saved on retry (attempt 2)."
+}

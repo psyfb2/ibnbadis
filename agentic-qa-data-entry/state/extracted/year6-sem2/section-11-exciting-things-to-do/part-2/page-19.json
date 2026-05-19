@@ -1,0 +1,13 @@
+{
+  "page_key": "year6-sem2/section-11-exciting-things-to-do/part-2/page-19",
+  "timestamp": "2026-05-12T18:23:30Z",
+  "existing_rows": [],
+  "extracted_rows": [
+    {"q": "Have you ever climbed a mountain?", "a": "We have never climbed a mountain."},
+    {"q": "Have you ever swum in an oasis?", "a": "We have never swum in an oasis."}
+  ],
+  "appended_rows": [
+    {"q": "Have you ever climbed a mountain?", "a": "We have never climbed a mountain."},
+    {"q": "Have you ever swum in an oasis?", "a": "We have never swum in an oasis."}
+  ]
+}

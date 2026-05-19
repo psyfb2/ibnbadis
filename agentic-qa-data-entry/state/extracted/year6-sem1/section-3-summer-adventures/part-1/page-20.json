@@ -1,0 +1,12 @@
+{
+  "page_key": "year6-sem1/section-3-summer-adventures/part-1/page-20",
+  "timestamp": "2026-05-12T14:43:00Z",
+  "existing_rows": [],
+  "extracted_rows": [
+    {"q": "Oh Amy, what are you doing? Why are you in the river?", "a": "We were going down the river when the boat turned over. My shoes floated in the water!"}
+  ],
+  "appended_rows": [
+    {"q": "Oh Amy, what are you doing? Why are you in the river?", "a": "We were going down the river when the boat turned over. My shoes floated in the water!"}
+  ],
+  "note": "Panel 2 contained the only clear Q→A dialogue. Other panels had narration/exclamations without direct Q→A structure."
+}

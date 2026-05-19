@@ -1,0 +1,16 @@
+{
+  "page_key": "year6-sem1/section-6-healthy-food/part-1/page-43",
+  "timestamp": "2026-05-12T15:21:10Z",
+  "existing_rows": [],
+  "extracted_rows": [
+    {"q": "What food should you eat sometimes?", "a": "You should eat …"},
+    {"q": "What is healthy food?", "a": "Healthy food is …"},
+    {"q": "Why should you eat healthy food?", "a": "You should eat healthy food because …"}
+  ],
+  "appended_rows": [
+    {"q": "What food should you eat sometimes?", "a": "You should eat …"},
+    {"q": "What is healthy food?", "a": "Healthy food is …"},
+    {"q": "Why should you eat healthy food?", "a": "You should eat healthy food because …"}
+  ],
+  "note": "Three Q→A pairs from 'Read aloud. Then answer the questions.' with partial model answers. Retry saved successfully."
+}

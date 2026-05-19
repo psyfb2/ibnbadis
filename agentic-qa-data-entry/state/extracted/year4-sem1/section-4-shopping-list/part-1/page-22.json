@@ -1,0 +1,12 @@
+{
+  "page_key": "year4-sem1/section-4-shopping-list/part-1/page-22",
+  "timestamp": "2026-05-11T16:09:00Z",
+  "existing_rows": [],
+  "extracted_rows": [
+    {"q": "How many bags of pasta?", "a": "We need two bags of pasta."}
+  ],
+  "appended_rows": [
+    {"q": "How many bags of pasta?", "a": "We need two bags of pasta."}
+  ],
+  "save_button_color_after_save": "rgb(0, 128, 0)"
+}

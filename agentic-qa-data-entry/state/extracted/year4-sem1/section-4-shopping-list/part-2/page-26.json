@@ -1,0 +1,12 @@
+{
+  "page_key": "year4-sem1/section-4-shopping-list/part-2/page-26",
+  "timestamp": "2026-05-11T16:14:00Z",
+  "existing_rows": [],
+  "extracted_rows": [
+    {"q": "How much is it?", "a": "40 dinars."}
+  ],
+  "appended_rows": [
+    {"q": "How much is it?", "a": "40 dinars."}
+  ],
+  "save_button_color_after_save": "rgb(0, 128, 0)"
+}

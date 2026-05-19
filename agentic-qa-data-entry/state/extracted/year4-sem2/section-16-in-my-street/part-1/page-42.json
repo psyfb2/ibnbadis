@@ -1,0 +1,15 @@
+{
+  "page_key": "year4-sem2/section-16-in-my-street/part-1/page-42",
+  "timestamp": "2026-05-12T06:52:30Z",
+  "existing_rows": [],
+  "extracted_rows": [
+    {"q": "Excuse me. Where's the baker's?", "a": "It's on the right."},
+    {"q": "Excuse me. Where's the book shop?", "a": "It's on the right."},
+    {"q": "Excuse me. Where's the book shop?", "a": "It's opposite the baker's."}
+  ],
+  "appended_rows": [
+    {"q": "Excuse me. Where's the baker's?", "a": "It's on the right."},
+    {"q": "Excuse me. Where's the book shop?", "a": "It's on the right."},
+    {"q": "Excuse me. Where's the book shop?", "a": "It's opposite the baker's."}
+  ]
+}

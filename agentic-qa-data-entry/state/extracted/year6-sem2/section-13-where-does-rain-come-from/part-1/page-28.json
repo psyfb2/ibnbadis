@@ -1,0 +1,15 @@
+{
+  "page_key": "year6-sem2/section-13-where-does-rain-come-from/part-1/page-28",
+  "timestamp": "2026-05-12T18:33:00Z",
+  "existing_rows": [],
+  "extracted_rows": [
+    {"q": "Where do you think rain comes from?", "a": "From the sea or rivers."},
+    {"q": "Now what do you think is happening?", "a": "The vapour is hot but it cools when it rises."},
+    {"q": "OK class, how do you think it rains?", "a": "The sun is very hot. The water in the sea becomes warm and some of it changes into vapour."}
+  ],
+  "appended_rows": [
+    {"q": "Where do you think rain comes from?", "a": "From the sea or rivers."},
+    {"q": "Now what do you think is happening?", "a": "The vapour is hot but it cools when it rises."},
+    {"q": "OK class, how do you think it rains?", "a": "The sun is very hot. The water in the sea becomes warm and some of it changes into vapour."}
+  ]
+}

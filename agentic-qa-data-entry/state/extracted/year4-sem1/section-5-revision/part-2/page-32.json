@@ -1,0 +1,15 @@
+{
+  "page_key": "year4-sem1/section-5-revision/part-2/page-32",
+  "timestamp": "2026-05-11T16:22:00Z",
+  "existing_rows": [],
+  "extracted_rows": [
+    {"q": "What would you like?", "a": "I'd like a carton of juice."},
+    {"q": "How much is it?", "a": "It's five dinars."}
+  ],
+  "appended_rows": [
+    {"q": "What would you like?", "a": "I'd like a carton of juice."},
+    {"q": "How much is it?", "a": "It's five dinars."}
+  ],
+  "save_button_color_after_save": "rgb(0, 128, 0)",
+  "notes": "First save 5xx (red); retry succeeded (green)."
+}

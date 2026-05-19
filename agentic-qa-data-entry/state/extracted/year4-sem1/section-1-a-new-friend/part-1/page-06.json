@@ -1,0 +1,18 @@
+{
+  "page_key": "year4-sem1/section-1-a-new-friend/part-1/page-06",
+  "timestamp": "2026-05-11T15:46:30Z",
+  "existing_rows": [
+    {"q": "What`s his name?", "a": "His name`s Omar"},
+    {"q": "What`s her name?", "a": "Her name`s nour"},
+    {"q": "What does he do?", "a": "He`s a doctor"},
+    {"q": "What does she do?", "a": "She`s a housewife"},
+    {"q": "Where`s he from ?", "a": "He`s from nablus"},
+    {"q": "Where`s she from?", "a": "She`s from bethelehem"}
+  ],
+  "extracted_rows": [
+    {"q": "What's her name?", "a": "Her name's Nour."},
+    {"q": "What does she do?", "a": "She's a housewife."},
+    {"q": "Where's she from?", "a": "She's from Bethlehem."}
+  ],
+  "appended_rows": []
+}

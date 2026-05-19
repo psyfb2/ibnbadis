@@ -1,0 +1,16 @@
+{
+  "page_key": "year6-sem1/section-4-films-i-like/part-1/page-31",
+  "timestamp": "2026-05-12T14:59:45Z",
+  "existing_rows": [],
+  "extracted_rows": [
+    {"q": "What happened while the oxen were eating?", "a": "While the oxen …"},
+    {"q": "What happened while the diver was swimming?", "a": "While the diver …"},
+    {"q": "What happened while the dog was chasing the cat?", "a": "While the dog …"}
+  ],
+  "appended_rows": [
+    {"q": "What happened while the oxen were eating?", "a": "While the oxen …"},
+    {"q": "What happened while the diver was swimming?", "a": "While the diver …"},
+    {"q": "What happened while the dog was chasing the cat?", "a": "While the dog …"}
+  ],
+  "note": "Three Q→A pairs with partial model answers from 'Read aloud. Then answer the questions.' section. userqanssave=true on first attempt."
+}

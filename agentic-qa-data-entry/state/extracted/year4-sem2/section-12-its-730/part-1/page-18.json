@@ -1,0 +1,26 @@
+{
+  "page_key": "year4-sem2/section-12-its-730/part-1/page-18",
+  "timestamp": "2026-05-11T18:59:24Z",
+  "existing_rows": [
+    {"q": "When does school start in Britain?", "a": "It starts at eight forty five."},
+    {"q": "When does school finish?", "a": "It finishes at three."},
+    {"q": "What about break?", "a": "It starts at ten forty five and finishes at eleven o`clock."},
+    {"q": "When does school start in Palestine?", "a": "It starts at eight o`clock."},
+    {"q": "When does school finish?", "a": "It finishes at one thirty."},
+    {"q": "What about break?", "a": "It starts at ten fifteen and finishes at ten forty five o`clock."},
+    {"q": "When does open day start?", "a": "It starts at nine thirty."},
+    {"q": "When does open day it finish?", "a": "t finishes at one forty five.."},
+    {"q": "When does acting start?", "a": "It starts at ten o`clock."},
+    {"q": "When does acting finish?", "a": "t finishes at eleven fifteen."},
+    {"q": "When does dance start?", "a": "It starts at two forty five."},
+    {"q": "When does dance finish?", "a": "t finishes at four o`clock."}
+  ],
+  "extracted_rows": [
+    {"q": "When does art start?", "a": "It starts at 11:30."},
+    {"q": "When does art finish?", "a": "It finishes at 12:30."}
+  ],
+  "appended_rows": [
+    {"q": "When does art start?", "a": "It starts at 11:30."},
+    {"q": "When does art finish?", "a": "It finishes at 12:30."}
+  ]
+}

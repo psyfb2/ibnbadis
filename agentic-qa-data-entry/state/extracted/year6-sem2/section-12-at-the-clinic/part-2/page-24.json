@@ -1,0 +1,11 @@
+{
+  "page_key": "year6-sem2/section-12-at-the-clinic/part-2/page-24",
+  "timestamp": "2026-05-12T18:29:30Z",
+  "existing_rows": [],
+  "extracted_rows": [
+    {"q": "How long have you had flu?", "a": "I have had flu since yesterday."}
+  ],
+  "appended_rows": [
+    {"q": "How long have you had flu?", "a": "I have had flu since yesterday."}
+  ]
+}

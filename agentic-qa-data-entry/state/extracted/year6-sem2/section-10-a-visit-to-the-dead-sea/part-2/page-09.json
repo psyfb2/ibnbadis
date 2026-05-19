@@ -1,0 +1,25 @@
+{
+  "page_key": "year6-sem2/section-10-a-visit-to-the-dead-sea/part-2/page-09",
+  "timestamp": "2026-05-12T18:14:00Z",
+  "existing_rows": [
+    {"q": "Who`s talking?", "a": "Rania and Amy are talking."},
+    {"q": "What did Rania`s dad do in the dead sea?", "a": "He was floating in the water and reading a book."},
+    {"q": "Why are there no fish or plants?", "a": "The dead sea is too salty."},
+    {"q": "What do people do there?", "a": "They put mud on their skin."},
+    {"q": "What were the desert animals doing?", "a": "They were dinking water."}
+  ],
+  "extracted_rows": [
+    {"q": "Have you ever eaten soap?", "a": "Yuck no, I haven't!"},
+    {"q": "Have you ever fried an egg?", "a": "Of course I have!"},
+    {"q": "Have you ever fallen down?", "a": "Yes, I have. Lots of times."},
+    {"q": "Have you ever banged your finger?", "a": "Ouch! No, I haven't."},
+    {"q": "Have you ever, ever, ever done anything bad?", "a": "No, of course we haven't!"}
+  ],
+  "appended_rows": [
+    {"q": "Have you ever eaten soap?", "a": "Yuck no, I haven't!"},
+    {"q": "Have you ever fried an egg?", "a": "Of course I have!"},
+    {"q": "Have you ever fallen down?", "a": "Yes, I have. Lots of times."},
+    {"q": "Have you ever banged your finger?", "a": "Ouch! No, I haven't."},
+    {"q": "Have you ever, ever, ever done anything bad?", "a": "No, of course we haven't!"}
+  ]
+}

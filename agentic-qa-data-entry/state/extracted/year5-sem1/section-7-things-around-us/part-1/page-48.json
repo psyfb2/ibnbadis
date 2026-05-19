@@ -1,0 +1,16 @@
+{
+  "page_key": "year5-sem1/section-7-things-around-us/part-1/page-48",
+  "timestamp": "2026-05-12T09:48:40Z",
+  "existing_rows": [
+    {"q": "I want to watch the football and the sports news.", "a": "Ok. I want to watch the volleyball, It`s earlier than the football."},
+    {"q": "Oh look! I like that house. It`s not cheap!", "a": "It`s very expensive. It`s the most expensive house in the street."},
+    {"q": "What a beautiful bird! It`s more beautiful bird than the birds in London. Do you this bird in England?", "a": "No this bird doesn`t live in England. It likes warm weather. It`s very cool in England."},
+    {"q": "We need a new car. Which car do you like?", "a": "I like this one. It`s not too expensive. It`s not too big. It`s difficult to clean big dirty cars."}
+  ],
+  "extracted_rows": [
+    {"q": "Do we have this bird in England?", "a": "No this bird doesn't live in England. It likes warm weather. It's very cool in England."},
+    {"q": "Which car do you like?", "a": "I like this one. It's not too expensive. It's not too big. It's difficult to clean big dirty cars."}
+  ],
+  "appended_rows": [],
+  "note": "Unit 7 Period 1: 4 panels of dialogue. Existing rows already capture the bubble pairs (including the Q→A from panels 3/4 that I'd extract). Per runbook §4.6, never overwrite existing rows. Save: no console error."
+}

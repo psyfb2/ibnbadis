@@ -1,0 +1,30 @@
+{
+  "page_key": "year6-sem2/section-11-exciting-things-to-do/part-1/page-12",
+  "timestamp": "2026-05-12T18:17:00Z",
+  "existing_rows": [
+    {"q": "Have you ever sailed in a boat?", "a": "I have sailed in a boat."},
+    {"q": "Have you ever used goggles and flippers?", "a": "No, I have never used goggles and flippers."},
+    {"q": "Has anyone seen desert animals?", "a": "Yes I have, I saw wildcats and a hedgehog."},
+    {"q": "Have you ever ridden a camel?", "a": "Yes, of course in Jericho."},
+    {"q": "Have you ridden a horse?", "a": "Yes, I love horse riding."},
+    {"q": "Have you ever camped?", "a": "Yes, of course when I was young."},
+    {"q": "Have you ever slept under the stars?", "a": "Yes, I have."},
+    {"q": "Have you ever got at sunrise?", "a": "Yes, it`s cool at sunrise."},
+    {"q": "What can you sail in?", "a": "You can sail in a boat."},
+    {"q": "What can you see under the water, fish, plants and ...?", "a": "Corals."},
+    {"q": "What desert animals do you know, Jerboa, gazelle and... ?", "a": "Wild cats."},
+    {"q": "What animal can you ride?", "a": "You can ride camels."},
+    {"q": "How does it feel at sunrise?", "a": "It is cool at sunrise."}
+  ],
+  "extracted_rows": [
+    {"q": "Have you ever sailed in a boat?", "a": "Yes, I have. I sailed in a boat at summer camp last year."},
+    {"q": "Have you ever used goggles and flippers?", "a": "No, I've never used goggles and flippers. But I've swum under the water and I've seen coral!"},
+    {"q": "Has anyone seen desert animals?", "a": "Yes, I have. I saw wild cats and a hedgehog while camping."},
+    {"q": "Have you ever ridden a camel?", "a": "Yes, of course! In Jericho. I love riding camels."},
+    {"q": "Have you ever ridden a horse?", "a": "Yes! I love horse riding. It's great fun!"},
+    {"q": "Have you ever camped?", "a": "Yes, of course, when I was young! We camped at the Dead Sea."},
+    {"q": "Have you ever got up at sunrise?", "a": "Yes I have. At the Dead Sea, it's cool at sunrise."}
+  ],
+  "appended_rows": [],
+  "note": "All extracted Q&A pairs already present (with minor phrasing variations) in existing rows; no new rows added per non-duplicate rule."
+}

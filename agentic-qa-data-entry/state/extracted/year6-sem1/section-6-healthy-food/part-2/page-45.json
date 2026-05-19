@@ -1,0 +1,14 @@
+{
+  "page_key": "year6-sem1/section-6-healthy-food/part-2/page-45",
+  "timestamp": "2026-05-12T15:25:25Z",
+  "existing_rows": [],
+  "extracted_rows": [
+    {"q": "Should I eat them? Should he eat them? Should they eat them?", "a": "Yes, I should. Yes, he should. Yes, they should. Only eat a little. Only eat them sometimes. Don't eat lots!"},
+    {"q": "Should I eat them? Should she eat them? Should we eat them?", "a": "Yes, I should. Yes, she should. Yes, we should. Eat lots of them. Eat them always. Eat them often!"}
+  ],
+  "appended_rows": [
+    {"q": "Should I eat them? Should he eat them? Should they eat them?", "a": "Yes, I should. Yes, he should. Yes, they should. Only eat a little. Only eat them sometimes. Don't eat lots!"},
+    {"q": "Should I eat them? Should she eat them? Should we eat them?", "a": "Yes, I should. Yes, she should. Yes, we should. Eat lots of them. Eat them always. Eat them often!"}
+  ],
+  "note": "Two Q→A 'should I eat them' chants from the listen-and-repeat passage. Retry saved successfully."
+}

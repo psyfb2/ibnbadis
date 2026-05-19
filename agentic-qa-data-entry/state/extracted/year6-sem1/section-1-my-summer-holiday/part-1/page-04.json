@@ -1,0 +1,17 @@
+{
+  "page_key": "year6-sem1/section-1-my-summer-holiday/part-1/page-04",
+  "timestamp": "2026-05-12T14:09:00Z",
+  "existing_rows": [
+    {"q": "Welcome back. Amy! I missed you. Did you have a nice time at the summer camp?", "a": "Yes. I had a great time. But I missed you too!"},
+    {"q": "Oh dear. What happened to your arm?", "a": "I fell down and broke it."},
+    {"q": "We played all day. Amy was very tired. Then she had an accident. She fell down the stairs of the tree house and broke her arm.", "a": "How awful!"},
+    {"q": "My friend Ann heard me fall. She called a teacher and I went to hospital.", "a": "Phew! Thank goodness."},
+    {"q": "Did you still had a good time at summer camp?", "a": "Oh yes. We had a great time. We played lots of sports. we went swimming every day! Look- My friends wrote their names."}
+  ],
+  "extracted_rows": [
+    {"q": "Did you have a nice time at summer camp?", "a": "Yes, I had a great time, but I missed you too!"},
+    {"q": "What happened to your arm?", "a": "I fell down and broke it."},
+    {"q": "Did you still have a good time at summer camp?", "a": "Oh yes, we had a great time. We played lots of sports and we went swimming every day! Look - my friends wrote their names."}
+  ],
+  "appended_rows": []
+}

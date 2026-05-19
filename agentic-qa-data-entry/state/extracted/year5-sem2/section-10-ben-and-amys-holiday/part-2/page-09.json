@@ -1,0 +1,15 @@
+{
+  "page_key": "year5-sem2/section-10-ben-and-amys-holiday/part-2/page-09",
+  "timestamp": "2026-05-12T12:37:00Z",
+  "existing_rows": [
+    {"q": "Who is talking?", "a": "It was Sarah` sister."},
+    {"q": "How many photos did Ben take? Which ones?", "a": "A lot of photos of the mountains."},
+    {"q": "How heavy was the fish?", "a": "About five kilos."},
+    {"q": "How long did the fish take to cook?", "a": "About two hours."},
+    {"q": "Who ate the fish?", "a": "They all ate it."},
+    {"q": "Who went for a bike ride?", "a": "They all went for a bike ride."}
+  ],
+  "extracted_rows": [],
+  "appended_rows": [],
+  "note": "Page is Listen-and-answer/Read-and-circle/Tongue-twisters/Ask-and-answer exercises (no canonical answers printed on page). 6 existing comprehension Q&A rows are sufficient. Saved without modifications."
+}

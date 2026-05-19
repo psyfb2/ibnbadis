@@ -1,0 +1,18 @@
+{
+  "page_key": "year4-sem2/section-10-visiting-palestine/part-2/page-08",
+  "timestamp": "2026-05-11T18:01:55Z",
+  "existing_rows": [
+    {"q": "When are you going to visit Bethlehem Fiona?", "a": "We are going to visit Bethlehem on Sunday."},
+    {"q": "What are you going to see there?", "a": "We are going to see the Church of Nativity."},
+    {"q": "When are you going to visit the Dead sea?", "a": "We are going to visit the Dead sea on Monday"},
+    {"q": "What are you going to do there?", "a": "We are going to go to the beach."},
+    {"q": "When are you going to visit Haifa?", "a": "We are going to visit Haifa on Thursday"},
+    {"q": "What are you going to see there?", "a": "We are going to see Mount Carmel."}
+  ],
+  "extracted_rows": [
+    {"q": "What are you going to do on Friday?", "a": "On Friday I'm going to visit Jerusalem. I'm going to see the Dome of the Rock."}
+  ],
+  "appended_rows": [
+    {"q": "What are you going to do on Friday?", "a": "On Friday I'm going to visit Jerusalem. I'm going to see the Dome of the Rock."}
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "page_key": "year4-sem1/section-7-at-the-restaurant/part-1/page-40",
+  "timestamp": "2026-05-11T17:13:50Z",
+  "existing_rows": [],
+  "extracted_rows": [
+    {"q": "Excuse me. Could I have a pen, please?", "a": "Yes, of course."}
+  ],
+  "appended_rows": [
+    {"q": "Excuse me. Could I have a pen, please?", "a": "Yes, of course."}
+  ],
+  "save_button_color_after_save": "rgb(0, 128, 0)",
+  "notes": "Unit 7 'At the restaurant' opener. Ex 1 vocab tick (fork, spoon, knife, glass, napkin). Ex 2 fill-in 'X asks for a ___'. Ex 3 listen instruction. Ex 4 'Say.' has the only genuine Q→A pair."
+}

@@ -1,0 +1,18 @@
+{
+  "page_key": "year5-sem1/section-3-mini-olympics/part-1/page-20",
+  "timestamp": "2026-05-12T08:19:24Z",
+  "existing_rows": [],
+  "extracted_rows": [
+    {"q": "Run fast Ben! I want you to come first!", "a": "Walk fast Rania! You're coming second. Fatima is third!"},
+    {"q": "Reem is very fast! She's first! Well done Reem!", "a": "Look! Omar is swimming fast. He's third!"},
+    {"q": "No, he's not. He's fourth. Look at the board.", "a": "Come on Rania, you are ninth!"},
+    {"q": "No, she isn't, she's eighth! No, she's fifth!", "a": "Look, she is fifth."}
+  ],
+  "appended_rows": [
+    {"q": "Run fast Ben! I want you to come first!", "a": "Walk fast Rania! You're coming second. Fatima is third!"},
+    {"q": "Reem is very fast! She's first! Well done Reem!", "a": "Look! Omar is swimming fast. He's third!"},
+    {"q": "No, he's not. He's fourth. Look at the board.", "a": "Come on Rania, you are ninth!"},
+    {"q": "No, she isn't, she's eighth! No, she's fifth!", "a": "Look, she is fifth."}
+  ],
+  "note": "Page dialogue captured as 4 Q/A row pairs (page-12-style dialogue capture). Most speech bubbles are commentary/encouragement on Mini-Olympics races, not formal Q→A. Saved successfully."
+}

@@ -1,0 +1,6 @@
+[     845ms] TypeError: Cannot read properties of null (reading 'style')
+    at ddpanel.initpanel (https://myquds.ibnbadis.org/includeahg/js/dddropdownpanel.js:118:11)
+    at https://myquds.ibnbadis.org/includeahg/js/dddropdownpanel.js:24:50
+[   10709ms] [WARNING] Alerted:  @ https://myquds.ibnbadis.org/content.php?gid=1136_0_1:5
+[   14327ms] [ERROR] Failed to load resource: net::ERR_NAME_NOT_RESOLVED @ https://res4sites/templates/myquds_ibnbadis/SHimages/usericon0.png:0
+[   14957ms] [ERROR] Failed to load resource: net::ERR_NAME_NOT_RESOLVED @ https://ahgsites.earabics.com/AppsDZlast/Icons/IZP0A16D.gif:0

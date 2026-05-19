@@ -1,0 +1,14 @@
+{
+  "page_key": "year4-sem2/section-15-i-can-do-it/part-1/page-34",
+  "timestamp": "2026-05-12T06:42:15Z",
+  "existing_rows": [],
+  "extracted_rows": [
+    {"q": "What can you do?", "a": "I can play volleyball."},
+    {"q": "What can you do?", "a": "I can play the drums."}
+  ],
+  "appended_rows": [
+    {"q": "What can you do?", "a": "I can play volleyball."},
+    {"q": "What can you do?", "a": "I can play the drums."}
+  ],
+  "notes": "First save attempt returned [\"\",false]; retried successfully."
+}

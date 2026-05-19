@@ -1,0 +1,13 @@
+{
+  "page_key": "year6-sem2/section-17-good-manners/part-1/page-56",
+  "timestamp": "2026-05-12T19:00:00Z",
+  "existing_rows": [],
+  "extracted_rows": [
+    {"q": "Where shall we play?", "a": "OK, let's play football."},
+    {"q": "Hey Ben, did you watch TV last night?", "a": "Hey Jordan! You shouldn't interrupt while others are speaking. Mum says we should take turns."}
+  ],
+  "appended_rows": [
+    {"q": "Where shall we play?", "a": "OK, let's play football."},
+    {"q": "Hey Ben, did you watch TV last night?", "a": "Hey Jordan! You shouldn't interrupt while others are speaking. Mum says we should take turns."}
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "page_key": "year4-sem2/section-13-good-habits/part-2/page-26",
+  "timestamp": "2026-05-11T19:13:34Z",
+  "existing_rows": [
+    {"q": "Do you help your mum?", "a": "Sometimes."},
+    {"q": "Do you help your mum?", "a": "I always help my mum."},
+    {"q": "Do you wash the dishes?", "a": "Sometimes."},
+    {"q": "Do you brush your teeth?", "a": "Sometimes."},
+    {"q": "Do you get up early?", "a": "Always."},
+    {"q": "Do you go to bed late?", "a": "Never."},
+    {"q": "Who always helps his mum?", "a": ""},
+    {"q": "Who sometimes washes the dishes?", "a": ""},
+    {"q": "Who always brushes his teeth?", "a": ""},
+    {"q": "Who always gets up early?", "a": ""},
+    {"q": "Who never goes to bed late?", "a": ""}
+  ],
+  "extracted_rows": [
+    {"q": "Do you wash the dishes?", "a": "I always wash the dishes."}
+  ],
+  "appended_rows": [
+    {"q": "Do you wash the dishes?", "a": "I always wash the dishes."}
+  ]
+}

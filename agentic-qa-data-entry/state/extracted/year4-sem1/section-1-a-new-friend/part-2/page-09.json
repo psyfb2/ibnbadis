@@ -1,0 +1,11 @@
+{
+  "page_key": "year4-sem1/section-1-a-new-friend/part-2/page-09",
+  "timestamp": "2026-05-11T15:51:30Z",
+  "existing_rows": [
+    {"q": "What`s your name?", "a": "My name`s Ali"},
+    {"q": "What`s your favorite hobby?", "a": "My favorite hobby is reading"}
+  ],
+  "extracted_rows": [],
+  "appended_rows": [],
+  "notes": "Page 9 has Say-and-tick template (answers as '...'), Write-in-copybook prompt, Play activity. No canonical Q→A pairs."
+}

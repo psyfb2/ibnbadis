@@ -1,0 +1,23 @@
+{
+  "page_key": "year5-sem2/section-12-omar-and-ranias-visit-to-qalqilya/part-2/page-25",
+  "timestamp": "2026-05-12T12:56:15Z",
+  "existing_rows": [
+    {"q": "Who`s talking?", "a": "Rania, Omar, the mother and father."},
+    {"q": "Why was mum happy?", "a": "She happy because the car started moving."},
+    {"q": "Why did Rania like singing?", "a": "She likes singing with her mum."},
+    {"q": "What did mum give to Rania?", "a": "She gave Rania some fruit."},
+    {"q": "What did Omar want to do?", "a": "He wanted to visit a fruit and vegetable farm."},
+    {"q": "What did the family think of Omar`s idea?", "a": "They thought it was a great idea."}
+  ],
+  "extracted_rows": [
+    {"q": "What's black and white and red all over?", "a": "A hot zebra."},
+    {"q": "Which month has 28 days?", "a": "All of them."},
+    {"q": "Take 3 apples from a box with 12 apples. How many apples would you have?", "a": "3 (they are in your hand)."}
+  ],
+  "appended_rows": [
+    {"q": "What's black and white and red all over?", "a": "A hot zebra."},
+    {"q": "Which month has 28 days?", "a": "All of them."},
+    {"q": "Take 3 apples from a box with 12 apples. How many apples would you have?", "a": "3 (they are in your hand)."}
+  ],
+  "note": "Appended 3 JOKES Q&A from activity 3 (Listen and repeat) — these are explicit Q→A pairs printed on the page with `Answer:` labels."
+}

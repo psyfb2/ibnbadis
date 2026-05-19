@@ -1,0 +1,16 @@
+{
+  "page_key": "year6-sem1/section-2-good-friends/part-1/page-15",
+  "timestamp": "2026-05-12T14:33:45Z",
+  "existing_rows": [],
+  "extracted_rows": [
+    {"q": "What did Bilal say?", "a": "He said …"},
+    {"q": "What did Fatima do?", "a": "She left …"},
+    {"q": "What did Omar do?", "a": "He invited …"}
+  ],
+  "appended_rows": [
+    {"q": "What did Bilal say?", "a": "He said …"},
+    {"q": "What did Fatima do?", "a": "She left …"},
+    {"q": "What did Omar do?", "a": "He invited …"}
+  ],
+  "note": "First save attempt got userqanssave=false (transient); retry succeeded."
+}

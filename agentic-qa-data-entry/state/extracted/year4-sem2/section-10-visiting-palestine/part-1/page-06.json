@@ -1,0 +1,11 @@
+{
+  "page_key": "year4-sem2/section-10-visiting-palestine/part-1/page-06",
+  "timestamp": "2026-05-11T17:57:45Z",
+  "existing_rows_summary": "14+ existing rows covering all days of week Q-A with destinations (Al-Aqsa, Dome of Rock, market, Dead Sea, Mount of Olives, old city, Bethlehem) plus When-questions.",
+  "extracted_rows": [
+    {"q": "What are we going to do on Friday?", "a": "We're going to see Al-Aqsa Mosque."},
+    {"q": "What are we going to do on Friday?", "a": "On Friday we're going to visit Al-Aqsa Mosque."}
+  ],
+  "appended_rows": [],
+  "notes": "Existing rows comprehensively cover both extracted speech-bubble exchanges (with minor stylistic differences). Skipped append per conservative duplicate handling."
+}

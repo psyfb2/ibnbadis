@@ -1,0 +1,15 @@
+{
+  "page_key": "year4-sem1/section-8-my-favourite-season/part-2/page-50",
+  "timestamp": "2026-05-11T17:25:55Z",
+  "existing_rows": [],
+  "extracted_rows": [
+    {"q": "What's your favourite season?", "a": "My favourite season is autumn."},
+    {"q": "What do you like to do?", "a": "I like to have a picnic."}
+  ],
+  "appended_rows": [
+    {"q": "What's your favourite season?", "a": "My favourite season is autumn."},
+    {"q": "What do you like to do?", "a": "I like to have a picnic."}
+  ],
+  "save_button_color_after_save": "rgb(0, 128, 0)",
+  "notes": "Ex 1 tick chart + sentence fill-in. Ex 3 'Say.' two Q→A pairs (favourite season, like to do). Saved on retry (attempt 2)."
+}

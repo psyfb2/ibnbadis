@@ -1,0 +1,24 @@
+[    1395ms] ReferenceError: ddmegamenu is not defined
+    at https://myquds.ibnbadis.org/login.php?ahg=2:1477:2
+[    1416ms] TypeError: $(...).scrollToFixed is not a function
+    at HTMLDocument.<anonymous> (https://myquds.ibnbadis.org/login.php?ahg=2:5262:34)
+    at Object.resolveWith (https://myquds.ibnbadis.org/jscripts/infusion/InfusionAll.js:16:12559)
+    at jQuery.ready (https://myquds.ibnbadis.org/jscripts/infusion/InfusionAll.js:16:5061)
+    at HTMLDocument.DOMContentLoaded (https://myquds.ibnbadis.org/jscripts/infusion/InfusionAll.js:16:11516)
+[    1444ms] TypeError: Cannot read properties of null (reading 'style')
+    at HTMLDocument.<anonymous> (https://myquds.ibnbadis.org/login.php?ahg=2:2838:42)
+[    1461ms] [VERBOSE] [DOM] Input elements should have autocomplete attributes (suggested: "current-password"): (More info: https://goo.gl/9p2vKq) %o @ https://myquds.ibnbadis.org/login.php?ahg=2:0
+[    1813ms] ReferenceError: ddmegamenu is not defined
+    at https://myquds.ibnbadis.org/login.php?ahg=2:1085:9
+[   22783ms] TypeError: Cannot read properties of null (reading 'style')
+    at ddpanel.initpanel (https://myquds.ibnbadis.org/includeahg/js/dddropdownpanel.js:118:11)
+    at https://myquds.ibnbadis.org/includeahg/js/dddropdownpanel.js:24:50
+[   32128ms] [WARNING] Alerted:  @ https://myquds.ibnbadis.org/content.php?gid=1070_0_1:5
+[   38382ms] [ERROR] Failed to load resource: net::ERR_NAME_NOT_RESOLVED @ https://res4sites/templates/myquds_ibnbadis/SHimages/usericon0.png:0
+[   39490ms] [ERROR] Failed to load resource: net::ERR_NAME_NOT_RESOLVED @ https://ahgsites.earabics.com/AppsDZlast/Icons/IZP0A16D.gif:0
+[   66827ms] [WARNING] Alerted:  @ https://myquds.ibnbadis.org/content.php?gid=1087_0_12:5
+[   70660ms] [ERROR] Failed to load resource: net::ERR_NAME_NOT_RESOLVED @ https://res4sites/templates/myquds_ibnbadis/SHimages/usericon0.png:0
+[   70719ms] [ERROR] Failed to load resource: net::ERR_NAME_NOT_RESOLVED @ https://ahgsites.earabics.com/AppsDZlast/Icons/IZP0A16D.gif:0
+[  316431ms] [WARNING] Alerted:  @ https://myquds.ibnbadis.org/content.php?gid=1090_0_14:5
+[  316476ms] [ERROR] Failed to load resource: net::ERR_NAME_NOT_RESOLVED @ https://res4sites/templates/myquds_ibnbadis/SHimages/usericon0.png:0
+[  319683ms] [ERROR] Failed to load resource: net::ERR_NAME_NOT_RESOLVED @ https://ahgsites.earabics.com/AppsDZlast/Icons/IZP0A16D.gif:0

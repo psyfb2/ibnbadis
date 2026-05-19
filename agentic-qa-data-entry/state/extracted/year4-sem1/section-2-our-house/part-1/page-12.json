@@ -1,0 +1,17 @@
+{
+  "page_key": "year4-sem1/section-2-our-house/part-1/page-12",
+  "timestamp": "2026-05-11T15:55:30Z",
+  "existing_rows": [
+    {"q": "Where`s mum?", "a": "She`s in the garden"},
+    {"q": "What`s she doing?", "a": "She`s reading a newspaper"},
+    {"q": "Where`s dad?", "a": "He`s in the bathroom"},
+    {"q": "What`s he doing?", "a": "He`s having a shower"}
+  ],
+  "extracted_rows": [
+    {"q": "Where's mum?", "a": "She's in the garden."},
+    {"q": "What's she doing?", "a": "She's reading a newspaper."},
+    {"q": "Where's dad?", "a": "He's in the bathroom."},
+    {"q": "What's he doing?", "a": "He's having a shower."}
+  ],
+  "appended_rows": []
+}

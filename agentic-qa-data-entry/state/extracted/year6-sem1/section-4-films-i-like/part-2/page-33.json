@@ -1,0 +1,22 @@
+{
+  "page_key": "year6-sem1/section-4-films-i-like/part-2/page-33",
+  "timestamp": "2026-05-12T15:04:10Z",
+  "existing_rows": [],
+  "extracted_rows": [
+    {"q": "What were you doing?", "a": "I was playing a game!"},
+    {"q": "What were you thinking?", "a": "I was feeling happy."},
+    {"q": "Where were you going?", "a": "I was going to the cinema."},
+    {"q": "When were you going?", "a": "I was going last Saturday."},
+    {"q": "Who were you with?", "a": "I was with my friend."},
+    {"q": "What were you watching?", "a": "We were watching a film!"}
+  ],
+  "appended_rows": [
+    {"q": "What were you doing?", "a": "I was playing a game!"},
+    {"q": "What were you thinking?", "a": "I was feeling happy."},
+    {"q": "Where were you going?", "a": "I was going to the cinema."},
+    {"q": "When were you going?", "a": "I was going last Saturday."},
+    {"q": "Who were you with?", "a": "I was with my friend."},
+    {"q": "What were you watching?", "a": "We were watching a film!"}
+  ],
+  "note": "Six Q→A pairs from the 'Listen and repeat' passage (past continuous Q&A model). First save attempt got userqanssave=false; retry succeeded."
+}

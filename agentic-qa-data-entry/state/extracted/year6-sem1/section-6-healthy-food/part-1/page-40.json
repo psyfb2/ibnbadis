@@ -1,0 +1,16 @@
+{
+  "page_key": "year6-sem1/section-6-healthy-food/part-1/page-40",
+  "timestamp": "2026-05-12T15:17:00Z",
+  "existing_rows": [],
+  "extracted_rows": [
+    {"q": "Should I eat ice-cream?", "a": "Yes, but only a little because it's very sweet. Vegetable soup is good for you!"},
+    {"q": "Should I eat rice and meat?", "a": "Yes, you should. Rice and meat are good for you because they make you strong."},
+    {"q": "Why shouldn't we eat lots of fried food?", "a": "Let me think, because fried food makes you fat. It's not healthy."}
+  ],
+  "appended_rows": [
+    {"q": "Should I eat ice-cream?", "a": "Yes, but only a little because it's very sweet. Vegetable soup is good for you!"},
+    {"q": "Should I eat rice and meat?", "a": "Yes, you should. Rice and meat are good for you because they make you strong."},
+    {"q": "Why shouldn't we eat lots of fried food?", "a": "Let me think, because fried food makes you fat. It's not healthy."}
+  ],
+  "note": "Three Q→A pairs from Healthy food dialogue (Unit 6). First save attempt got userqanssave=false; retry succeeded."
+}
