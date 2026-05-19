@@ -9,7 +9,7 @@ from __future__ import annotations
 
 from pathlib import Path
 
-from pydantic import SecretStr
+from pydantic import SecretStr, ValidationError
 from pydantic_settings import BaseSettings, SettingsConfigDict
 
 
@@ -43,16 +43,14 @@ def get_settings() -> Settings:
             required env vars are absent. The password value is never included.
     """
     try:
-        return Settings()  # type: ignore[call-arg]  # values come from env
-    except Exception as exc:  # pydantic ValidationError -> friendly message
+        return Settings()  # values come from env / .env (pydantic-settings)
+    except ValidationError as exc:  # -> friendly, secret-free message
         missing: list[str] = []
-        errors = getattr(exc, "errors", None)
-        if callable(errors):
-            for err in exc.errors():  # type: ignore[attr-defined]
-                if err.get("type") == "missing":
-                    loc = err.get("loc", ())
-                    if loc:
-                        missing.append(f"IBNBADIS_{str(loc[0]).upper()}")
+        for err in exc.errors():
+            if err.get("type") == "missing":
+                loc = err.get("loc", ())
+                if loc:
+                    missing.append(f"IBNBADIS_{str(loc[0]).upper()}")
         if missing:
             raise RuntimeError(
                 "Missing required environment variable(s): "

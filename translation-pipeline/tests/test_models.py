@@ -89,6 +89,18 @@ def test_writeback_status_enum_enforced() -> None:
         Page(writeback_status="bogus")  # type: ignore[arg-type]
 
 
+def test_store_mapping_helpers() -> None:
+    store = _sample_store()
+    assert PAGE_KEY in store
+    assert store.get(PAGE_KEY) is store[PAGE_KEY]
+    assert store.get("missing/key/page-99") is None
+    sentinel = Page()
+    assert store.get("missing/key/page-99", sentinel) is sentinel
+    assert list(iter(store)) == [PAGE_KEY]
+    assert list(store.keys()) == [PAGE_KEY]
+    assert len(store) == 1
+
+
 def test_row_index_is_list_position() -> None:
     rows = [Row(tq=f"q{i}") for i in range(3)]
     page = Page(rows=rows)

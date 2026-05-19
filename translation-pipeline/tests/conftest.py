@@ -19,8 +19,10 @@ def store_path(tmp_path: Path) -> Path:
 
 
 @pytest.fixture
-def clean_ibnbadis_env(monkeypatch: pytest.MonkeyPatch) -> None:
-    """Remove any ambient IBNBADIS_* / LOG_LEVEL env so tests are hermetic."""
+def clean_ibnbadis_env(monkeypatch: pytest.MonkeyPatch, tmp_path: Path) -> None:
+    """Hermetic config env: drop ambient IBNBADIS_*/LOG_LEVEL AND chdir into an
+    empty tmp dir so a developer's gitignored ``.env`` cannot leak in and give a
+    false green (pydantic-settings reads ``.env`` relative to CWD)."""
     for var in (
         "IBNBADIS_USERNAME",
         "IBNBADIS_PASSWORD",
@@ -29,6 +31,7 @@ def clean_ibnbadis_env(monkeypatch: pytest.MonkeyPatch) -> None:
         "LOG_LEVEL",
     ):
         monkeypatch.delenv(var, raising=False)
+    monkeypatch.chdir(tmp_path)
 
 
 @pytest.fixture

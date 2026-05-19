@@ -1,4 +1,4 @@
-.PHONY: install install-browsers lint format test scrape validate writeback
+.PHONY: install install-browsers lint format typecheck test scrape validate writeback
 
 # Deterministic dependency install. NO browser download so it always succeeds offline.
 install:
@@ -16,6 +16,10 @@ lint:
 # Auto-format the codebase.
 format:
 	uv run ruff format .
+
+# Static type checking (repo Python standard).
+typecheck:
+	uv run mypy
 
 # Run the unit test suite.
 test:

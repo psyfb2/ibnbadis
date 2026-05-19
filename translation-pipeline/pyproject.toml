@@ -17,6 +17,7 @@ dev = [
     "pytest-mock>=3",
     "ruff>=0.6",
     "pre-commit>=3",
+    "mypy>=1",
 ]
 
 [build-system]
@@ -37,3 +38,11 @@ select = ["E", "F", "I", "UP", "B"]
 [tool.pytest.ini_options]
 testpaths = ["tests"]
 pythonpath = ["src"]
+
+[tool.mypy]
+python_version = "3.12"
+files = ["src"]
+plugins = ["pydantic.mypy"]
+ignore_missing_imports = true
+warn_unused_ignores = true
+warn_redundant_casts = true

@@ -12,6 +12,7 @@ need no schema change.
 
 from __future__ import annotations
 
+from collections.abc import Iterator
 from typing import Literal
 
 from pydantic import BaseModel, ConfigDict, RootModel
@@ -81,7 +82,12 @@ class TranslationStore(RootModel[dict[str, Page]]):
     def __contains__(self, key: str) -> bool:
         return key in self.root
 
-    def __iter__(self):  # type: ignore[override]
+    def get(self, key: str, default: Page | None = None) -> Page | None:
+        return self.root.get(key, default)
+
+    # Intentionally diverges from BaseModel.__iter__ (which yields field
+    # tuples): a RootModel-as-mapping iterates its keys, like a dict.
+    def __iter__(self) -> Iterator[str]:  # type: ignore[override]
         return iter(self.root)
 
     def __len__(self) -> int:
