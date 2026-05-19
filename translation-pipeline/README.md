@@ -17,18 +17,30 @@ The pipeline has three steps:
    `UQ{N}`/`UA{N}` fields and Save, confirming persistence via the `userqanssave.php`
    response body.
 
-> Only steps 1 and 3 contain code. The authoritative operator **RUNBOOK** and the step-2
-> translation procedure are added in later tasks (tasks 6 and 4 respectively). This task
-> delivers only the project scaffold, the data-store schema, and store I/O.
+> Only steps 1 and 3 contain code (step 2 is a no-code manual translation step
+> performed by Claude Code).
 
 Credentials are supplied via environment variables (`IBNBADIS_USERNAME`,
 `IBNBADIS_PASSWORD`) — never hardcoded, logged, or committed.
 
+## Documentation
+
+- **[`RUNBOOK.md`](RUNBOOK.md)** — the authoritative end-to-end operator runbook
+  (prerequisites, the 3-step flow, resume/retry, `writeback_status` semantics,
+  divergences, security). **Start here.**
+- **[`docs/step-2-translation-procedure.md`](docs/step-2-translation-procedure.md)**
+  — the no-code step-2 manual translation contract.
+
 ## Quick commands
 
 ```sh
-make install          # uv sync (no browser download)
-make install-browsers # download Chromium (needed by later tasks)
-make lint             # ruff check + format --check
-make test             # pytest
+make install            # uv sync (no browser download)
+make install-browsers   # download Chromium (required for scrape & writeback)
+make lint typecheck test
+
+# End-to-end pipeline (see RUNBOOK.md for full detail):
+make scrape             # step 1 — scrape English + site state (READ-ONLY)
+#  → step 2: Claude Code fills uq/ua_translation (NO CODE — see step-2 doc)
+make validate           # step 3a — mandatory offline gate, must exit 0
+make writeback          # step 3b — write Arabic back & Save
 ```
