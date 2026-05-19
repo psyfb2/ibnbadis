@@ -26,6 +26,12 @@ BOOK_KEYS: frozenset[str] = frozenset(
     f"year{year}-sem{sem}" for year in (4, 5, 6) for sem in (1, 2)
 )
 
+#: Fixed deterministic ``(year, semester)`` walk order over the six books
+#: (``BOOK_KEYS`` is an unordered frozenset). Lives here — the foundational
+#: book-key module — so scrape (step 1) and write-back (step 3) share the same
+#: ordering without an inter-step import (they communicate only via the store).
+BOOKS: list[tuple[int, int]] = [(4, 1), (4, 2), (5, 1), (5, 2), (6, 1), (6, 2)]
+
 #: Anchored regex for a full page key.
 PAGE_KEY_RE: re.Pattern[str] = re.compile(
     r"^year[456]-sem[12]/[a-z0-9-]+(?:/[a-z0-9-]+)*/page-\d{2,}$"

@@ -19,14 +19,13 @@ import pytest
 from tests.conftest import ARABIC_A, ARABIC_Q
 from translation_pipeline import writeback
 from translation_pipeline.core import build_row
-from translation_pipeline.models import Page, Row
+from translation_pipeline.models import Page, Row, RowFields
 from translation_pipeline.page_keys import book_key, is_valid_page_key
 from translation_pipeline.selectors import Field, TargetField
 from translation_pipeline.site import (
     NavigationError,
     PageContext,
     PanelError,
-    RowFields,
     SiteNavigator,
 )
 from translation_pipeline.store import TranslationStore, load_store, save_store
@@ -540,10 +539,15 @@ def test_writeback_book_double_run_terminal_success_not_renavigated(
     nav1 = make_book_nav([pc(KEY_04)])
     writeback.writeback_book(nav1, 4, 1, store, store_path)
     assert store[KEY_04].writeback_status == "success"
+    # The empty-plan pending->success transition is persisted (no site I/O
+    # occurred, but the status change MUST reach disk) — locks the invariant
+    # against a future "skip save_store for no-op pages" optimisation.
+    assert patched_io["save_store"].call_count == 1
 
     nav2 = make_book_nav([pc(KEY_04)])
     writeback.writeback_book(nav2, 4, 1, store, store_path)
     nav2.open_textapps.assert_not_called()  # resume-skip on re-run
+    assert patched_io["save_store"].call_count == 1  # re-run: no re-persist
 
 
 def test_run_walks_six_books_in_order_one_session_each(

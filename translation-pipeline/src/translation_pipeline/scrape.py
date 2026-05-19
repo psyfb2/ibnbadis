@@ -28,11 +28,10 @@ from pathlib import Path
 from translation_pipeline.config import get_settings
 from translation_pipeline.core import build_row, is_blank
 from translation_pipeline.logging_config import get_logger
-from translation_pipeline.models import Page, Row
-from translation_pipeline.page_keys import BOOK_KEYS, book_key
+from translation_pipeline.models import Page, Row, RowFields
+from translation_pipeline.page_keys import BOOK_KEYS, BOOKS, book_key
 from translation_pipeline.site import (
     PanelError,
-    RowFields,
     SiteNavigator,
     browser_session,
 )
@@ -42,9 +41,6 @@ _log = get_logger(__name__)
 
 #: ``skip_reason`` recorded for a page with no English Q&A at scrape time.
 SKIP_NO_ENGLISH = "no_english_qa"
-
-#: Fixed deterministic walk order (``BOOK_KEYS`` is an unordered frozenset).
-BOOKS: list[tuple[int, int]] = [(4, 1), (4, 2), (5, 1), (5, 2), (6, 1), (6, 2)]
 
 
 # --- Pure core (no Playwright / store I/O — trivially unit-testable) --------

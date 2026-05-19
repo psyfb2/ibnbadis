@@ -17,7 +17,7 @@ import pytest
 
 from translation_pipeline import scrape
 from translation_pipeline.core import build_row
-from translation_pipeline.models import Page, Row
+from translation_pipeline.models import Page, Row, RowFields
 from translation_pipeline.page_keys import book_key, is_valid_page_key
 from translation_pipeline.scrape import (
     SKIP_NO_ENGLISH,
@@ -27,7 +27,6 @@ from translation_pipeline.site import (
     NavigationError,
     PageContext,
     PanelError,
-    RowFields,
     SiteNavigator,
 )
 from translation_pipeline.store import TranslationStore, load_store, save_store

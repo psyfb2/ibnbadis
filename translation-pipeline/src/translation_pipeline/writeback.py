@@ -44,13 +44,11 @@ from playwright.sync_api import Page as PwPage
 from translation_pipeline.config import get_settings
 from translation_pipeline.core import build_row, is_blank
 from translation_pipeline.logging_config import get_logger
-from translation_pipeline.models import Page, Row
-from translation_pipeline.page_keys import BOOK_KEYS, book_key
-from translation_pipeline.scrape import BOOKS
+from translation_pipeline.models import Page, Row, RowFields
+from translation_pipeline.page_keys import BOOK_KEYS, BOOKS, book_key
 from translation_pipeline.selectors import Field, TargetField
 from translation_pipeline.site import (
     PanelError,
-    RowFields,
     SiteNavigator,
     browser_session,
 )
