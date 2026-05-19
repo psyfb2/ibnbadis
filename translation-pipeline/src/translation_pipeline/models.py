@@ -13,9 +13,26 @@ need no schema change.
 from __future__ import annotations
 
 from collections.abc import Iterator
+from dataclasses import dataclass
 from typing import Literal
 
 from pydantic import BaseModel, ConfigDict, RootModel
+
+
+@dataclass(frozen=True)
+class RowFields:
+    """One TextApps row as read from the site (all by ``name``, 0-based).
+
+    The plain transport object produced by the (Playwright) scrape read and
+    consumed by the pure flag logic in :mod:`translation_pipeline.core`. It
+    lives here — not in :mod:`translation_pipeline.site` — so the pure/offline
+    modules (``core``, ``validate``) depend only on this Playwright-free module.
+    """
+
+    tq: str  # Page Questions   (English, read-only source)
+    ta: str  # Page Answers     (English, read-only source)
+    uq: str  # Translated Questions (Arabic, write target — value at scrape time)
+    ua: str  # Translated Answers   (Arabic, write target — value at scrape time)
 
 
 class Row(BaseModel):

@@ -46,8 +46,7 @@ from pathlib import Path
 from translation_pipeline.config import DEFAULT_STORE_PATH
 from translation_pipeline.core import build_row, is_blank
 from translation_pipeline.logging_config import get_logger
-from translation_pipeline.models import TranslationStore
-from translation_pipeline.site import RowFields
+from translation_pipeline.models import RowFields, TranslationStore
 from translation_pipeline.store import load_store
 
 _log = get_logger(__name__)

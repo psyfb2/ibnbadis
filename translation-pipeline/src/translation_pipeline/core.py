@@ -11,14 +11,15 @@ that scrape (step 1), the validator and write-back (step 3) must all agree on:
 Keeping these here (rather than anchoring them in ``scrape`` and importing the
 private ``scrape._is_blank`` across modules) makes the shared contract explicit
 and stops the validator/write-back depending on a module-private implementation
-detail of the scrape step. The module is pure (no Playwright, no store I/O), so
-it is trivially unit-testable and safe for any step to import.
+detail of the scrape step. The module is pure — it imports **only** the
+Playwright-free :mod:`translation_pipeline.models` (no Playwright, no network,
+no store I/O) — so it is trivially unit-testable and safe for any step,
+including the offline validator, to import.
 """
 
 from __future__ import annotations
 
-from translation_pipeline.models import Row
-from translation_pipeline.site import RowFields
+from translation_pipeline.models import Row, RowFields
 
 
 def is_blank(value: str) -> bool:

@@ -27,6 +27,7 @@ from playwright.sync_api import TimeoutError as PlaywrightTimeoutError
 
 from translation_pipeline.config import Settings, get_settings
 from translation_pipeline.logging_config import get_logger
+from translation_pipeline.models import RowFields
 from translation_pipeline.page_keys import book_key, compose_page_key, section_slug
 from translation_pipeline.selectors import (
     ADMIN_PANEL_CLOSE_TEXT,
@@ -82,14 +83,9 @@ class PanelError(SiteError):
     """The TextApps panel could not be opened/closed."""
 
 
-@dataclass(frozen=True)
-class RowFields:
-    """One TextApps row as read from the site (all by ``name``, 0-based)."""
-
-    tq: str  # Page Questions   (English, read-only source)
-    ta: str  # Page Answers     (English, read-only source)
-    uq: str  # Translated Questions (Arabic, write target — value at scrape time)
-    ua: str  # Translated Answers   (Arabic, write target — value at scrape time)
+# ``RowFields`` now lives in the Playwright-free :mod:`translation_pipeline.models`
+# (imported above and re-exported here for backward compatibility) so the pure
+# ``core``/``validate`` modules do not transitively import Playwright.
 
 
 @dataclass(frozen=True)

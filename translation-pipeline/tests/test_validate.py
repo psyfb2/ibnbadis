@@ -14,8 +14,7 @@ import pytest
 from tests.conftest import ARABIC_A, ARABIC_Q
 from translation_pipeline import validate
 from translation_pipeline.core import build_row
-from translation_pipeline.models import Page, Row, TranslationStore
-from translation_pipeline.site import RowFields
+from translation_pipeline.models import Page, Row, RowFields, TranslationStore
 from translation_pipeline.store import save_store
 from translation_pipeline.validate import (
     Finding,
@@ -351,7 +350,12 @@ def test_validate_module_is_read_only_offline() -> None:
             identifiers.add(node.attr)
 
     assert not any("write_helper" in m for m in imported)
+    # The offline/credential-free guarantee is enforced by the module graph:
+    # validate must not (even transitively, via ``site``) pull in Playwright.
+    assert not any("translation_pipeline.site" in m for m in imported)
+    assert not any(m == "playwright" or m.startswith("playwright.") for m in imported)
     forbidden = {
+        "translation_pipeline.site",
         "write_helper",
         "fill_translation",
         "save_page",
