@@ -99,6 +99,12 @@ make scrape ARGS='--headed --book year4-sem1'  # single book, visible (live tuni
   cause no error (CSTC-3 partial-completion handling — see §9).
 - **Resumable**: the store is saved after every page; a killed run resumes from
   disk on restart.
+- **Fail-fast on the unexpected**: only a `PanelError` (TextApps grid never
+  appeared) is recovered per-page (the page is left unrecorded and retried next
+  run). Any *other* unexpected exception on a page (e.g. a Playwright timeout)
+  **aborts the book session by design** — no data is lost (the store on disk is
+  intact and atomic); just re-run `make scrape` and it resumes from disk. This
+  mirrors write-back's fail-fast behaviour (§7).
 - **Merge-refresh** (re-running scrape after step 2 or 3 is safe): a re-scrape
   refreshes the English source, the site snapshot (`tq/ta/uq/ua`) and the four
   per-field flags from live data, but **preserves** every `uq_translation` /

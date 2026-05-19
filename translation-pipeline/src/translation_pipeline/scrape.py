@@ -125,6 +125,14 @@ def scrape_book(
 
     A ``PanelError`` (grid never appeared) leaves the page **unrecorded** so a
     re-run retries it — distinct from a recorded no-English skip.
+
+    Fail-fast (deliberate, mirrors ``writeback``): ``PanelError`` is the *only*
+    per-page recoverable case. Any **other** unexpected exception (e.g. a
+    Playwright timeout on a stale handle) propagates and aborts the book walk
+    by design — the scrape is resumable, so the operator simply re-runs and it
+    resumes from the atomically-saved store on disk. Widening this ``except``
+    was considered and explicitly rejected in review (it would mask genuinely
+    unexpected failures).
     """
     bk = nav.select_book(year, sem)
     _log.info("book_start", book_key=bk)

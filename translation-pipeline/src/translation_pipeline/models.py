@@ -12,7 +12,7 @@ need no schema change.
 
 from __future__ import annotations
 
-from collections.abc import Iterator
+from collections.abc import ItemsView, Iterator, KeysView, ValuesView
 from dataclasses import dataclass
 from typing import Literal
 
@@ -110,11 +110,11 @@ class TranslationStore(RootModel[dict[str, Page]]):
     def __len__(self) -> int:
         return len(self.root)
 
-    def items(self):
+    def items(self) -> ItemsView[str, Page]:
         return self.root.items()
 
-    def keys(self):
+    def keys(self) -> KeysView[str]:
         return self.root.keys()
 
-    def values(self):
+    def values(self) -> ValuesView[Page]:
         return self.root.values()

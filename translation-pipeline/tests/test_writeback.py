@@ -334,6 +334,7 @@ def test_writeback_page_all_defensively_skipped_terminal_success_no_save(
     writeback.writeback_page(nav, pm, KEY_04)
 
     nav.open_textapps.assert_called_once()
+    nav.close_textapps.assert_called_once()  # panel cleaned up via _safe_close
     patched_io["fill"].assert_not_called()
     patched_io["save"].assert_not_called()  # empty form NEVER submitted
     assert pm.writeback_status == "success"  # terminal nothing-to-do
