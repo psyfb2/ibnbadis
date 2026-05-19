@@ -53,6 +53,18 @@ from translation_pipeline.selectors import (
 
 _log = get_logger(__name__)
 
+#: JS predicate for the SPA page-swap settle wait: true once the active
+#: page-number element exists and its trimmed text differs from the value
+#: snapshotted before the next-arrow click.
+# VERIFY-ON-LIVE: the page-number selector/markup is unverified; the
+# snapshot-before-click contract this relies on is fixed.
+_PAGE_SETTLE_JS = (
+    "([sel, prev]) => {"
+    " const el = document.querySelector(sel);"
+    " return el !== null && (el.textContent || '').trim() !== prev;"
+    " }"
+)
+
 
 class SiteError(RuntimeError):
     """Base error for any site/navigation failure."""
@@ -271,33 +283,69 @@ class SiteNavigator:
     def _advance_to_next_page(self) -> bool:
         """Click the next-page arrow; ``False`` at end of book.
 
+        Snapshots the active page-number text **before** clicking so the
+        settle wait can block until the SPA has actually swapped pages.
+
         # VERIFY-ON-LIVE: end-of-book detection is ambiguous in the source —
         # treated as "no enabled next arrow".
         """
         arrow = self._page.query_selector(PAGE_NEXT_ARROW_SELECTOR)
         if arrow is None or arrow.is_disabled():
             return False
+        prev_page_text = self._page_number_text()
         arrow.click()
-        self._wait_for_page_settled()
+        self._wait_for_page_settled(prev_page_text)
         return True
 
-    def _wait_for_page_settled(self) -> None:
-        """Wait for the new page's content to settle after a page change.
+    def _page_number_text(self) -> str:
+        """Active page-number indicator text, or ``""`` if not present.
+
+        Unlike :meth:`_current_page_number` this never raises — it is the
+        pre-click snapshot fed to :meth:`_wait_for_page_settled`, where an
+        absent indicator must degrade gracefully, not abort the walk.
+        """
+        el = self._page.query_selector(PAGE_NUMBER_ACTIVE_SELECTOR)
+        if el is None:
+            return ""
+        return (el.text_content() or "").strip()
+
+    def _wait_for_page_settled(self, prev_page_text: str) -> None:
+        """Block until the SPA page swap after a next-arrow click completes.
 
         ``page.click`` only auto-waits for the arrow's actionability — it does
-        NOT wait for the viewer's SPA to swap the page number, the sidebar
-        highlight and the grid inputs. Without this, the next
-        ``_current_page_context``/``read_rows`` could read stale values from
-        the previous page.
+        NOT wait for the viewer's single-page-app to swap the page number, the
+        sidebar highlight and the grid inputs. Without this the next
+        ``_current_page_context``/``read_rows`` would read STALE values from
+        the previous page (a correctness bug, not cosmetic).
 
-        # VERIFY-ON-LIVE: the correct settle strategy (full reload vs SPA DOM
-        # swap) is unknown from the RUNBOOK/screenshots. This is the SINGLE
-        # seam tasks 3/5 must implement during their live integration runs
-        # (e.g. wait_for_load_state, or wait_for_function on the page-number
-        # indicator changing). Intentionally a no-op until then so we do not
-        # guess a wrong wait that masks the gap.
+        Strategy: block until the active page-number indicator's text differs
+        from ``prev_page_text`` (the value snapshotted *before* the click),
+        then settle on a network/DOM load-state as a backstop. Each wait is
+        bounded by ``DEFAULT_TIMEOUT_MS``. A page-number wait that times out is
+        logged and tolerated (e.g. an unverified selector or a non-numeric
+        indicator) so a single mismatch degrades to the load-state backstop
+        rather than aborting the whole book; a genuinely stale read then
+        surfaces downstream instead of being silently masked here.
+
+        Args:
+            prev_page_text: the page-number text captured *before* the click.
+
+        # VERIFY-ON-LIVE: the exact JS predicate / page-number selector is
+        # confirmed during the task 3/5 live integration runs. The signature
+        # and the snapshot-before-click contract are fixed.
         """
-        return None
+        try:
+            self._page.wait_for_function(
+                _PAGE_SETTLE_JS,
+                arg=[PAGE_NUMBER_ACTIVE_SELECTOR, prev_page_text],
+                timeout=DEFAULT_TIMEOUT_MS,
+            )
+        except PlaywrightTimeoutError:
+            _log.warning("page_number_unchanged_after_advance", prev_page_text=prev_page_text)
+        try:
+            self._page.wait_for_load_state("networkidle", timeout=DEFAULT_TIMEOUT_MS)
+        except PlaywrightTimeoutError:
+            self._page.wait_for_load_state("domcontentloaded", timeout=DEFAULT_TIMEOUT_MS)
 
     def _click_first_by_text(self, texts: tuple[str, ...]) -> None:
         """Click the first locator whose text matches any of ``texts``."""

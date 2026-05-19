@@ -27,7 +27,7 @@ test:
 
 # --- Pipeline step placeholders (implemented in tasks 3 / 4 / 5) ---
 scrape:
-	@echo "scrape: not yet implemented (task 3)"
+	uv run python -m translation_pipeline.scrape
 
 validate:
 	@echo "validate: not yet implemented (task 4)"

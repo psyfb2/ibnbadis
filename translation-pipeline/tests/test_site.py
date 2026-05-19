@@ -10,7 +10,7 @@ from __future__ import annotations
 import ast
 from pathlib import Path
 from typing import Any
-from unittest.mock import MagicMock
+from unittest.mock import MagicMock, call
 
 import pytest
 from playwright.sync_api import TimeoutError as PlaywrightTimeoutError
@@ -193,19 +193,61 @@ def test_advance_to_next_page(
 ) -> None:
     settled = MagicMock()
     nav._wait_for_page_settled = settled  # type: ignore[method-assign]
+
     if arrow is None:
-        mock_page.query_selector.return_value = None
-        el = None
+        arrow_el = None
     else:
-        el = MagicMock()
-        el.is_disabled.return_value = arrow == "disabled"
-        mock_page.query_selector.return_value = el
+        arrow_el = MagicMock()
+        arrow_el.is_disabled.return_value = arrow == "disabled"
+
+    def _qs(selector: str) -> MagicMock | None:
+        if selector == site_mod.PAGE_NEXT_ARROW_SELECTOR:
+            return arrow_el
+        if selector == site_mod.PAGE_NUMBER_ACTIVE_SELECTOR:
+            return fake_text_el(" 7 ")
+        return None
+
+    mock_page.query_selector.side_effect = _qs
+
     assert nav._advance_to_next_page() is expected
-    if el is not None:
-        assert el.click.called is clicked
+    if arrow_el is not None:
+        assert arrow_el.click.called is clicked
     # The settle seam is invoked exactly when (and only when) we advanced, so
     # the next read does not race the SPA page swap.
     assert settled.called is clicked
+    if clicked:
+        # snapshot-before-click: settle gets the page-number text captured
+        # BEFORE the arrow click (stripped of surrounding whitespace).
+        settled.assert_called_once_with("7")
+
+
+def test_wait_for_page_settled_waits_on_page_number_then_load_state(
+    nav: SiteNavigator, mock_page: MagicMock
+) -> None:
+    nav._wait_for_page_settled("3")
+
+    mock_page.wait_for_function.assert_called_once()
+    _, kwargs = mock_page.wait_for_function.call_args
+    # The pre-click page-number text is threaded into the JS predicate arg.
+    assert kwargs["arg"] == [site_mod.PAGE_NUMBER_ACTIVE_SELECTOR, "3"]
+    assert kwargs["timeout"] == 30_000
+    mock_page.wait_for_load_state.assert_called_once_with("networkidle", timeout=30_000)
+
+
+def test_wait_for_page_settled_falls_back_when_signals_time_out(
+    nav: SiteNavigator, mock_page: MagicMock
+) -> None:
+    # Page-number never changes AND networkidle never settles -> must not raise;
+    # degrade to the domcontentloaded backstop.
+    mock_page.wait_for_function.side_effect = PlaywrightTimeoutError("no change")
+    mock_page.wait_for_load_state.side_effect = [PlaywrightTimeoutError("net"), None]
+
+    nav._wait_for_page_settled("3")
+
+    assert mock_page.wait_for_load_state.call_args_list == [
+        call("networkidle", timeout=30_000),
+        call("domcontentloaded", timeout=30_000),
+    ]
 
 
 # --- read_rows (RTL: by name, never by position) ---------------------------
