@@ -31,8 +31,12 @@ test:
 scrape:
 	uv run python -m translation_pipeline.scrape $(ARGS)
 
+# `make validate` is the offline, credential-free pre-write-back gate
+# (run after step-2 translation, before step-3 write-back). Non-zero exit on
+# any finding. Optional store override:
+#   make validate ARGS='--store /path/to/translations.json'
 validate:
-	@echo "validate: not yet implemented (task 4)"
+	uv run python -m translation_pipeline.validate $(ARGS)
 
 writeback:
 	@echo "writeback: not yet implemented (task 5)"
