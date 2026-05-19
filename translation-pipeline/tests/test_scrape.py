@@ -16,11 +16,11 @@ from unittest.mock import MagicMock, call, create_autospec
 import pytest
 
 from translation_pipeline import scrape
+from translation_pipeline.core import build_row
 from translation_pipeline.models import Page, Row
 from translation_pipeline.page_keys import book_key, is_valid_page_key
 from translation_pipeline.scrape import (
     SKIP_NO_ENGLISH,
-    build_row,
     merge_page,
 )
 from translation_pipeline.site import (

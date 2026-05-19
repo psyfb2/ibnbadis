@@ -13,8 +13,8 @@ import pytest
 
 from tests.conftest import ARABIC_A, ARABIC_Q
 from translation_pipeline import validate
+from translation_pipeline.core import build_row
 from translation_pipeline.models import Page, Row, TranslationStore
-from translation_pipeline.scrape import build_row
 from translation_pipeline.site import RowFields
 from translation_pipeline.store import save_store
 from translation_pipeline.validate import (
@@ -245,7 +245,7 @@ def test_aggregates_all_distinct_violations() -> None:
     }
 
 
-# --- Flag-reuse parity (locks exact reuse of scrape.build_row) -------------
+# --- Flag-reuse parity (locks exact reuse of core.build_row) -------------
 
 
 @pytest.mark.parametrize(

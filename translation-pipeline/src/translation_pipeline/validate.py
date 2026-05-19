@@ -31,7 +31,7 @@ Failure modes (mapped 1:1 to the PRD task-4 text), checking ``UQ`` and ``UA``
   both-true row).
 
 The canonical "blank" rule and per-field flag formulas are **reused** from
-:mod:`translation_pipeline.scrape` (``_is_blank`` / ``build_row``) — zero
+:mod:`translation_pipeline.core` (``is_blank`` / ``build_row``) — zero
 duplication, parity-locked by a unit test.
 """
 
@@ -43,10 +43,10 @@ from dataclasses import dataclass
 from enum import StrEnum
 from pathlib import Path
 
-from translation_pipeline.config import Settings
+from translation_pipeline.config import DEFAULT_STORE_PATH
+from translation_pipeline.core import build_row, is_blank
 from translation_pipeline.logging_config import get_logger
 from translation_pipeline.models import TranslationStore
-from translation_pipeline.scrape import _is_blank, build_row
 from translation_pipeline.site import RowFields
 from translation_pipeline.store import load_store
 
@@ -89,7 +89,7 @@ def _check_missing_translations(store: TranslationStore) -> list[Finding]:
     findings: list[Finding] = []
     for page_key, page in store.items():
         for idx, row in enumerate(page.rows):
-            if row.uq_needs_translation and _is_blank(row.uq_translation):
+            if row.uq_needs_translation and is_blank(row.uq_translation):
                 findings.append(
                     Finding(
                         code=ValidationCode.MISSING_TRANSLATION,
@@ -99,7 +99,7 @@ def _check_missing_translations(store: TranslationStore) -> list[Finding]:
                         message="uq flagged needs_translation but uq_translation is blank",
                     )
                 )
-            if row.ua_needs_translation and _is_blank(row.ua_translation):
+            if row.ua_needs_translation and is_blank(row.ua_translation):
                 findings.append(
                     Finding(
                         code=ValidationCode.MISSING_TRANSLATION,
@@ -117,7 +117,7 @@ def _check_already_translated_not_written(store: TranslationStore) -> list[Findi
     findings: list[Finding] = []
     for page_key, page in store.items():
         for idx, row in enumerate(page.rows):
-            if row.uq_already_translated and not _is_blank(row.uq_translation):
+            if row.uq_already_translated and not is_blank(row.uq_translation):
                 findings.append(
                     Finding(
                         code=ValidationCode.ALREADY_TRANSLATED_WRITE,
@@ -130,7 +130,7 @@ def _check_already_translated_not_written(store: TranslationStore) -> list[Findi
                         ),
                     )
                 )
-            if row.ua_already_translated and not _is_blank(row.ua_translation):
+            if row.ua_already_translated and not is_blank(row.ua_translation):
                 findings.append(
                     Finding(
                         code=ValidationCode.ALREADY_TRANSLATED_WRITE,
@@ -149,7 +149,7 @@ def _check_already_translated_not_written(store: TranslationStore) -> list[Findi
 def _check_source_flag_integrity(store: TranslationStore) -> list[Finding]:
     """Stored per-field flags must equal flags recomputed from ``tq/ta/uq/ua``.
 
-    Reuses :func:`scrape.build_row` (``prev=None`` — translations are irrelevant
+    Reuses :func:`translation_pipeline.core.build_row` (``prev=None`` — translations are irrelevant
     to flags) so the validator and the scraper share one flag definition. A
     mismatch means an English source / already-translated state was modified
     after scrape, or the flags were hand-corrupted (e.g. ``already``+``needs``
@@ -226,7 +226,7 @@ def _check_translation_consistency(store: TranslationStore) -> list[Finding]:
                 (row.tq, row.uq_translation, "uq"),
                 (row.ta, row.ua_translation, "ua"),
             ):
-                if _is_blank(src) or _is_blank(trans):
+                if is_blank(src) or is_blank(trans):
                     continue
                 occurrences.setdefault(src, []).append((trans, page_key, idx, field))
 
@@ -276,7 +276,8 @@ def validate_store(store: TranslationStore) -> list[Finding]:
 def _resolve_store_path(cli_path: str | None) -> Path:
     """Resolve the store path: ``--store`` > ``IBNBADIS_STORE_PATH`` > default.
 
-    The default is read from the :class:`Settings` field metadata, NOT via
+    The default is the shared :data:`config.DEFAULT_STORE_PATH` constant (the
+    single source of truth for the :class:`Settings.store_path` default), NOT
     :func:`config.get_settings`, so an offline validation never requires
     credentials.
     """
@@ -285,7 +286,7 @@ def _resolve_store_path(cli_path: str | None) -> Path:
     env = os.environ.get("IBNBADIS_STORE_PATH")
     if env:
         return Path(env)
-    return Path(Settings.model_fields["store_path"].default)
+    return DEFAULT_STORE_PATH
 
 
 def run(*, store_path: Path | None = None) -> int:

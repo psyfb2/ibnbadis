@@ -42,10 +42,11 @@ from typing import Literal
 from playwright.sync_api import Page as PwPage
 
 from translation_pipeline.config import get_settings
+from translation_pipeline.core import build_row, is_blank
 from translation_pipeline.logging_config import get_logger
 from translation_pipeline.models import Page, Row
 from translation_pipeline.page_keys import BOOK_KEYS, book_key
-from translation_pipeline.scrape import BOOKS, _is_blank, build_row
+from translation_pipeline.scrape import BOOKS
 from translation_pipeline.selectors import Field, TargetField
 from translation_pipeline.site import (
     PanelError,
@@ -82,7 +83,7 @@ def plan_page_writes(page: Page) -> list[WriteItem]:
 
     A field is included iff its ``*_needs_translation`` flag is true **and**
     its ``*_translation`` is non-blank (whitespace-aware, via the canonical
-    :func:`translation_pipeline.scrape._is_blank`). A blank ``*_translation``
+    :func:`translation_pipeline.core.is_blank`). A blank ``*_translation``
     is excluded even when the needs flag is set — defensive: the validator
     should have caught it, and write-back must never fill a blank value nor
     submit an empty form. The order is deterministic: rows ascending, ``UQ``
@@ -90,9 +91,9 @@ def plan_page_writes(page: Page) -> list[WriteItem]:
     """
     items: list[WriteItem] = []
     for idx, row in enumerate(page.rows):
-        if row.uq_needs_translation and not _is_blank(row.uq_translation):
+        if row.uq_needs_translation and not is_blank(row.uq_translation):
             items.append(WriteItem(idx, TargetField.UQ, row.uq_translation))
-        if row.ua_needs_translation and not _is_blank(row.ua_translation):
+        if row.ua_needs_translation and not is_blank(row.ua_translation):
             items.append(WriteItem(idx, TargetField.UA, row.ua_translation))
     return items
 
@@ -107,7 +108,7 @@ def reconcile_guarded_row(row: Row, field: TargetField, live_value: str) -> Row:
 
     The *guarded* side's site value (``uq``/``ua``) is set to the live value,
     then **all four** per-field flags are recomputed via the canonical
-    :func:`translation_pipeline.scrape.build_row` with ``prev=row`` so the
+    :func:`translation_pipeline.core.build_row` with ``prev=row`` so the
     step-2 ``uq_translation``/``ua_translation`` are carried forward and never
     destroyed. Reusing ``build_row`` keeps zero flag-formula duplication and
     keeps the validator's source-flag-integrity invariant satisfied. The
@@ -182,7 +183,7 @@ def writeback_page(nav: SiteNavigator, page_model: Page, page_key: str) -> None:
         filled_any = False
         for item in plan:
             live = read_field_value(nav.page, item.row_index, _as_field(item.field))
-            if not _is_blank(live):  # DEFENSIVE: never overwrite a non-blank target
+            if not is_blank(live):  # DEFENSIVE: never overwrite a non-blank target
                 _log.warning(
                     "defensive_skip_nonblank_target",
                     page_key=page_key,

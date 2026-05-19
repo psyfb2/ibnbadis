@@ -18,9 +18,9 @@ import pytest
 
 from tests.conftest import ARABIC_A, ARABIC_Q
 from translation_pipeline import writeback
+from translation_pipeline.core import build_row
 from translation_pipeline.models import Page, Row
 from translation_pipeline.page_keys import book_key, is_valid_page_key
-from translation_pipeline.scrape import build_row
 from translation_pipeline.selectors import Field, TargetField
 from translation_pipeline.site import (
     NavigationError,
@@ -220,7 +220,7 @@ def test_reconcile_guarded_row_uq_sets_live_flips_flags_preserves_rest() -> None
     assert out.ua_translation == "KEEP_A"
     assert out.ua == ""
     assert out.ua_needs_translation is True
-    # parity: identical to the canonical scrape.build_row.
+    # parity: identical to the canonical core.build_row.
     assert out == build_row(RowFields(tq="q", ta="a", uq="LIVE_Q", ua=""), prev=r)
 
 

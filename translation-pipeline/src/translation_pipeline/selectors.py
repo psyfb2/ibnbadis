@@ -117,7 +117,13 @@ BOOK_ROW_TEXT_TMPL = "Year {year} English"  # VERIFY-ON-LIVE
 
 # --- Ebook viewer / navigation --------------------------------------------
 SIDEBAR_SECTION_SELECTOR = ".sidebar .section"  # VERIFY-ON-LIVE
-SIDEBAR_SECTION_ACTIVE_SELECTOR = ".sidebar .section.active"  # VERIFY-ON-LIVE
+#: INTENTIONALLY UNUSED — site.py detects the active section by DOM position +
+#: ``SIDEBAR_ACTIVE_CLASS`` (below), never via a CSS ``.active`` match. Kept on
+#: purpose as a documented fallback selector for the pending live
+#: selector-tuning run (no selector constant is changed until then). Do not
+#: delete: it records the alternative an operator may switch to if the
+#: position+class heuristic does not hold on the live DOM.  # VERIFY-ON-LIVE
+SIDEBAR_SECTION_ACTIVE_SELECTOR = ".sidebar .section.active"
 #: Token expected in the active sidebar section element's class list. The
 #: active section is identified by DOM POSITION + this class (never by title
 #: text, which can collide across sections, e.g. a repeated "Part 1").

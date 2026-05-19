@@ -12,6 +12,14 @@ from pathlib import Path
 from pydantic import SecretStr, ValidationError
 from pydantic_settings import BaseSettings, SettingsConfigDict
 
+#: Default store location, resolved against the current working directory
+#: (Makefile targets run from ``translation-pipeline/``). Exposed as a module
+#: constant so it is a single source of truth shared by :class:`Settings` and
+#: the credential-free offline path resolution in
+#: :func:`translation_pipeline.validate._resolve_store_path` — neither reaches
+#: into pydantic ``FieldInfo`` internals.
+DEFAULT_STORE_PATH = Path("store/translations.json")
+
 
 class Settings(BaseSettings):
     """Runtime settings, populated from ``IBNBADIS_*`` env vars / ``.env``."""
@@ -31,8 +39,9 @@ class Settings(BaseSettings):
 
     #: Store location. Resolved against the current working directory (Makefile
     #: targets run from ``translation-pipeline/``). NEVER derived from package
-    #: ``__file__`` — that breaks for non-editable installs.
-    store_path: Path = Path("store/translations.json")
+    #: ``__file__`` — that breaks for non-editable installs. Defaults to the
+    #: shared :data:`DEFAULT_STORE_PATH` constant.
+    store_path: Path = DEFAULT_STORE_PATH
 
 
 def get_settings() -> Settings:

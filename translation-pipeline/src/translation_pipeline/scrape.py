@@ -26,6 +26,7 @@ import argparse
 from pathlib import Path
 
 from translation_pipeline.config import get_settings
+from translation_pipeline.core import build_row, is_blank
 from translation_pipeline.logging_config import get_logger
 from translation_pipeline.models import Page, Row
 from translation_pipeline.page_keys import BOOK_KEYS, book_key
@@ -47,56 +48,16 @@ BOOKS: list[tuple[int, int]] = [(4, 1), (4, 2), (5, 1), (5, 2), (6, 1), (6, 2)]
 
 
 # --- Pure core (no Playwright / store I/O — trivially unit-testable) --------
-
-
-def _is_blank(value: str) -> bool:
-    """Whitespace-aware "blank" test (RUNBOOK §6: empty rows are not-present).
-
-    The single definition of "blank" reused by every per-field flag and the
-    no-English skip rule, so the three stay consistent.
-    """
-    return value.strip() == ""
-
-
-def build_row(src: RowFields, *, prev: Row | None) -> Row:
-    """Build a :class:`~translation_pipeline.models.Row` from live fields.
-
-    Source (``tq``/``ta``) and site-state (``uq``/``ua``) and the four
-    independent per-field flags are refreshed from ``src`` every scrape. The
-    step-2 Arabic (``uq_translation``/``ua_translation``) is carried forward
-    from ``prev`` (the row previously at this index) and is never derived from
-    the site nor cleared by a re-scrape.
-
-    Per-field flags are independent: ``UQ`` keys off ``tq``, ``UA`` off ``ta``.
-    ``*_already_translated`` and ``*_needs_translation`` are mutually exclusive
-    for one side but **both are ``False``** when that side has no English
-    source (valid, not an error).
-
-    Args:
-        src: the row as read from the site at scrape time.
-        prev: the row previously stored at this 0-based index, or ``None``.
-    """
-    uq_blank = _is_blank(src.uq)
-    ua_blank = _is_blank(src.ua)
-    tq_blank = _is_blank(src.tq)
-    ta_blank = _is_blank(src.ta)
-    return Row(
-        tq=src.tq,
-        ta=src.ta,
-        uq=src.uq,
-        ua=src.ua,
-        uq_translation=prev.uq_translation if prev is not None else "",
-        ua_translation=prev.ua_translation if prev is not None else "",
-        uq_already_translated=not uq_blank,
-        uq_needs_translation=(not tq_blank) and uq_blank,
-        ua_already_translated=not ua_blank,
-        ua_needs_translation=(not ta_blank) and ua_blank,
-    )
+#
+# The canonical "blank" rule and per-field flag formulas live in
+# :mod:`translation_pipeline.core` (imported above and re-exported here for
+# backward compatibility) so the validator and write-back can depend on an
+# explicit shared contract rather than a private detail of this step.
 
 
 def _page_has_english(rows: list[Row]) -> bool:
     """``True`` if any row has a non-blank English source (``tq`` or ``ta``)."""
-    return any(not _is_blank(r.tq) or not _is_blank(r.ta) for r in rows)
+    return any(not is_blank(r.tq) or not is_blank(r.ta) for r in rows)
 
 
 def merge_page(prev: Page | None, sources: list[RowFields]) -> Page:

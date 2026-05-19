@@ -101,9 +101,11 @@ def save_store(store: TranslationStore, path: Path) -> None:
             os.fsync(fh.fileno())
         os.replace(tmp_path, path)
     except BaseException:
+        # Swallow ANY OS-level cleanup failure (missing temp, permission, etc.)
+        # so the original failure is always the one re-raised, never masked.
         try:
             tmp_path.unlink()
-        except FileNotFoundError:
+        except OSError:
             pass
         raise
 

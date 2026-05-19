@@ -1,6 +1,8 @@
 # Data store is deliberately NOT committed (diverges from CSTC-3 which commits state/).
 store/translations.json
 store/*.bak
+# Orphaned atomic-write temp files if a process is SIGKILLed mid-save.
+store/*.tmp
 
 # Screenshots may leak credentials / page content.
 screenshots/
