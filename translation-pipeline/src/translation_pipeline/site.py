@@ -1,19 +1,36 @@
 """Deterministic **READ-ONLY** Playwright site/navigation module.
 
-Shared by ``scrape.py`` (task 3) and ``writeback.py`` (task 5). It can log in,
-select semester/book, walk the sidebar sections and step pages, open/close the
-TextApps panel and *read* the grid rows by ``name``.
+Shared by ``scrape.py`` and ``writeback.py``. It can log in, select a book,
+walk the sidebar ``Section -> Part`` tree (each Part is a separate
+``content.php?gid=…`` page covering a global page range), step pages, open/close
+the TextApps panel and *read* the grid rows by ``name``.
+
+Live model (verified 2026-05-19 — see ``docs/live-selectors-tuning.md``)
+-----------------------------------------------------------------------
+* The post-login books listing lists all six books as exact links
+  ``"Year N English A|B"`` (A = semester 1, B = semester 2) — no semester
+  dropdown is involved.
+* The viewer sidebar is an ordered tree: ``SECTION`` header spans, each
+  followed by its ``Part`` anchors. Every Part anchor navigates to its own
+  ``content.php?gid=…`` URL. The sidebar carries NO page range (each Part's
+  ``data-name`` is the literal ``"X"`` and its text is just a label); the
+  range is discovered live from the loaded Part's pager — a ``<ul>`` of
+  ``<a href="#pageN">`` links whose text is the GLOBAL page number, the
+  ``currentpage`` link being the page in view and the ``#next`` arrow
+  gaining ``disabled`` on the Part's last page. Page numbers are globally
+  sequential (never reset per part) so composed keys never collide. This
+  replaces CSTC-3's "active sidebar highlight" heuristic with a fully
+  deterministic walk (divergence C: ``part`` is always ``None`` —
+  :meth:`_current_part_number` is a documented stub, so no ``/part-`` segment
+  is ever emitted).
+* The TextApps grid + Save button live inside a **cross-origin iframe**
+  (``dev.ibnbadis.org/exp_entry.php``); reads happen through a Playwright
+  ``frame_locator`` (the automation driver is not bound by same-origin policy).
 
 Interface segregation (a hard requirement): this module contains **zero**
 write/fill/Save code and never imports :mod:`translation_pipeline.write_helper`,
-so the scrape path provably cannot mutate the site. All side-effecting
-primitives live in that separate module, imported only by write-back.
-
-Selectors are best-effort and unverified (see :mod:`translation_pipeline.
-selectors`); navigation methods are intent-based so live tuning during tasks
-3/5 touches only ``selectors.py``. ``browser_session`` is the only place a real
-Chromium is launched and runs only after ``make install-browsers``; unit tests
-mock Playwright entirely (no browser, no network).
+so the scrape path provably cannot mutate the site. ``browser_session`` is the
+only place a real Chromium is launched; unit tests mock Playwright entirely.
 """
 
 from __future__ import annotations
@@ -21,8 +38,9 @@ from __future__ import annotations
 from collections.abc import Iterator
 from contextlib import contextmanager
 from dataclasses import dataclass
+from urllib.parse import urljoin
 
-from playwright.sync_api import Page, sync_playwright
+from playwright.sync_api import FrameLocator, Page, sync_playwright
 from playwright.sync_api import TimeoutError as PlaywrightTimeoutError
 
 from translation_pipeline.config import Settings, get_settings
@@ -30,23 +48,29 @@ from translation_pipeline.logging_config import get_logger
 from translation_pipeline.models import RowFields
 from translation_pipeline.page_keys import book_key, compose_page_key, section_slug
 from translation_pipeline.selectors import (
-    ADMIN_PANEL_CLOSE_TEXT,
-    BOOK_ROW_TEXT_TMPL,
-    DATA_IBOOK_TEXT,
+    ADMIN_DEV_TRIGGER_SELECTOR,
+    ADMIN_MODAL_CLOSE_SELECTOR,
+    ADMIN_PANEL_CLOSE_SELECTOR,
+    BOOK_LINK_NAME_TMPL,
+    DATA_IBOOK_SELECTOR,
     DEFAULT_TIMEOUT_MS,
     LISTING_READY_SELECTOR,
     LOGIN_PASSWORD_SELECTOR,
-    LOGIN_SUBMIT_TEXTS,
+    LOGIN_SUBMIT_SELECTOR,
     LOGIN_USERNAME_SELECTOR,
-    MODAL_CLOSE_TEXT,
+    PAGE_CURRENT_SELECTOR,
+    PAGE_LIST_SELECTOR,
     PAGE_NEXT_ARROW_SELECTOR,
-    PAGE_NUMBER_ACTIVE_SELECTOR,
+    PAGE_NEXT_DISABLED_SELECTOR,
     ROW_INPUT_CSS,
-    SEMESTER_DROPDOWN_SELECTOR,
-    SEMESTER_OPTION,
-    SIDEBAR_ACTIVE_CLASS,
+    SEMESTER_BOOK_SUFFIX,
+    SEMESTER_SELECT_SELECTOR,
+    SEMESTER_SELECT_VALUE,
+    SIDEBAR_PART_HREF_RE,
     SIDEBAR_SECTION_SELECTOR,
-    SPANNER_TRIGGER_SELECTOR,
+    SIDEBAR_TITLE_ATTR,
+    SIDEBAR_TREE_SELECTOR,
+    TEXTAPPS_IFRAME_SELECTOR,
     TEXTAPPS_TAB_TEXT,
     Field,
     parse_field_name,
@@ -54,11 +78,9 @@ from translation_pipeline.selectors import (
 
 _log = get_logger(__name__)
 
-#: JS predicate for the SPA page-swap settle wait: true once the active
-#: page-number element exists and its trimmed text differs from the value
-#: snapshotted before the next-arrow click.
-# VERIFY-ON-LIVE: the page-number selector/markup is unverified; the
-# snapshot-before-click contract this relies on is fixed.
+#: JS predicate for the page-step settle wait: true once the page-number
+#: element exists and its trimmed text differs from the value snapshotted
+#: before the next-arrow click. The snapshot-before-click contract is fixed.
 _PAGE_SETTLE_JS = (
     "([sel, prev]) => {"
     " const el = document.querySelector(sel);"
@@ -80,12 +102,7 @@ class NavigationError(SiteError):
 
 
 class PanelError(SiteError):
-    """The TextApps panel could not be opened/closed."""
-
-
-# ``RowFields`` now lives in the Playwright-free :mod:`translation_pipeline.models`
-# (imported above and re-exported here for backward compatibility) so the pure
-# ``core``/``validate`` modules do not transitively import Playwright.
+    """The TextApps panel could not be opened/read."""
 
 
 @dataclass(frozen=True)
@@ -93,11 +110,25 @@ class PageContext:
     """Identifies the page currently shown in the viewer."""
 
     book_key: str
-    section_index: int  # 1-based sidebar position
+    section_index: int  # 1-based sidebar Section ordinal
     section_title: str
-    part_number: int | None
+    part_number: int | None  # always None (divergence C)
     page_number: int
     page_key: str
+
+
+@dataclass(frozen=True)
+class _SidebarUnit:
+    """One navigable sidebar Part (a ``content.php?gid=…`` page).
+
+    The sidebar exposes NO page range (every Part's ``data-name`` is the
+    literal ``"X"``); the range is discovered live by walking the loaded
+    Part's pager, so this unit only carries its identity + Section grouping.
+    """
+
+    section_index: int
+    section_title: str
+    href: str
 
 
 class SiteNavigator:
@@ -110,7 +141,7 @@ class SiteNavigator:
     def __init__(self, page: Page, settings: Settings | None = None) -> None:
         self._page = page
         # Resolve eagerly so both ``None`` callers and monkeypatched-env tests
-        # work without a ``NoneType`` access later in ``login()``.
+        # work without a ``NoneType`` access later.
         self._settings = settings if settings is not None else get_settings()
 
     @property
@@ -120,8 +151,6 @@ class SiteNavigator:
         Exposing the already-injected page adds **no** write surface to this
         module: every side-effecting primitive still lives solely in
         :mod:`translation_pipeline.write_helper` (imported only by write-back).
-        Interface segregation is unchanged — ``site.py`` still contains zero
-        fill/Save code and never imports ``write_helper``.
         """
         return self._page
 
@@ -138,75 +167,194 @@ class SiteNavigator:
         self._page.fill(LOGIN_USERNAME_SELECTOR, s.username)
         # Secret used here ONLY; never logged/stored.
         self._page.fill(LOGIN_PASSWORD_SELECTOR, s.password.get_secret_value())
-        self._click_first_by_text(LOGIN_SUBMIT_TEXTS)
+        # Submit is <input type="submit">; its label is a ``value`` attribute,
+        # so it must be addressed by selector, not by visible text.
+        self._page.click(LOGIN_SUBMIT_SELECTOR)
         try:
-            self._page.wait_for_selector(LISTING_READY_SELECTOR, timeout=DEFAULT_TIMEOUT_MS)
+            # Presence probe (login OK), not interaction: the listing has many
+            # book links and the first in DOM order may be hidden, so wait for
+            # ATTACHED, not visible.
+            self._page.wait_for_selector(
+                LISTING_READY_SELECTOR, state="attached", timeout=DEFAULT_TIMEOUT_MS
+            )
         except PlaywrightTimeoutError as exc:
             raise LoginError("login did not reach the books listing") from exc
         _log.info("login_ok", username=s.username)
 
-    # --- Semester / book ---------------------------------------------------
-    def select_semester(self, semester: int) -> None:
-        """Select semester 1 or 2 in the dropdown."""
-        if semester not in SEMESTER_OPTION:
-            raise NavigationError(f"semester must be 1 or 2 (got {semester!r})")
-        self._page.select_option(SEMESTER_DROPDOWN_SELECTOR, label=SEMESTER_OPTION[semester])
-        _log.info("semester_selected", semester=semester)
-
+    # --- Book selection ----------------------------------------------------
     def select_book(self, year: int, semester: int) -> str:
-        """Select the ``Year <N> English`` book and return its book key."""
+        """Open the ``Year <N> English A|B`` book and return its book key.
+
+        The listing IS semester-filtered: a semester's book rows live in
+        ``<tr style="display:none">`` until the ``#changeYear`` ("الفصل")
+        ``<select>`` is set to that semester's option value, so the semester
+        MUST be selected before the (otherwise hidden, unclickable) book link.
+        ``A`` = semester 1, ``B`` = semester 2.
+        """
         bk = book_key(year, semester)  # validates year/semester
-        self.select_semester(semester)
-        self._page.get_by_text(BOOK_ROW_TEXT_TMPL.format(year=year)).first.click()
+        suffix = SEMESTER_BOOK_SUFFIX[semester]
+        name = BOOK_LINK_NAME_TMPL.format(year=year, suffix=suffix)
+        # Reveal this semester's rows first (sem-2 rows are display:none by
+        # default); select_option fires the change handler that re-filters.
+        self._page.select_option(SEMESTER_SELECT_SELECTOR, SEMESTER_SELECT_VALUE[semester])
+        self._page.get_by_role("link", name=name, exact=True).first.click()
+        try:
+            # Presence probe (viewer loaded): the sidebar may be collapsed, so
+            # wait for ATTACHED rather than visible.
+            self._page.wait_for_selector(
+                SIDEBAR_SECTION_SELECTOR, state="attached", timeout=DEFAULT_TIMEOUT_MS
+            )
+        except PlaywrightTimeoutError as exc:
+            raise NavigationError(f"book viewer for {bk!r} did not load") from exc
         _log.info("book_selected", book_key=bk)
         return bk
 
-    # --- Sidebar / page walk ----------------------------------------------
-    def sections(self) -> list[tuple[int, str]]:
-        """Return ``(1-based index, title)`` for every sidebar section.
+    # --- Sidebar Section -> Part tree --------------------------------------
+    def _parse_sidebar_units(self) -> list[_SidebarUnit]:
+        """Parse the sidebar into an ordered list of navigable Part units.
 
-        Read by text (RTL-safe), never by visual position.
+        Walks ``SECTION`` header spans and ``Part`` anchors in DOM order. Each
+        Part is attributed to the nearest preceding Section; a Part with no
+        preceding Section (e.g. a leading ``"xxxxx 1 - 2"``) becomes its own
+        Section using its own label. Section ordinals are 1-based and stable
+        for both scrape and (future) write-back, so keys are deterministic.
         """
-        out: list[tuple[int, str]] = []
-        for idx, el in enumerate(self._page.query_selector_all(SIDEBAR_SECTION_SELECTOR), start=1):
-            out.append((idx, (el.text_content() or "").strip()))
-        return out
+        units: list[_SidebarUnit] = []
+        section_index = 0
+        section_title: str | None = None
+        for el in self._page.query_selector_all(SIDEBAR_TREE_SELECTOR):
+            tag = (el.evaluate("e => e.tagName") or "").upper()
+            label = (el.get_attribute(SIDEBAR_TITLE_ATTR) or el.text_content() or "").strip()
+            if tag != "A":  # a SECTION header span
+                section_index += 1
+                section_title = label
+                continue
+            href = el.get_attribute("href") or ""
+            if SIDEBAR_PART_HREF_RE.search(href) is None:
+                continue  # a skip-nav link sharing the path (#fragment) — ignore
+            if section_title is None:  # orphan Part before any Section header
+                section_index += 1
+                title = label
+            else:
+                title = section_title
+            units.append(_SidebarUnit(section_index=section_index, section_title=title, href=href))
+        if not units:
+            raise NavigationError("no navigable sidebar Part links found")
+        return units
+
+    def _next_disabled(self) -> bool:
+        """True iff the forward page-step arrow carries class ``disabled``.
+
+        A *multi-page* Part marks ``#next`` ``disabled`` on its last page.
+        (A single-page Part's ``#next`` is plain — see :meth:`_at_last_page`.)
+        """
+        return self._page.query_selector(PAGE_NEXT_DISABLED_SELECTOR) is not None
+
+    def _at_last_page(self) -> bool:
+        """True iff the viewer is on the current Part's LAST page.
+
+        Two verified-live pager shapes: a multi-page Part marks ``#next``
+        ``disabled`` on its last page; a single-page Part has exactly one
+        page link, **no** ``currentpage`` marker and a plain (non-
+        ``prevnext``) ``#next`` — there is nowhere to step, so its sole page
+        is also its last. Either shape ends the Part.
+        """
+        if self._next_disabled():
+            return True
+        if self._page.query_selector(PAGE_CURRENT_SELECTOR) is None:
+            return len(self._page.query_selector_all(PAGE_LIST_SELECTOR)) == 1
+        return False
 
     def iter_book_pages(self, book_key: str) -> Iterator[PageContext]:
-        """Walk every page of the current book front-to-back.
+        """Walk every page of the current book, Part by Part, front-to-back.
 
         A single forward generator consumed by BOTH scrape (read each page) and
-        write-back (act per page); the site has no per-page URL so pages must be
-        stepped. Section is derived from the highlighted sidebar entry on each
-        page (page numbers repeat across sections, so the section slug
-        differentiates the key).
+        write-back (act per page). Navigates to each Part's gid URL (which
+        lands on its first page) and steps with the next-arrow until that arrow
+        is ``disabled`` (the authoritative end-of-Part signal — the sidebar
+        carries no page range). A Part whose pager never appears is a
+        no-content placeholder (e.g. the dashed "xxxxx" intro) and is skipped,
+        not fatal. Page numbers are global and sequential so keys never collide.
         """
-        while True:
-            ctx = self._current_page_context(book_key)
-            _log.info("page", page_key=ctx.page_key)
-            yield ctx
-            if not self._advance_to_next_page():
-                return
+        units = self._parse_sidebar_units()
+        for unit in units:
+            self._page.goto(urljoin(self._settings.base_url, unit.href))
+            try:
+                self._page.wait_for_selector(
+                    PAGE_LIST_SELECTOR, state="attached", timeout=DEFAULT_TIMEOUT_MS
+                )
+            except PlaywrightTimeoutError:
+                # No pager => a placeholder Part with no real pages. Skip it
+                # (resumable, non-fatal) rather than abort the whole book.
+                _log.warning("part_has_no_pages", href=unit.href)
+                continue
+            page_number = self._current_page_number()
+            while True:
+                part = self._current_part_number()
+                slug = section_slug(unit.section_index, unit.section_title, part)
+                yield PageContext(
+                    book_key=book_key,
+                    section_index=unit.section_index,
+                    section_title=unit.section_title,
+                    part_number=part,
+                    page_number=page_number,
+                    page_key=compose_page_key(book_key, slug, page_number),
+                )
+                if self._at_last_page():
+                    break  # last page of the Part (multi- or single-page)
+                self._page.click(PAGE_NEXT_ARROW_SELECTOR)
+                self._wait_for_page_settled(str(page_number))
+                advanced = self._current_page_number()
+                if advanced <= page_number:
+                    # Did not advance (stuck nav): stop this Part rather than
+                    # loop forever — scrape is resumable, so a re-run retries.
+                    _log.warning("page_did_not_advance", href=unit.href, page_number=page_number)
+                    break
+                page_number = advanced
 
-    def current_page_key(self, book_key: str) -> str:
-        """The composed flat page key for the page currently shown."""
-        return self._current_page_context(book_key).page_key
+    # --- TextApps panel (inside the cross-origin iframe) -------------------
+    def _textapps_frame(self) -> FrameLocator:
+        """A ``FrameLocator`` for the cross-origin TextApps iframe."""
+        return self._page.frame_locator(TEXTAPPS_IFRAME_SELECTOR)
 
-    # --- TextApps panel ----------------------------------------------------
     def open_textapps(self) -> None:
-        """Open spanner -> Data iBook (Text Entry) -> TextApps tab."""
-        self._page.hover(SPANNER_TRIGGER_SELECTOR)
-        self._page.get_by_text(DATA_IBOOK_TEXT).first.click()
-        self._page.get_by_text(TEXTAPPS_TAB_TEXT).first.click()
+        """Open Admin & Dev -> Data iBook (Text Entry) -> TextApps tab.
+
+        The grid lives in a cross-origin iframe; this clicks the parent-page
+        triggers, then switches into the frame to select the TextApps tab and
+        waits for the grid inputs. The readiness wait is for the ATTACHED
+        state, **not** visible: the live form's first input is the Arabic
+        ``UQ0`` (*Translated Questions*) field, which the RTL layout renders
+        ``hidden`` by default — yet it (and every UQ/UA/TQ/TA) is fully
+        readable by ``read_rows`` (addressed by ``name``; ``input_value``
+        works on hidden inputs). Waiting for visibility here would wrongly
+        time out on every page. Any failure to reach the grid is a
+        :class:`PanelError` (the page is then retried on a later run).
+        """
         try:
-            self._page.wait_for_selector(ROW_INPUT_CSS, timeout=DEFAULT_TIMEOUT_MS)
+            self._page.click(ADMIN_DEV_TRIGGER_SELECTOR)
+            self._page.click(DATA_IBOOK_SELECTOR)
+            frame = self._textapps_frame()
+            frame.get_by_text(TEXTAPPS_TAB_TEXT, exact=True).first.click(timeout=DEFAULT_TIMEOUT_MS)
+            frame.locator(ROW_INPUT_CSS).first.wait_for(
+                state="attached", timeout=DEFAULT_TIMEOUT_MS
+            )
         except PlaywrightTimeoutError as exc:
             raise PanelError("TextApps grid did not appear") from exc
 
     def close_textapps(self) -> None:
-        """Close the modal then the Admin & Dev panel (RUNBOOK §4.9)."""
-        self._page.get_by_text(MODAL_CLOSE_TEXT).first.click()
-        self._page.get_by_text(ADMIN_PANEL_CLOSE_TEXT).first.click()
+        """Close the data-entry modal then the Admin & Dev side menu.
+
+        Best-effort and tolerant: each control is clicked independently and a
+        missing/already-closed control is ignored, because the modal MUST be
+        dismissed before the page-step arrows become clickable again, and a
+        transient close failure must never abort a book.
+        """
+        for selector in (ADMIN_MODAL_CLOSE_SELECTOR, ADMIN_PANEL_CLOSE_SELECTOR):
+            try:
+                self._page.locator(selector).first.click(timeout=DEFAULT_TIMEOUT_MS)
+            except PlaywrightTimeoutError:
+                _log.warning("textapps_close_control_absent", selector=selector)
 
     def read_rows(self) -> list[RowFields]:
         """Read every grid row, addressing inputs strictly by ``name``.
@@ -216,10 +364,11 @@ class SiteNavigator:
         Inputs whose name is not a ``UQ/UA/TQ/TA{N}`` (e.g. ``Level``,
         ``Subject``, the ``+`` button) are ignored. The result is a dense list
         ``[0..max_index]``; any field absent from the DOM defaults to ``""``.
-        Performs no writes.
+        Reads run inside the cross-origin TextApps iframe. Performs no writes.
         """
+        inputs = self._textapps_frame().locator(ROW_INPUT_CSS)
         by_index: dict[int, dict[Field, str]] = {}
-        for el in self._page.query_selector_all(ROW_INPUT_CSS):
+        for el in inputs.all():
             name = el.get_attribute("name")
             if name is None:
                 continue
@@ -241,40 +390,16 @@ class SiteNavigator:
             for i in range(max(by_index) + 1)
         ]
 
-    # --- Internal helpers (selector-bound; # VERIFY-ON-LIVE) ---------------
-    def _current_page_context(self, book_key: str) -> PageContext:
-        sec_index, sec_title = self._current_section()
-        part = self._current_part_number()
-        page_number = self._current_page_number()
-        slug = section_slug(sec_index, sec_title, part)
-        key = compose_page_key(book_key, slug, page_number)
-        return PageContext(
-            book_key=book_key,
-            section_index=sec_index,
-            section_title=sec_title,
-            part_number=part,
-            page_number=page_number,
-            page_key=key,
-        )
-
-    def _current_section(self) -> tuple[int, str]:
-        """Return ``(1-based index, title)`` of the highlighted section.
-
-        The active section is identified by its DOM POSITION among the sidebar
-        entries combined with the active class — never by matching the title
-        text, because sidebar titles can collide (e.g. a repeated "Part 1"),
-        which would otherwise always resolve to the first occurrence.
-        """
-        for idx, el in enumerate(self._page.query_selector_all(SIDEBAR_SECTION_SELECTOR), start=1):
-            classes = (el.get_attribute("class") or "").split()
-            if SIDEBAR_ACTIVE_CLASS in classes:
-                return idx, (el.text_content() or "").strip()
-        raise NavigationError("no active sidebar section")
-
+    # --- Internal helpers --------------------------------------------------
     def _current_page_number(self) -> int:
-        el = self._page.query_selector(PAGE_NUMBER_ACTIVE_SELECTOR)
+        el = self._page.query_selector(PAGE_CURRENT_SELECTOR)
         if el is None:
-            raise NavigationError("could not read the current page number")
+            # A single-page Part does not mark its lone page link
+            # ``currentpage``; that sole link IS the current page.
+            links = self._page.query_selector_all(PAGE_LIST_SELECTOR)
+            if len(links) != 1:
+                raise NavigationError("could not read the current page number")
+            el = links[0]
         text = (el.text_content() or "").strip()
         try:
             return int(text)
@@ -282,70 +407,32 @@ class SiteNavigator:
             raise NavigationError(f"page number {text!r} is not an int") from exc
 
     def _current_part_number(self) -> int | None:
-        # VERIFY-ON-LIVE: part detection is not derivable from the RUNBOOK or
-        # screenshots. Default to None (no ``/part-`` segment), which is
-        # format-compliant; tune in the task 3/5 integration runs if the live
-        # UI exposes a part indicator.
+        # Divergence C: a stable per-part indicator is not exposed in a form
+        # this deterministic walk needs (the gid Part pages already bound the
+        # walk by global page range). Always None -> no ``/part-`` segment is
+        # emitted; keys stay collision-free because page numbers are global.
         return None
 
-    def _advance_to_next_page(self) -> bool:
-        """Click the next-page arrow; ``False`` at end of book.
-
-        Snapshots the active page-number text **before** clicking so the
-        settle wait can block until the SPA has actually swapped pages.
-
-        # VERIFY-ON-LIVE: end-of-book detection is ambiguous in the source —
-        # treated as "no enabled next arrow".
-        """
-        arrow = self._page.query_selector(PAGE_NEXT_ARROW_SELECTOR)
-        if arrow is None or arrow.is_disabled():
-            return False
-        prev_page_text = self._page_number_text()
-        arrow.click()
-        self._wait_for_page_settled(prev_page_text)
-        return True
-
-    def _page_number_text(self) -> str:
-        """Active page-number indicator text, or ``""`` if not present.
-
-        Unlike :meth:`_current_page_number` this never raises — it is the
-        pre-click snapshot fed to :meth:`_wait_for_page_settled`, where an
-        absent indicator must degrade gracefully, not abort the walk.
-        """
-        el = self._page.query_selector(PAGE_NUMBER_ACTIVE_SELECTOR)
-        if el is None:
-            return ""
-        return (el.text_content() or "").strip()
-
     def _wait_for_page_settled(self, prev_page_text: str) -> None:
-        """Block until the SPA page swap after a next-arrow click completes.
+        """Block until the page-step after a next-arrow click completes.
 
-        ``page.click`` only auto-waits for the arrow's actionability — it does
-        NOT wait for the viewer's single-page-app to swap the page number, the
-        sidebar highlight and the grid inputs. Without this the next
-        ``_current_page_context``/``read_rows`` would read STALE values from
-        the previous page (a correctness bug, not cosmetic).
+        ``page.click`` only auto-waits for the arrow's actionability — not for
+        the viewer to swap the page. Without this the next
+        ``_current_page_number``/``read_rows`` could read STALE values.
 
-        Strategy: block until the active page-number indicator's text differs
-        from ``prev_page_text`` (the value snapshotted *before* the click),
-        then settle on a network/DOM load-state as a backstop. Each wait is
-        bounded by ``DEFAULT_TIMEOUT_MS``. A page-number wait that times out is
-        logged and tolerated (e.g. an unverified selector or a non-numeric
-        indicator) so a single mismatch degrades to the load-state backstop
-        rather than aborting the whole book; a genuinely stale read then
-        surfaces downstream instead of being silently masked here.
-
-        Args:
-            prev_page_text: the page-number text captured *before* the click.
-
-        # VERIFY-ON-LIVE: the exact JS predicate / page-number selector is
-        # confirmed during the task 3/5 live integration runs. The signature
-        # and the snapshot-before-click contract are fixed.
+        Strategy: block until the page-number indicator's text differs from
+        ``prev_page_text`` (snapshotted *before* the click), then settle on a
+        network/DOM load-state backstop. Each wait is bounded by
+        ``DEFAULT_TIMEOUT_MS``; a page-number wait that times out is logged and
+        tolerated so a single mismatch degrades to the load-state backstop
+        rather than aborting the book — a genuinely stale read then surfaces
+        downstream (and ``iter_book_pages`` independently breaks the Part if
+        the number did not advance).
         """
         try:
             self._page.wait_for_function(
                 _PAGE_SETTLE_JS,
-                arg=[PAGE_NUMBER_ACTIVE_SELECTOR, prev_page_text],
+                arg=[PAGE_CURRENT_SELECTOR, prev_page_text],
                 timeout=DEFAULT_TIMEOUT_MS,
             )
         except PlaywrightTimeoutError:
@@ -359,15 +446,6 @@ class SiteNavigator:
                 # Bounded + tolerated per this method's contract: never abort
                 # the book here. A genuinely stale read surfaces downstream.
                 _log.warning("page_load_state_not_settled", prev_page_text=prev_page_text)
-
-    def _click_first_by_text(self, texts: tuple[str, ...]) -> None:
-        """Click the first locator whose text matches any of ``texts``."""
-        for text in texts:
-            locator = self._page.get_by_text(text)
-            if locator.count() > 0:
-                locator.first.click()
-                return
-        raise NavigationError(f"no clickable element for any of {texts!r}")
 
 
 @contextmanager

@@ -140,18 +140,3 @@ def fake_input(name: str, value: str) -> MagicMock:
     el.get_attribute.return_value = name
     el.input_value.return_value = value
     return el
-
-
-def fake_text_el(text: str) -> MagicMock:
-    """A fake element exposing ``text_content()``."""
-    el = MagicMock()
-    el.text_content.return_value = text
-    return el
-
-
-def fake_section(title: str, *, active: bool = False) -> MagicMock:
-    """A fake sidebar section element (``text_content()`` + ``class`` attr)."""
-    el = MagicMock()
-    el.text_content.return_value = title
-    el.get_attribute.return_value = "section active" if active else "section"
-    return el

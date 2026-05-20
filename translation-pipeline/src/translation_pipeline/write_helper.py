@@ -25,7 +25,7 @@ from dataclasses import dataclass
 from enum import Enum, auto
 
 from playwright.sync_api import Error as PlaywrightError
-from playwright.sync_api import Page, Response
+from playwright.sync_api import FrameLocator, Page, Response
 from playwright.sync_api import TimeoutError as PlaywrightTimeoutError
 
 from translation_pipeline.logging_config import get_logger
@@ -33,12 +33,36 @@ from translation_pipeline.selectors import (
     SAVE_BUTTON_SELECTOR,
     SAVE_ENDPOINT_SUBSTR,
     SAVE_RESPONSE_TIMEOUT_MS,
+    TEXTAPPS_IFRAME_SELECTOR,
     Field,
     TargetField,
     field_input_css,
 )
 
 _log = get_logger(__name__)
+
+#: The TextApps grid + Save button live inside the cross-origin ``#LFrm``
+#: iframe (same frame the READ-ONLY ``site.read_rows`` uses) — every
+#: fill/read/Save here is frame-scoped, never on the top-level page.
+#:
+#: Set-value JS for a (possibly **hidden**) Arabic ``UQ``/``UA`` input: the
+#: RTL layout renders these cells ``hidden``, so ``Locator.fill`` (which
+#: requires visibility) cannot be used. ``Locator.evaluate`` only needs the
+#: element ATTACHED, so we set ``.value`` directly and dispatch the
+#: ``input``/``change`` events the site's ``submitForms`` serialisation
+#: relies on. (Mirrors the read path's "address hidden inputs by name"
+#: rationale. Live Save-flow confirmation is the writeback canary's job —
+#: ``# VERIFY-ON-LIVE-WRITEBACK``.)
+_SET_VALUE_JS = (
+    "(el, v) => { el.value = v;"
+    " el.dispatchEvent(new Event('input', { bubbles: true }));"
+    " el.dispatchEvent(new Event('change', { bubbles: true })); }"
+)
+
+
+def _textapps_frame(page: Page) -> FrameLocator:
+    """The cross-origin TextApps iframe (same ``#LFrm`` the read path uses)."""
+    return page.frame_locator(TEXTAPPS_IFRAME_SELECTOR)
 
 
 class SaveOutcome(Enum):
@@ -75,12 +99,19 @@ def fill_translation(page: Page, row_index: int, field: TargetField, value: str)
     """
     if not isinstance(field, TargetField):
         raise ValueError(f"fill_translation only writes UQ/UA TargetField (got {field!r})")
-    page.fill(field_input_css(field, row_index), value)
+    css = field_input_css(field, row_index)  # raises on a negative index
+    # Frame-scoped, hidden-input safe (see _SET_VALUE_JS): never the top page,
+    # never a visibility-gated fill, never TQ/TA, never the ``+`` button.
+    _textapps_frame(page).locator(css).evaluate(_SET_VALUE_JS, value)
 
 
 def read_field_value(page: Page, row_index: int, field: Field) -> str:
-    """Return the live ``.value`` of one field (task 5 no-overwrite guard)."""
-    return page.input_value(field_input_css(field, row_index))
+    """Return the live ``.value`` of one field (task 5 no-overwrite guard).
+
+    Frame-scoped; ``input_value`` reads a hidden input fine (same as the
+    READ-ONLY ``site.read_rows`` path).
+    """
+    return _textapps_frame(page).locator(field_input_css(field, row_index)).input_value()
 
 
 def _is_save_response(response: Response) -> bool:
@@ -95,8 +126,10 @@ def save_page(page: Page, *, timeout_ms: int = SAVE_RESPONSE_TIMEOUT_MS) -> Save
     or style is never read.
     """
     try:
+        # ``expect_response`` stays page-level (it captures sub-frame requests
+        # too); only the Save click is frame-scoped (the button is in #LFrm).
         with page.expect_response(_is_save_response, timeout=timeout_ms) as info:
-            page.click(SAVE_BUTTON_SELECTOR)
+            _textapps_frame(page).locator(SAVE_BUTTON_SELECTOR).click()
         response = info.value
     except PlaywrightTimeoutError:
         _log.warning("save_no_response", reason="timeout")
