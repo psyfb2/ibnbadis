@@ -95,6 +95,16 @@ Normalize for comparison: lowercase, collapse whitespace, strip surrounding quot
    - Do **not** add the page to `completed_pages`.
    - Skip to step 4.9 (close & advance).
 
+> **CSTC-3 vs CSTC-4 save-signal (informational; CSTC-3 behaviour unchanged).**
+> CSTC-3 (this agentic flow) intentionally continues to use the **green
+> Save-button flash** as its observable save signal (step 4.7 above is
+> unchanged). The CSTC-4 deterministic pipeline (`../translation-pipeline/`,
+> ticket CSTC-4) instead keys save-success strictly off the
+> `https://dev.ibnbadis.org/TextEntry/userqanssave.php` POST body
+> `["", true]` (a `["", false]` body or a 5xx = failed). Same underlying
+> endpoint; the observable signal differs because CSTC-4 can intercept the
+> response and CSTC-3 cannot. This note does **not** change any CSTC-3 step.
+
 ### 4.8 Persist audit log + completion
 1. Write `state/extracted/<book-key>/<section-slug>/page-<NN>.json`:
    ```json

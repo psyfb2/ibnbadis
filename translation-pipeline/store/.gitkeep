@@ -1,0 +1,2 @@
+# Keeps the store/ directory tracked in git.
+# store/translations.json and store/*.bak are gitignored (see ../.gitignore).

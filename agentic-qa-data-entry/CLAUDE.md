@@ -35,3 +35,4 @@ CSTC-3 on fadyai.atlassian.net — has six screenshots of each UI stage and the 
 - Existing rows on the site are **never** modified — only missing Q&A are appended via the "+" button.
 - State is persisted after every page, so any session can be killed and resumed.
 - A page is only marked complete after the Save button confirms green; save failures go to `state.errors[]`.
+- **Save-signal divergence (informational):** CSTC-3 uses the green Save-button flash as its save signal; the CSTC-4 pipeline (`../translation-pipeline/`, ticket CSTC-4) uses the `userqanssave.php` body `["", true]` as the canonical save-success signal. CSTC-3 behaviour is unchanged by this.
